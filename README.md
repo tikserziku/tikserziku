@@ -32,7 +32,7 @@ But that's what I'm aiming for. )))** <br>
 
  **Languages** <br>
 ![English](https://img.shields.io/badge/English-intermediate-blue)
-![Ukrainian](https://img.shields.io/badge/Lithuania-native-blue)
+![Lithuanian](https://img.shields.io/badge/Lithuania-native-blue)
 ![Russian](https://img.shields.io/badge/Russian-native-blue)
 ## 
 ![](https://img.shields.io/badge/:-Thymeleaf-informational?style=flat&logo=Thymeleaf&logoColor=white&color=4AB197)
