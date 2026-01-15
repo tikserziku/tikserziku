@@ -1,0 +1,15 @@
+{
+  "lastUpdated": "2025-01-15",
+  "phases": {
+    "foundation": { "name": "Foundation", "progress": 100, "status": "complete" },
+    "memory": { "name": "Memory", "progress": 80, "status": "active" },
+    "autonomy": { "name": "Autonomy", "progress": 20, "status": "starting" },
+    "selfImprove": { "name": "Self-Improve", "progress": 0, "status": "planned" },
+    "agi": { "name": "AGI", "progress": 0, "status": "vision" }
+  },
+  "metrics": {
+    "mcpTools": 28,
+    "knowledgeItems": 26,
+    "projects": 4
+  }
+}

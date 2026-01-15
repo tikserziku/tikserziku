@@ -1,41 +1,113 @@
-![](https://img.shields.io/badge/J:-Java-informational?style=flat&logo=Java&logoColor=white&color=4AB197)
-![](https://img.shields.io/badge/SB:-SpringBoot-informational?style=flat&logo=Spring&logoColor=white&color=4AB197)
-![](https://img.shields.io/badge/H:-Hibernate-informational?style=flat&logo=Hibernate&logoColor=white&color=4AB197)
-![](https://img.shields.io/badge/M:-Maven-informational?style=flat&logo=Maven&logoColor=white&color=4AB197)
-![](https://img.shields.io/badge/PSQL:-PostgreSQL-informational?style=flat&logo=PostgreSQL&logoColor=white&color=4AB197) <br>
-**Hi. I'm still learning how to program. <br>
-That's all that's below isn't true yet. <br>
-But that's what I'm aiming for. )))** <br>
+<div align="center">
 
-![Java_Developer](https://img.shields.io/badge/-Java_Developer-2F0601?style=for-the-badge&logo=Java_Developer&logoColor=efd81d)  
+# 👋 Hey, I'm Sergej Drus
 
-**Technologies**<br>
-![Java](https://img.shields.io/badge/-Java-545775?style=for-the-badge&logo=Jav1a&logoColor=efd81d) 
-![Spring](https://img.shields.io/badge/-Spring-4AB197?style=for-the-badge&logo=Sprin1g&logoColor=efd81d) 
-![Hibernate](https://img.shields.io/badge/-Hibernate-545775?style=for-the-badge&logo=Hibernat1e&logoColor=efd81d)  
-![JUnit](https://img.shields.io/badge/-JUnit-3b444b?style=for-the-badge&logo=JUni1t&logoColor=efd81d) 
-![Groovy](https://img.shields.io/badge/-Groovy-545775?style=for-the-badge&logo=Groov1y&logoColor=efd81d) 
-![Gradle](https://img.shields.io/badge/-Gradle-3b444b?style=for-the-badge&logo=Gradl1e&logoColor=efd81d)  
-![Maven](https://img.shields.io/badge/-Maven-545775?style=for-the-badge&logo=Mav1en&logoColor=efd81d) 
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-3b444b?style=for-the-badge&logo=Postg1reSQL&logoColor=efd81d)
-![mongoDB](https://img.shields.io/badge/-mongoDB-545775?style=for-the-badge&logo=mo1ngoDB&logoColor=efd81d) 
-![Git](https://img.shields.io/badge/-Git-3b444b?style=for-the-badge&logo=Gi1t&logoColor=efd81d)  
-![SpringBoot](https://img.shields.io/badge/-Spring_Boot-4AB197?style=for-the-badge&logo=Spring1Boot&logoColor=efd81d) 
-![SpringMVC](https://img.shields.io/badge/-Spring_MVC-116062?style=for-the-badge&logo=SpringM1VC&logoColor=efd81d) 
-![SpringData](https://img.shields.io/badge/-Spring_Data-4AB197?style=for-the-badge&logo=Spring1Data&logoColor=efd81d) 
-<br>
+### AI Developer • Claude Enthusiast • Building Towards AGI
 
-**Programming tools** <br>
-![Jetbrains_IDE](https://img.shields.io/badge/-Jetbrains_IDE-116062?style=for-the-badge&logo=Jetbrains1IDE&logoColor=efd81d)
-![GitHub](https://img.shields.io/badge/-GitHub-3b444b?style=for-the-badge&logo=Git1Hub&logoColor=efd81d)
-![Postman](https://img.shields.io/badge/-Postman-116062?style=for-the-badge&logo=Post1man&logoColor=efd81d)
+[![Portfolio](https://img.shields.io/badge/Portfolio-6366f1?style=for-the-badge&logo=googlechrome&logoColor=white)](https://tikserziku.github.io/portfolio/)
+[![AGI Roadmap](https://img.shields.io/badge/AGI_Roadmap-10b981?style=for-the-badge&logo=rocket&logoColor=white)](https://tikserziku.github.io/mcp-hub/roadmap/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tikserziku)
 
- **Languages** <br>
-![English](https://img.shields.io/badge/English-intermediate-blue)
-![Lithuanian](https://img.shields.io/badge/Lithuania-native-blue)
-![Russian](https://img.shields.io/badge/Russian-native-blue)
-## 
-![](https://img.shields.io/badge/:-Thymeleaf-informational?style=flat&logo=Thymeleaf&logoColor=white&color=4AB197)
-![](https://img.shields.io/badge/L:-Lombok-informational?style=flat&logo=Lombok&logoColor=white&color=4AB197)
-![](https://img.shields.io/badge/Test-JUnit-informational?style=flat&logo=jUnit&logoColor=white&color=4AB197)
-![](https://img.shields.io/badge/Log-Log4j2-informational?style=flat&logo=Log4j2&logoColor=white&color=4AB197)
+</div>
+
+---
+
+## 📊 My Journey to AGI
+
+```
+Phase 1: Foundation     ████████████████████ 100% ✅
+Phase 2: Memory         ████████████████░░░░  80% 🔄 ← I'm here
+Phase 3: Autonomy       ████░░░░░░░░░░░░░░░░  20%
+Phase 4: Self-Improve   ░░░░░░░░░░░░░░░░░░░░   0%
+Phase 5: AGI            ░░░░░░░░░░░░░░░░░░░░   0% 🌟
+```
+
+**Current Focus:** Building autonomous AI agents with persistent memory and self-improvement capabilities.
+
+[📈 View Live Roadmap →](https://tikserziku.github.io/mcp-hub/roadmap/)
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+### AI & LLMs
+![Claude](https://img.shields.io/badge/Claude-000000?style=flat-square&logo=anthropic&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![MCP Protocol](https://img.shields.io/badge/MCP_Protocol-6366f1?style=flat-square&logo=lightning&logoColor=white)
+
+### Languages
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+
+### Infrastructure
+![Oracle Cloud](https://img.shields.io/badge/Oracle_Cloud-F80000?style=flat-square&logo=oracle&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
+
+### Tools
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+</div>
+
+---
+
+## 🚀 Featured Projects
+
+| Project | Description | Status |
+|---------|-------------|--------|
+| [**MCP Hub**](https://github.com/tikserziku/mcp-hub) | MCP server with 28+ tools, agent memory, VM control | 🟢 Live |
+| [**Portfolio**](https://tikserziku.github.io/portfolio/) | AI Developer portfolio with Anthropic letter | 🟢 Live |
+| [**AI Catalog MCP**](https://github.com/tikserziku/ai-catalog-mcp) | Searchable catalog of AI tools via MCP | 🟢 Live |
+| **Telegram AI Agent** | Autonomous bot with Claude integration | 🔄 Building |
+
+---
+
+## 📈 Activity
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=tikserziku&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117)
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=tikserziku&theme=tokyonight&hide_border=true&background=0d1117)
+
+</div>
+
+---
+
+## 🎯 What I'm Building
+
+> **Goal:** Fully autonomous AI agent that thinks, codes, deploys, and improves itself.
+
+- 🧠 **Agent Memory System** - SQLite-based persistent knowledge with RAG search
+- 🔧 **28 MCP Tools** - VM control, GitHub deploy, notes, tasks, and more
+- 🔄 **Self-Improvement Loop** - Agent that tracks and improves its own capabilities
+- 📱 **Telegram Integration** - Chat interface for the autonomous agent
+
+---
+
+## 📫 Let's Connect
+
+<div align="center">
+
+[![Email](https://img.shields.io/badge/Email-sergej.drus@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sergej.drus@gmail.com)
+[![Location](https://img.shields.io/badge/Location-Lithuania_🇱🇹-green?style=for-the-badge)]()
+[![Open to Work](https://img.shields.io/badge/Open_to-Remote_Work-6366f1?style=for-the-badge)]()
+
+**Looking to join Anthropic team! 🚀**
+
+</div>
+
+---
+
+<div align="center">
+
+*Last updated: January 2025 • Building the future with Claude*
+
+</div>

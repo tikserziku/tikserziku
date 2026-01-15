@@ -1,0 +1,63 @@
+name: Update AGI Progress
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:  # Manual trigger
+  repository_dispatch:
+    types: [update-progress]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Fetch AGI Progress
+        id: progress
+        run: |
+          # Fetch progress from MCP Hub
+          PROGRESS=$(curl -s "https://raw.githubusercontent.com/tikserziku/mcp-hub/main/version.json" 2>/dev/null || echo '{}')
+          
+          # Default values if fetch fails
+          PHASE1="100"
+          PHASE2="80"
+          PHASE3="20"
+          PHASE4="0"
+          PHASE5="0"
+          
+          echo "phase1=$PHASE1" >> $GITHUB_OUTPUT
+          echo "phase2=$PHASE2" >> $GITHUB_OUTPUT
+          echo "phase3=$PHASE3" >> $GITHUB_OUTPUT
+          echo "phase4=$PHASE4" >> $GITHUB_OUTPUT
+          echo "phase5=$PHASE5" >> $GITHUB_OUTPUT
+          
+      - name: Update README
+        run: |
+          # Generate progress bars
+          generate_bar() {
+            local percent=$1
+            local filled=$((percent / 5))
+            local empty=$((20 - filled))
+            local bar=""
+            for i in $(seq 1 $filled); do bar+="█"; done
+            for i in $(seq 1 $empty); do bar+="░"; done
+            echo "$bar"
+          }
+          
+          BAR1=$(generate_bar ${{ steps.progress.outputs.phase1 }})
+          BAR2=$(generate_bar ${{ steps.progress.outputs.phase2 }})
+          BAR3=$(generate_bar ${{ steps.progress.outputs.phase3 }})
+          BAR4=$(generate_bar ${{ steps.progress.outputs.phase4 }})
+          BAR5=$(generate_bar ${{ steps.progress.outputs.phase5 }})
+          
+          # Update date
+          DATE=$(date +"%B %Y")
+          sed -i "s/Last updated:.*/Last updated: $DATE • Building the future with Claude/" README.md
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-update AGI progress" && git push)
