@@ -16,15 +16,25 @@
 
 ```
 Phase 1: Foundation     ████████████████████ 100% ✅
-Phase 2: Memory         █████████████████░░░ 85% 🔄 ← I'm here
-Phase 3: Autonomy       █████░░░░░░░░░░░░░░░ 25%
-Phase 4: Self-Improve   ░░░░░░░░░░░░░░░░░░░░ 0%
+Phase 2: Memory         ██████████████████░░ 90% 🔄
+Phase 3: Autonomy       ████████░░░░░░░░░░░░ 40% ← I'm here
+Phase 4: Self-Improve   ███░░░░░░░░░░░░░░░░░ 15%
 Phase 5: AGI            ░░░░░░░░░░░░░░░░░░░░ 0% 🌟
 ```
 
-**Current Focus:** Building autonomous AI agents with persistent memory and self-improvement capabilities.
+**Current Focus:** Self-learning AI systems, autonomous agents, YouTube content analysis
 
 [📈 View Live Roadmap →](https://tikserziku.github.io/mcp-hub/roadmap/)
+
+---
+
+## 🆕 Latest Projects (January 2026)
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| 🎓 [**AI Learning Agent**](https://github.com/tikserziku/ai-learning-agent) | Self-learning system that analyzes YouTube tutorials | Gemini 2.0, Python |
+| 🎬 [**YouTube AI Monitor**](https://github.com/tikserziku/youtube-ai-monitor) | Monitors AI news channels, sends summaries to Telegram | Gemini, RSS |
+| 🎯 [**ARM Hunter**](https://github.com/tikserziku/oracle-arm-hunter) | Auto-captures free Oracle ARM VMs (4 CPU, 24GB RAM) | OCI CLI, Bash |
 
 ---
 
@@ -34,7 +44,7 @@ Phase 5: AGI            ░░░░░░░░░░░░░░░░░░�
 
 ### AI & LLMs
 ![Claude](https://img.shields.io/badge/Claude-000000?style=flat-square&logo=anthropic&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
 ![MCP Protocol](https://img.shields.io/badge/MCP_Protocol-6366f1?style=flat-square&logo=lightning&logoColor=white)
 
 ### Languages
@@ -46,13 +56,7 @@ Phase 5: AGI            ░░░░░░░░░░░░░░░░░░�
 ### Infrastructure
 ![Oracle Cloud](https://img.shields.io/badge/Oracle_Cloud-F80000?style=flat-square&logo=oracle&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
-
-### Tools
-![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 
 </div>
 
@@ -62,10 +66,23 @@ Phase 5: AGI            ░░░░░░░░░░░░░░░░░░�
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| [**MCP Hub**](https://github.com/tikserziku/mcp-hub) | MCP server with 28+ tools, agent memory, VM control | 🟢 Live |
-| [**Portfolio**](https://tikserziku.github.io/portfolio/) | AI Developer portfolio with Anthropic letter | 🟢 Live |
-| [**AI Catalog MCP**](https://github.com/tikserziku/ai-catalog-mcp) | Searchable catalog of AI tools via MCP | 🟢 Live |
-| **Telegram AI Agent** | Autonomous bot with Claude integration | 🔄 Building |
+| [**MCP Hub v2.2**](https://github.com/tikserziku/backup-mcp-hub) | MCP server with 28+ tools, agent memory, VM control | 🟢 Live |
+| [**AI Learning Agent**](https://github.com/tikserziku/ai-learning-agent) | Self-learning from YouTube tutorials | 🟢 Active |
+| [**YouTube AI Monitor**](https://github.com/tikserziku/youtube-ai-monitor) | AI Flash news analysis | 🟢 24/7 |
+| [**ARM Hunter**](https://github.com/tikserziku/oracle-arm-hunter) | Free Oracle VM hunter | 🟢 Hunting |
+| [**Portfolio**](https://tikserziku.github.io/portfolio/) | AI Developer portfolio | 🟢 Live |
+
+---
+
+## 🤖 Active Services (Oracle Cloud)
+
+```
+VM2 (158.180.56.74):
+├── arm-hunter          🟢 Hunting for free ARM VMs
+├── youtube-ai-monitor  🟢 Analyzing AI Flash News  
+├── mcp-hub             🟢 28+ MCP tools active
+└── auto-deployer       🟢 Auto-commit to GitHub
+```
 
 ---
 
@@ -75,39 +92,14 @@ Phase 5: AGI            ░░░░░░░░░░░░░░░░░░�
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=tikserziku&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117)
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=tikserziku&theme=tokyonight&hide_border=true&background=0d1117)
-
-</div>
-
----
-
-## 🎯 What I'm Building
-
-> **Goal:** Fully autonomous AI agent that thinks, codes, deploys, and improves itself.
-
-- 🧠 **Agent Memory System** - SQLite-based persistent knowledge with RAG search
-- 🔧 **28 MCP Tools** - VM control, GitHub deploy, notes, tasks, and more
-- 🔄 **Self-Improvement Loop** - Agent that tracks and improves its own capabilities
-- 📱 **Telegram Integration** - Chat interface for the autonomous agent
-
----
-
-## 📫 Let's Connect
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-sergej.drus@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sergej.drus@gmail.com)
-[![Location](https://img.shields.io/badge/Location-Lithuania_🇱🇹-green?style=for-the-badge)]()
-[![Open to Work](https://img.shields.io/badge/Open_to-Remote_Work-6366f1?style=for-the-badge)]()
-
-**Looking to join Anthropic team! 🚀**
-
 </div>
 
 ---
 
 <div align="center">
 
-*Last updated: January 2025 • Building the future with Claude*
+**🔄 Last updated:** January 16, 2026 | **MCP Hub v2.2.0**
+
+*Building the future, one agent at a time* 🚀
 
 </div>
