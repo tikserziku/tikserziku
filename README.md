@@ -49,7 +49,7 @@ My approach to artificial general intelligence:
 │   │                   Oracle Cloud (Always Free)                  │     │
 │   │  ┌────────────────────┐      ┌────────────────────┐          │     │
 │   │  │   VM1 (Main)       │ SSH  │   VM2 (Hub)        │          │     │
-│   │  │   92.5.72.169      │◄────►│   158.180.56.74    │          │     │
+│   │  │   ██.██.██.███     │◄────►│   ███.███.██.██    │          │     │
 │   │  │                    │      │                    │          │     │
 │   │  │ • grok-voice       │      │ • oracle-agent-api │          │     │
 │   │  │ • grok-emilia      │      │ • ai-learner       │          │     │
