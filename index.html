@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISAGINAS360 — AGI Research</title>
+    <title>Sergej Drus — Building AGI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -20,11 +20,7 @@
             --code-bg: #292524;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -35,7 +31,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -51,12 +46,25 @@
             align-items: center;
         }
 
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
         .logo {
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.1rem;
             letter-spacing: -0.02em;
             color: var(--text-primary);
             text-decoration: none;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
         }
 
         .nav-links {
@@ -71,11 +79,8 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
+        .nav-links a:hover { color: var(--text-primary); }
 
-        /* Hero */
         .hero {
             padding: 10rem 2rem 6rem;
             max-width: 900px;
@@ -99,7 +104,6 @@
             line-height: 1.7;
         }
 
-        /* Section */
         section {
             padding: 5rem 2rem;
             max-width: 900px;
@@ -119,7 +123,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -129,10 +132,7 @@
             margin: 3rem 0;
         }
 
-        .stat {
-            background: var(--bg-primary);
-            padding: 2rem;
-        }
+        .stat { background: var(--bg-primary); padding: 2rem; }
 
         .stat-value {
             font-family: 'Source Serif 4', Georgia, serif;
@@ -150,7 +150,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* Architecture */
         .architecture {
             background: var(--code-bg);
             color: #E7E5E4;
@@ -167,7 +166,6 @@
         .architecture .highlight { color: #FCD34D; }
         .architecture .agent { color: #A78BFA; }
 
-        /* Feature List */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -180,19 +178,9 @@
             border-top: 1px solid var(--border);
         }
 
-        .feature h3 {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
+        .feature h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .feature p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; }
 
-        .feature p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin: 0;
-        }
-
-        /* Progress */
         .progress-section {
             background: var(--bg-secondary);
             padding: 3rem;
@@ -202,13 +190,7 @@
 
         .progress-item { margin-bottom: 1.5rem; }
         .progress-item:last-child { margin-bottom: 0; }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
+        .progress-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
         .progress-label { font-size: 0.875rem; color: var(--text-secondary); }
         .progress-value { font-size: 0.875rem; font-weight: 500; color: var(--text-primary); }
 
@@ -226,7 +208,6 @@
             transition: width 1s ease-out;
         }
 
-        /* Repos */
         .repos {
             display: grid;
             gap: 1px;
@@ -250,7 +231,6 @@
         .repo-desc { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
         .repo-arrow { color: var(--text-muted); font-size: 1.25rem; }
 
-        /* Footer */
         footer {
             padding: 4rem 2rem;
             max-width: 900px;
@@ -294,7 +274,10 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="logo">VISAGINAS360</a>
+        <a href="#" class="logo-group">
+            <span class="logo">Sergej Drus</span>
+            <span class="logo-subtitle">Building AGI</span>
+        </a>
         <div class="nav-links">
             <a href="#research">Research</a>
             <a href="#architecture">Architecture</a>
@@ -333,7 +316,7 @@
 
         <section id="research">
             <h2>Research Direction</h2>
-            <p>We're exploring whether genuine intelligence can emerge from the collaboration of specialized AI agents, each handling different cognitive functions — similar to how the human brain operates through interconnected neural regions.</p>
+            <p>I'm exploring whether genuine intelligence can emerge from the collaboration of specialized AI agents, each handling different cognitive functions — similar to how the human brain operates through interconnected neural regions.</p>
             
             <div class="features">
                 <div class="feature">
@@ -482,12 +465,12 @@
 
         <section>
             <h2>Approach</h2>
-            <p>This project takes a different path than traditional AI development. Instead of training massive models, we orchestrate existing AI systems into a collaborative network.</p>
+            <p>This project takes a different path than traditional AI development. Instead of training massive models, I orchestrate existing AI systems into a collaborative network.</p>
             
             <div class="features">
                 <div class="feature">
                     <h3>No Training Required</h3>
-                    <p>We use Claude, Gemini, and GPT-4 as building blocks, focusing on coordination rather than parameter optimization.</p>
+                    <p>Using Claude, Gemini, and GPT-4 as building blocks, focusing on coordination rather than parameter optimization.</p>
                 </div>
                 <div class="feature">
                     <h3>Minimal Resources</h3>
@@ -498,7 +481,7 @@
                     <p>Progress, mistakes, and learnings are documented publicly. This is research in the open.</p>
                 </div>
                 <div class="feature">
-                    <h3>Human Partnership</h3>
+                    <h3>Human-AI Partnership</h3>
                     <p>AI and human working together, each contributing unique capabilities to the shared goal.</p>
                 </div>
             </div>
@@ -508,7 +491,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-left">
-                <p>VISAGINAS360 AGI Research</p>
+                <p>Sergej Drus</p>
                 <p>Built with Claude, Gemini, and GPT-4</p>
             </div>
             <div class="footer-links">
