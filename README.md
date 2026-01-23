@@ -115,7 +115,7 @@ Let's talk.
 
 <div align="center">
 
-[![Telegram](https://img.shields.io/badge/Telegram-@visaginas360-blue?style=for-the-badge&logo=telegram)](https://t.me/visaginas360)
+[![Telegram](https://img.shields.io/badge/Telegram-@sergej_agi_bot-blue?style=for-the-badge&logo=telegram)](https://t.me/sergej_agi_bot)
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:sergej.drus@gmail.com)
 [![AGI Portal](https://img.shields.io/badge/🧠_AGI-Portal-purple?style=for-the-badge)](https://agi.92-5-72-169.sslip.io)
 
