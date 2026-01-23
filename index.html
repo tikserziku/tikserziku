@@ -13,19 +13,16 @@
     <style>
         :root {
             --bg-primary: #faf9f6;
-            --bg-secondary: #f5f4f1;
             --bg-card: #ffffff;
             --text-primary: #1a1a1a;
             --text-secondary: #525252;
             --text-muted: #737373;
             --border: #e5e5e5;
             --accent: #d97706;
-            --accent-hover: #b45309;
             --accent-light: #fef3c7;
             --accent-glow: rgba(217, 119, 6, 0.1);
-            --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            --success: #10b981;
-            --error: #ef4444;
+            --whatsapp: #25D366;
+            --telegram: #0088cc;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,7 +34,6 @@
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
-            overflow-x: hidden;
         }
         
         .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
@@ -46,403 +42,154 @@
         @media (max-width: 600px) { header { padding: 60px 0 32px; } }
         
         .avatar {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            margin: 0 auto 24px;
-            overflow: hidden;
+            width: 110px; height: 110px; border-radius: 50%;
+            margin: 0 auto 24px; overflow: hidden;
             border: 3px solid var(--accent);
             box-shadow: 0 4px 20px var(--accent-glow);
         }
-        
         .avatar img { width: 100%; height: 100%; object-fit: cover; }
         
         .name {
             font-family: 'Instrument Serif', serif;
             font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 400;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
+            font-weight: 400; margin-bottom: 8px;
         }
         
-        .tagline {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            font-weight: 300;
-            margin-bottom: 16px;
-        }
+        .tagline { font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 16px; }
         
-        .location {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        .location { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 0.9rem; }
         .location::before { content: '📍'; }
         
         .status {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #ecfdf5;
-            border: 1px solid #a7f3d0;
-            border-radius: 100px;
-            padding: 6px 14px;
-            font-size: 0.8rem;
-            color: #047857;
-            margin-top: 16px;
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #ecfdf5; border: 1px solid #a7f3d0;
+            border-radius: 100px; padding: 6px 14px;
+            font-size: 0.8rem; color: #047857; margin-top: 16px;
         }
-        
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            background: #10b981;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+        .status-dot { width: 6px; height: 6px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         
         .hero { padding: 40px 0 60px; text-align: center; }
-        
         .hero-text {
             font-family: 'Instrument Serif', serif;
             font-size: clamp(1.3rem, 3.5vw, 2rem);
-            font-weight: 400;
-            line-height: 1.5;
-            max-width: 700px;
-            margin: 0 auto;
+            font-weight: 400; line-height: 1.5;
+            max-width: 700px; margin: 0 auto;
             color: var(--text-secondary);
         }
-        
         .hero-text span { color: var(--accent); }
         
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            padding: 40px 0;
-        }
-        
-        @media (max-width: 600px) {
-            .metrics { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        }
+        .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 40px 0; }
+        @media (max-width: 600px) { .metrics { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
         
         .metric {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 16px;
-            text-align: center;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px 16px; text-align: center;
             transition: all 0.2s ease;
         }
-        
-        .metric:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px var(--accent-glow);
-        }
-        
-        .metric-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 4px;
-        }
-        
+        .metric:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px var(--accent-glow); }
+        .metric-value { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 500; color: var(--accent); margin-bottom: 4px; }
         @media (max-width: 600px) { .metric-value { font-size: 1.5rem; } }
-        
-        .metric-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
+        .metric-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
         
         section { padding: 40px 0; }
         
         .section-title {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            font-size: 0.75rem; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.15em;
+            margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
         }
-        
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
         
         .projects { display: flex; flex-direction: column; gap: 12px; }
-        
         .project {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 16px;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            color: inherit;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+            transition: all 0.2s ease; text-decoration: none; color: inherit;
         }
-        
-        @media (max-width: 600px) {
-            .project { flex-direction: column; gap: 12px; }
-        }
-        
-        .project:hover {
-            border-color: var(--accent);
-            box-shadow: 0 2px 8px var(--accent-glow);
-        }
-        
+        @media (max-width: 600px) { .project { flex-direction: column; gap: 12px; } }
+        .project:hover { border-color: var(--accent); box-shadow: 0 2px 8px var(--accent-glow); }
         .project-info { flex: 1; }
         .project-info h3 { font-size: 1rem; font-weight: 500; margin-bottom: 6px; }
         .project-info p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
-        
         .project-meta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
         @media (max-width: 600px) { .project-meta { width: 100%; } }
-        
-        .project-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--accent);
-            background: var(--accent-light);
-            padding: 4px 10px;
-            border-radius: 100px;
-        }
-        
+        .project-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); background: var(--accent-light); padding: 4px 10px; border-radius: 100px; }
         .project-status { font-size: 0.75rem; color: var(--text-muted); }
         
         .architecture {
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 24px;
-            margin-top: 16px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            line-height: 1.7;
-            color: #a1a1aa;
-            overflow-x: auto;
+            background: #1a1a1a; border-radius: 12px; padding: 24px; margin-top: 16px;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7;
+            color: #a1a1aa; overflow-x: auto;
         }
-        
         @media (max-width: 600px) { .architecture { padding: 16px; font-size: 0.7rem; } }
-        
         .architecture pre { margin: 0; white-space: pre-wrap; word-wrap: break-word; }
         .architecture .accent { color: #f59e0b; }
         .architecture .comment { color: #6b7280; }
         
-        /* Contact Form */
-        .contact-form {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            max-width: 500px;
+        /* Contact Section */
+        .contact-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 500px;
         }
+        @media (max-width: 600px) { .contact-box { padding: 24px; } }
         
-        @media (max-width: 600px) {
-            .contact-form { padding: 24px; }
+        .contact-intro { margin-bottom: 28px; }
+        .contact-intro h3 { font-family: 'Instrument Serif', serif; font-size: 1.5rem; margin-bottom: 8px; }
+        .contact-intro p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        
+        .contact-buttons { display: flex; flex-direction: column; gap: 12px; }
+        
+        .contact-btn {
+            display: flex; align-items: center; gap: 12px;
+            padding: 16px 20px; border-radius: 12px;
+            border: 1px solid var(--border); background: var(--bg-primary);
+            color: var(--text-primary); text-decoration: none;
+            font-size: 1rem; font-weight: 500;
+            transition: all 0.2s ease; cursor: pointer;
         }
+        .contact-btn:hover { transform: translateX(4px); }
         
-        .form-intro {
-            margin-bottom: 24px;
-        }
+        .contact-btn.whatsapp:hover { border-color: var(--whatsapp); background: rgba(37, 211, 102, 0.08); }
+        .contact-btn.telegram:hover { border-color: var(--telegram); background: rgba(0, 136, 204, 0.08); }
+        .contact-btn.call:hover { border-color: var(--accent); background: var(--accent-light); }
+        .contact-btn.ai:hover { border-color: #8b5cf6; background: rgba(139, 92, 246, 0.08); }
         
-        .form-intro h3 {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
+        .contact-btn svg { width: 24px; height: 24px; flex-shrink: 0; }
+        .contact-btn.whatsapp svg { fill: var(--whatsapp); }
+        .contact-btn.telegram svg { fill: var(--telegram); }
+        .contact-btn.call svg { fill: var(--accent); }
+        .contact-btn.ai svg { fill: #8b5cf6; }
         
-        .form-intro p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
+        .contact-btn span { flex: 1; }
+        .contact-btn small { font-size: 0.75rem; color: var(--text-muted); font-weight: 400; }
         
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            background: var(--bg-primary);
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px var(--accent-glow);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .form-group select {
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23737373' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 40px;
-        }
-        
-        /* Honeypot - hidden from humans */
-        .hp-field {
-            position: absolute;
-            left: -9999px;
-            opacity: 0;
-            height: 0;
-            width: 0;
-            pointer-events: none;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 14px 24px;
-            background: var(--accent-gradient);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px var(--accent-glow);
-        }
-        
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .submit-btn .spinner {
-            width: 18px;
-            height: 18px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            display: none;
-        }
-        
-        .submit-btn.loading .spinner { display: block; }
-        .submit-btn.loading .btn-text { display: none; }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .form-message {
-            margin-top: 16px;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            display: none;
-        }
-        
-        .form-message.success {
-            display: block;
-            background: #ecfdf5;
-            color: #047857;
-            border: 1px solid #a7f3d0;
-        }
-        
-        .form-message.error {
-            display: block;
-            background: #fef2f2;
-            color: #b91c1c;
-            border: 1px solid #fecaca;
-        }
-        
-        .form-note {
-            margin-top: 16px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 24px;
-            padding-top: 24px;
+        .contact-note {
+            margin-top: 20px; padding-top: 20px;
             border-top: 1px solid var(--border);
+            font-size: 0.85rem; color: var(--text-muted);
+            display: flex; align-items: center; gap: 8px;
         }
         
+        .social-row {
+            display: flex; gap: 12px; margin-top: 20px;
+            padding-top: 20px; border-top: 1px solid var(--border);
+        }
         .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background: var(--bg-primary);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            transition: all 0.2s ease;
+            display: flex; align-items: center; justify-content: center;
+            width: 44px; height: 44px; border-radius: 10px;
+            background: var(--bg-primary); border: 1px solid var(--border);
+            color: var(--text-secondary); transition: all 0.2s ease;
         }
-        
-        .social-link:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-        
-        .social-link svg { width: 18px; height: 18px; fill: currentColor; }
+        .social-link:hover { border-color: var(--accent); color: var(--accent); }
+        .social-link svg { width: 20px; height: 20px; fill: currentColor; }
         
         footer {
-            padding: 40px 0 32px;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            margin-top: 40px;
+            padding: 40px 0 32px; text-align: center;
+            border-top: 1px solid var(--border); margin-top: 40px;
         }
-        
         .footer-text { color: var(--text-muted); font-size: 0.85rem; }
         .footer-text a { color: var(--accent); text-decoration: none; }
         .footer-text a:hover { text-decoration: underline; }
@@ -569,61 +316,39 @@
         
         <section class="reveal">
             <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-form">
-                <div class="form-intro">
+            <div class="contact-box">
+                <div class="contact-intro">
                     <h3>Let's Connect</h3>
-                    <p>Interested in AGI, collaboration, or investment opportunities? I'd love to hear from you.</p>
+                    <p>Interested in AGI collaboration, investment opportunities, or technical discussions? Choose your preferred way to reach me.</p>
                 </div>
                 
-                <form id="contactForm">
-                    <input type="hidden" name="_t" id="formTime">
+                <div class="contact-buttons">
+                    <a href="#" class="contact-btn whatsapp" onclick="openWhatsApp(); return false;">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span>WhatsApp<br><small>Quick message</small></span>
+                    </a>
                     
-                    <!-- Honeypot field - hidden from humans, bots fill it -->
-                    <div class="hp-field">
-                        <label for="website">Website</label>
-                        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
-                    </div>
+                    <a href="#" class="contact-btn telegram" onclick="openTelegram(); return false;">
+                        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        <span>Telegram<br><small>Secure chat</small></span>
+                    </a>
                     
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name">
-                    </div>
+                    <a href="#" class="contact-btn call" onclick="makeCall(); return false;">
+                        <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                        <span>Call Me<br><small>Direct phone</small></span>
+                    </a>
                     
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="interest">I'm interested in...</label>
-                        <select id="interest" name="interest" required>
-                            <option value="">Select an option</option>
-                            <option value="investment">💰 Investment Opportunity</option>
-                            <option value="collaboration">🤝 Collaboration / Partnership</option>
-                            <option value="technical">🔧 Technical Question</option>
-                            <option value="job">💼 Job Opportunity</option>
-                            <option value="other">📩 Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Tell me more..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">
-                        <span class="spinner"></span>
-                        <span class="btn-text">Send Message</span>
-                    </button>
-                    
-                    <div id="formMessage" class="form-message"></div>
-                    
-                    <p class="form-note">
-                        🔒 Your message goes directly to my inbox. No spam, ever.
-                    </p>
-                </form>
+                    <a href="https://secretary.92-5-72-169.sslip.io" target="_blank" class="contact-btn ai">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5z"/></svg>
+                        <span>AI Assistant<br><small>Talk to my AI secretary</small></span>
+                    </a>
+                </div>
                 
-                <div class="social-links">
+                <p class="contact-note">
+                    🔒 Your privacy is respected. I personally respond to all inquiries.
+                </p>
+                
+                <div class="social-row">
                     <a href="https://github.com/tikserziku" target="_blank" class="social-link" title="GitHub">
                         <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
@@ -653,7 +378,6 @@
                 }
             });
         }, { threshold: 0.1 });
-        
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         
         // Fetch live metrics
@@ -667,58 +391,24 @@
         }
         fetchMetrics();
         
-        // Contact form
-        const form = document.getElementById('contactForm');
-        const formMessage = document.getElementById('formMessage');
-        const submitBtn = form.querySelector('.submit-btn');
+        // Protected contact functions - number is NEVER in HTML
+        // Obfuscated to prevent bot scraping
+        const _c = [51,55,48,54,55,54,49,56,51,51,53]; // ASCII codes
+        function _d() { return _c.map(c => String.fromCharCode(c)).join(''); }
         
-        // Set form load time (for bot detection)
-        document.getElementById('formTime').value = Math.floor(Date.now() / 1000);
+        function openWhatsApp() {
+            const n = _d();
+            window.open('https://wa.me/' + n + '?text=Hi%20Sergej!%20I%20found%20you%20through%20your%20AGI%20portfolio.', '_blank');
+        }
         
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // UI feedback
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
-            formMessage.className = 'form-message';
-            formMessage.textContent = '';
-            
-            const formData = {
-                name: form.name.value.trim(),
-                email: form.email.value.trim(),
-                interest: form.interest.value,
-                message: form.message.value.trim(),
-                website: form.website.value, // honeypot
-                _t: form._t.value
-            };
-            
-            try {
-                const response = await fetch('https://contact.92-5-72-169.sslip.io/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    formMessage.className = 'form-message success';
-                    formMessage.textContent = result.message || 'Thank you! I\'ll get back to you soon.';
-                    form.reset();
-                    document.getElementById('formTime').value = Math.floor(Date.now() / 1000);
-                } else {
-                    formMessage.className = 'form-message error';
-                    formMessage.textContent = result.error || 'Something went wrong. Please try again.';
-                }
-            } catch (error) {
-                formMessage.className = 'form-message error';
-                formMessage.textContent = 'Network error. Please try again later.';
-            } finally {
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
-            }
-        });
+        function openTelegram() {
+            window.open('https://t.me/my_Visaginas360', '_blank');
+        }
+        
+        function makeCall() {
+            const n = _d();
+            window.location.href = 'tel:+' + n;
+        }
     </script>
 </body>
 </html>
