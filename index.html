@@ -129,7 +129,6 @@
         .architecture .accent { color: #f59e0b; }
         .architecture .comment { color: #6b7280; }
         
-        /* Contact Section */
         .contact-box {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 16px; padding: 32px; max-width: 500px;
@@ -338,7 +337,7 @@
                         <span>Call Me<br><small>Direct phone</small></span>
                     </a>
                     
-                    <a href="https://secretary.92-5-72-169.sslip.io" target="_blank" class="contact-btn ai">
+                    <a href="https://oven-principles-lift-seller.trycloudflare.com" target="_blank" class="contact-btn ai">
                         <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5z"/></svg>
                         <span>AI Assistant<br><small>Talk to my AI secretary</small></span>
                     </a>
@@ -391,9 +390,8 @@
         }
         fetchMetrics();
         
-        // Protected contact functions - number is NEVER in HTML
-        // Obfuscated to prevent bot scraping
-        const _c = [51,55,48,54,55,54,49,56,51,51,53]; // ASCII codes
+        // Protected contact - number NEVER in HTML (bot protection)
+        const _c = [51,55,48,54,55,54,49,56,51,51,53];
         function _d() { return _c.map(c => String.fromCharCode(c)).join(''); }
         
         function openWhatsApp() {
