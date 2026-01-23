@@ -9,7 +9,7 @@
 [![MCP Protocol](https://img.shields.io/badge/MCP-Protocol-purple?style=for-the-badge)](https://modelcontextprotocol.io)
 [![Claude](https://img.shields.io/badge/Anthropic-Claude-orange?style=for-the-badge)](https://anthropic.com)
 
-**[🌐 Portfolio](https://tikserziku.github.io/tikserziku/)** • **[🤖 AI Assistant](https://ai-secretary-sergej.fly.dev)** • **[📱 Telegram](https://t.me/my_Visaginas360)**
+**[🌐 Portfolio](https://tikserziku.github.io/tikserziku/)** • **[🤖 AI Assistant](https://ai-secretary-sergej.fly.dev)** • **[📱 Telegram](https://t.me/sergej_agi_bot)**
 
 </div>
 
@@ -138,7 +138,7 @@ Let's talk.
 | | |
 |---|---|
 | 🤖 **AI Assistant** | [ai-secretary-sergej.fly.dev](https://ai-secretary-sergej.fly.dev) |
-| 📱 **Telegram** | [@my_Visaginas360](https://t.me/my_Visaginas360) |
+| 📱 **Telegram** | [@sergej_agi_bot](https://t.me/sergej_agi_bot) |
 | 🌐 **Portfolio** | [tikserziku.github.io/tikserziku](https://tikserziku.github.io/tikserziku/) |
 
 </div>
