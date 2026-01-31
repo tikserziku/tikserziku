@@ -10,7 +10,7 @@
 [![Claude](https://img.shields.io/badge/Anthropic-Claude-orange?style=for-the-badge)](https://anthropic.com)
 [![AGI](https://img.shields.io/badge/AGI_Progress-77%25-brightgreen?style=for-the-badge)]()
 
-**[Portfolio](https://tikserziku.github.io/tikserziku/)** | **[AI Assistant](https://ai-secretary-sergej.fly.dev)** | **[MCP Hub](https://mcp-hub-old-frost-2327.fly.dev)** | **[Telegram](https://t.me/sergej_agi_bot)**
+**[Portfolio](https://tikserziku.github.io/tikserziku/)** | **[AGI Blog](https://agi.92-5-72-169.sslip.io)** | **[AI Assistant](https://ai-secretary-sergej.fly.dev)** | **[MCP Hub](https://mcp-hub-old-frost-2327.fly.dev)** | **[Telegram](https://t.me/sergej_agi_bot)**
 
 </div>
 
@@ -154,6 +154,7 @@ Let's talk.
 
 | | |
 |---|---|
+| **AGI Blog** | [agi.92-5-72-169.sslip.io](https://agi.92-5-72-169.sslip.io) |
 | **AI Assistant** | [ai-secretary-sergej.fly.dev](https://ai-secretary-sergej.fly.dev) |
 | **MCP Hub API** | [mcp-hub-old-frost-2327.fly.dev](https://mcp-hub-old-frost-2327.fly.dev) |
 | **Telegram** | [@sergej_agi_bot](https://t.me/sergej_agi_bot) |
