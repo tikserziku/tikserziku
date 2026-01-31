@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧠 Building AGI Solo
+# Building AGI Solo
 
 ### From zero coding experience to 54+ microservices on 1GB RAM
 
@@ -10,13 +10,13 @@
 [![Claude](https://img.shields.io/badge/Anthropic-Claude-orange?style=for-the-badge)](https://anthropic.com)
 [![AGI](https://img.shields.io/badge/AGI_Progress-77%25-brightgreen?style=for-the-badge)]()
 
-**[🌐 Portfolio](https://tikserziku.github.io/tikserziku/)** • **[🧠 AGI Blog](https://agi.92-5-72-169.sslip.io)** • **[🤖 AI Assistant](https://ai-secretary-sergej.fly.dev)** • **[📱 Telegram](https://t.me/sergej_agi_bot)**
+**[Portfolio](https://tikserziku.github.io/tikserziku/)** | **[AI Assistant](https://ai-secretary-sergej.fly.dev)** | **[MCP Hub](https://mcp-hub-old-frost-2327.fly.dev)** | **[Telegram](https://t.me/sergej_agi_bot)**
 
 </div>
 
 ---
 
-## 🎯 The Mission
+## The Mission
 
 I'm building an **Artificial General Intelligence system** through collective AI agent coordination — not by training models, but by orchestrating them.
 
@@ -27,7 +27,7 @@ I'm building an **Artificial General Intelligence system** through collective AI
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 🏗️ Architecture v3.1
+## Architecture v3.2
 
 ```
                     ┌──────────────────┐
@@ -38,57 +38,60 @@ I'm building an **Artificial General Intelligence system** through collective AI
                              │
                     ┌────────▼─────────┐
                     │    MCP Hub       │
-                    │   92 Tools       │
+                    │   92+ Tools      │
+                    │   Fly.io         │
                     └────────┬─────────┘
                              │
         ┌────────────────────┼────────────────────┐
         │                    │                    │
 ┌───────▼───────┐   ┌───────▼───────┐   ┌───────▼───────┐
-│  Brain Core   │   │  AI Agents    │   │  Autonomic    │
-│  • Memory     │   │  • Claude Code│   │  • Auto-test  │
-│  • Heartbeat  │   │  • Gemini 2.0 │   │  • Backup     │
-│  • Context    │   │  • GPT-4o     │   │  • ARM Hunter │
+│  Shared Brain │   │  AI Agents    │   │  Capability   │
+│  • Memory     │   │  • Claude Code│   │  Registry     │
+│  • A2A Proto  │   │  • Gemini 2.0 │   │  • Routing    │
+│  • Context    │   │  • GPT-4o     │   │  • Discovery  │
 └───────────────┘   └───────────────┘   └───────────────┘
 ```
 
-## 🆕 Latest: Claude Code Agent Integration
+## NEW: Capability Registry & Tool Architect
 
-```python
-# NEW! Execute complex tasks via API
-POST http://92.5.72.169:5001/claude/execute
-{"prompt": "Analyze and fix the bug in my service"}
+```bash
+# Find which agent can do what
+curl https://mcp-hub-old-frost-2327.fly.dev/capabilities/find?need=python
 
-# Response:
-{"success": true, "output": "Fixed! The issue was..."}
+# Smart task routing
+curl -X POST https://mcp-hub-old-frost-2327.fly.dev/capabilities/route \
+  -d '{"task": "run python script on VM"}'
 ```
 
-## 🤖 Try My AI Secretary
+**Philosophy:** "Before building a bridge, check if one already exists."
+
+## Try My AI Secretary
 
 Want to see what I build? **Talk to my AI assistant:**
 
 <div align="center">
 
-### 🎤 [**ai-secretary-sergej.fly.dev**](https://ai-secretary-sergej.fly.dev)
+### [**ai-secretary-sergej.fly.dev**](https://ai-secretary-sergej.fly.dev)
 
 *Voice-enabled AI secretary powered by Grok + Edge-TTS*
 
 </div>
 
-- 🎙️ Voice input (microphone)
-- 🔊 Voice output (Edge-TTS neural voice)
-- 💬 Text chat available
-- 📱 Works on mobile
+- Voice input (microphone)
+- Voice output (Edge-TTS neural voice)
+- Text chat available
+- Works on mobile
 
-## 🔥 Key Projects
+## Key Projects
 
 | Project | Description |
 |---------|-------------|
-| [**agi-progress**](https://github.com/tikserziku/agi-progress) | 🧠 Full AGI system with 54+ services |
+| [**a2a-agent-saas**](https://github.com/tikserziku/a2a-agent-saas) | Main AGI project documentation & progress |
 | [**claude-ai-ecosystem**](https://github.com/tikserziku/claude-ai-ecosystem) | Multi-agent orchestration & memory |
-| [**backup-grok-voice**](https://github.com/tikserziku/backup-grok-voice) | All service backups & configs |
-| [**agi-skills**](https://github.com/tikserziku/agi-skills) | Skill library and patterns |
+| [**mcp-hub**](https://github.com/tikserziku/mcp-hub) | MCP server with 92+ tools |
+| [**backup-agent-memory**](https://github.com/tikserziku/backup-agent-memory) | Agent memory & bootstrap system |
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 <div align="center">
 
@@ -103,31 +106,22 @@ Want to see what I build? **Talk to my AI assistant:**
 
 </div>
 
-## 📊 Stats
+## Stats
 
 <div align="center">
 
 | Metric | Value |
 |--------|-------|
-| 🔧 Microservices | 54+ |
-| 🧠 MCP Tools | 92 |
-| 🎯 AGI Progress | 77% |
-| ⏰ Uptime | 24/7 |
-| 💾 RAM Usage | ~500MB / 1GB |
-| 📦 Repositories | 100+ |
+| Microservices | 54+ |
+| MCP Tools | 92+ |
+| AGI Progress | 77% |
+| Uptime | 24/7 |
+| RAM Usage | ~500MB / 1GB |
+| Repositories | 100+ |
 
 </div>
 
-## 🎯 ARM Hunter v3.1
-
-Currently hunting for FREE ARM VM (Oracle Cloud):
-```
-Target: 1 OCPU / 6GB RAM
-Purpose: RIGHT BRAIN (Neo4j GraphRAG + Qdrant Vector DB)
-Status: 🔄 Hunting every 60 seconds...
-```
-
-## 🚀 What I Learned
+## What I Learned
 
 > *"AGI isn't about having the most powerful model — it's about orchestrating intelligence effectively."*
 
@@ -136,34 +130,34 @@ Status: 🔄 Hunting every 60 seconds...
 - Discovered that constraints (1GB RAM) breed creativity
 - Understood the difference between **training** AI and **using** AI
 
-## 🎯 Looking For
+## Looking For
 
 I'm seeking opportunities at companies pushing AI boundaries:
 
 <div align="center">
 
-**Anthropic** • **OpenAI** • **Meta AI** • **TESONET**
+**Anthropic** | **OpenAI** | **Meta AI** | **TESONET**
 
 </div>
 
 If you're building the future of AI and need someone who:
-- ✅ Ships production systems
-- ✅ Thrives under constraints  
-- ✅ Learns rapidly
-- ✅ Thinks architecturally
+- Ships production systems
+- Thrives under constraints
+- Learns rapidly
+- Thinks architecturally
 
 Let's talk.
 
-## 📫 Connect
+## Connect
 
 <div align="center">
 
 | | |
 |---|---|
-| 🧠 **AGI Blog** | [agi.92-5-72-169.sslip.io](https://agi.92-5-72-169.sslip.io) |
-| 🤖 **AI Assistant** | [ai-secretary-sergej.fly.dev](https://ai-secretary-sergej.fly.dev) |
-| 📱 **Telegram** | [@sergej_agi_bot](https://t.me/sergej_agi_bot) |
-| 🌐 **Portfolio** | [tikserziku.github.io/tikserziku](https://tikserziku.github.io/tikserziku/) |
+| **AI Assistant** | [ai-secretary-sergej.fly.dev](https://ai-secretary-sergej.fly.dev) |
+| **MCP Hub API** | [mcp-hub-old-frost-2327.fly.dev](https://mcp-hub-old-frost-2327.fly.dev) |
+| **Telegram** | [@sergej_agi_bot](https://t.me/sergej_agi_bot) |
+| **Portfolio** | [tikserziku.github.io/tikserziku](https://tikserziku.github.io/tikserziku/) |
 
 </div>
 
@@ -171,10 +165,10 @@ Let's talk.
 
 <div align="center">
 
-*Building in public from Lithuania 🇱🇹*
+*Building in public from Lithuania*
 
 **"The best way to predict the future is to build it."**
 
-**Version 3.1** | **Updated: January 25, 2026**
+**Version 3.2** | **Updated: February 1, 2026**
 
 </div>
