@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergej Drus — AI Agent Systems Builder</title>
-    <meta name="description" content="Building autonomous AI agent swarms. 8 parallel agents, distributed memory, 3.3x speedup, $0 infrastructure. Day 24 of the journey.">
+    <meta name="description" content="Building autonomous AI agent swarms. 8 parallel agents, distributed memory, 3.3x speedup. Day 24 of the journey.">
     <meta property="og:title" content="Sergej Drus — AI Agent Systems Builder">
-    <meta property="og:description" content="8 AI agents working in parallel. Distributed memory across 3 VMs. Google Workspace integration. 45 ideas shipped.">
+    <meta property="og:description" content="8 AI agents working in parallel. Distributed memory. Google Workspace integration. 45 ideas shipped.">
     <meta property="og:type" content="website">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -163,7 +163,7 @@
         .agent-card:hover { border-color: var(--accent); transform: translateY(-2px); }
         .agent-emoji { font-size: 1.5rem; margin-bottom: 6px; }
         .agent-name { font-size: 0.75rem; font-weight: 500; margin-bottom: 2px; }
-        .agent-model { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--text-muted); }
+        .agent-role { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--text-muted); }
         
         .contact-box {
             background: var(--bg-card); border: 1px solid var(--border);
@@ -230,15 +230,15 @@
             <span class="location">Vilnius, Lithuania</span>
             <div class="status">
                 <span class="status-dot"></span>
-                3 VMs &bull; 46 services &bull; running 24/7
+                Multi-cloud &bull; 45 ideas shipped &bull; running 24/7
             </div>
         </header>
         
         <section class="hero reveal">
             <p class="hero-text">
-                Building a <span>SaaS platform</span> where AI agents 
+                Building a <span>SaaS platform</span> where 8 AI agents 
                 work in parallel, create real documents, remember context, 
-                and cost <span>$0 in infrastructure</span>.
+                and deliver <span>3.3x faster</span> results.
             </p>
         </section>
         
@@ -258,8 +258,8 @@
                     <div class="metric-label">Speedup</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">$0</div>
-                    <div class="metric-label">Infra Cost</div>
+                    <div class="metric-value">24/7</div>
+                    <div class="metric-label">Autonomous</div>
                 </div>
             </div>
         </section>
@@ -270,42 +270,42 @@
                 <div class="agent-card">
                     <div class="agent-emoji">🔍</div>
                     <div class="agent-name">Researcher</div>
-                    <div class="agent-model">Kimi K2</div>
+                    <div class="agent-role">Deep search</div>
                 </div>
                 <div class="agent-card">
                     <div class="agent-emoji">💻</div>
                     <div class="agent-name">Coder</div>
-                    <div class="agent-model">Qwen3 32B</div>
+                    <div class="agent-role">Code + exec</div>
                 </div>
                 <div class="agent-card">
                     <div class="agent-emoji">✍️</div>
                     <div class="agent-name">Writer</div>
-                    <div class="agent-model">Llama 4</div>
+                    <div class="agent-role">Content</div>
                 </div>
                 <div class="agent-card">
                     <div class="agent-emoji">📊</div>
                     <div class="agent-name">Analyst</div>
-                    <div class="agent-model">GPT-OSS 120B</div>
+                    <div class="agent-role">Data + exec</div>
                 </div>
                 <div class="agent-card">
                     <div class="agent-emoji">🧠</div>
                     <div class="agent-name">Thinker</div>
-                    <div class="agent-model">Kimi K2.5</div>
+                    <div class="agent-role">Reasoning</div>
                 </div>
                 <div class="agent-card">
                     <div class="agent-emoji">🎨</div>
                     <div class="agent-name">Creator</div>
-                    <div class="agent-model">Gemini Flash</div>
+                    <div class="agent-role">Images</div>
                 </div>
                 <div class="agent-card">
                     <div class="agent-emoji">🌐</div>
                     <div class="agent-name">Web Search</div>
-                    <div class="agent-model">Compound</div>
+                    <div class="agent-role">Real-time</div>
                 </div>
                 <div class="agent-card">
                     <div class="agent-emoji">🛡️</div>
                     <div class="agent-name">Guardian</div>
-                    <div class="agent-model">Llama Guard</div>
+                    <div class="agent-role">Safety</div>
                 </div>
             </div>
         </section>
@@ -316,7 +316,7 @@
                 <a href="https://github.com/tikserziku/a2a-agent-saas" target="_blank" class="project">
                     <div class="project-info">
                         <h3>A2A Agent SaaS</h3>
-                        <p>The main product &mdash; 8 AI agents working in parallel on a lightweight VM. Google Workspace integration, distributed memory, code execution sandbox. Customer pays $19/mo, gets their own agent swarm.</p>
+                        <p>The main product &mdash; 8 AI agents working in parallel on a dedicated VM. Google Workspace integration, distributed memory, code execution sandbox. Customer pays $19/mo, gets their own agent swarm.</p>
                     </div>
                     <div class="project-meta">
                         <span class="project-tag">Core Product</span>
@@ -338,33 +338,22 @@
                 <a href="https://github.com/tikserziku/a2a-agent-saas/blob/main/docs/memory-swarm-v2.1.md" target="_blank" class="project">
                     <div class="project-info">
                         <h3>Distributed Memory</h3>
-                        <p>SQLite + FTS5 knowledge graph running on 3 VMs with cross-VM sync. 65 entities, 147 observations, 39 typed relations. Agents remember context between sessions.</p>
+                        <p>Knowledge graph synced across multiple VMs. Agents remember context between sessions &mdash; facts, decisions, and typed relationships.</p>
                     </div>
                     <div class="project-meta">
-                        <span class="project-tag">3 VMs synced</span>
+                        <span class="project-tag">Multi-VM sync</span>
                         <span class="project-tag green">New!</span>
                     </div>
                 </a>
                 
-                <a href="https://github.com/tikserziku/a2a-agent-saas/blob/main/docs/monty-integration-20260209.md" target="_blank" class="project">
+                <a href="https://github.com/tikserziku/a2a-agent-saas" target="_blank" class="project">
                     <div class="project-info">
                         <h3>Code Execution Sandbox</h3>
-                        <p>Rust-based Monty sandbox for safe Python execution. Coder and Analyst agents auto-execute code. Security: dangerous imports blocked, feature flags with kill switch.</p>
+                        <p>Secure sandbox for safe Python execution. Coder and Analyst agents auto-execute code. Dangerous operations blocked, feature flags with kill switch.</p>
                     </div>
                     <div class="project-meta">
                         <span class="project-tag">Secure</span>
                         <span class="project-status">Active</span>
-                    </div>
-                </a>
-
-                <a href="https://platform.92-5-72-169.nip.io" target="_blank" class="project">
-                    <div class="project-info">
-                        <h3>Web Platform</h3>
-                        <p>Customer-facing demo with subscription flow. Chat UI, agent swarm visualization, Google Workspace integration showcase.</p>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-tag">Demo</span>
-                        <span class="project-status">Beta</span>
                     </div>
                 </a>
             </div>
@@ -373,31 +362,27 @@
         <section class="reveal">
             <h2 class="section-title">Architecture</h2>
             <div class="architecture">
-<pre><span class="comment">// A2A Agent SaaS — Distributed Swarm Architecture</span>
+<pre><span class="comment">// A2A Agent SaaS — Parallel Swarm Architecture</span>
 
 <span class="accent">SWARM ORCHESTRATOR</span>
 Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate → Synthesize
-├── 🔍 Researcher    (Kimi K2)       <span class="comment">// via Groq API</span>
-├── 💻 Coder         (Qwen3 32B)     <span class="comment">// + Monty sandbox</span>
-├── ✍️  Writer        (Llama 4)       <span class="comment">// ultra-fast</span>
-├── 📊 Analyst       (GPT-OSS 120B)  <span class="comment">// + Monty sandbox</span>
-├── 🧠 Thinker       (Kimi K2.5)     <span class="comment">// deep reasoning</span>
-├── 🎨 Creator       (Gemini Flash)  <span class="comment">// image gen</span>
-├── 🌐 Web Search    (Compound)      <span class="comment">// real-time</span>
-└── 🛡️  Guardian      (Llama Guard)   <span class="comment">// safety filter</span>
+├── 🔍 Researcher       <span class="comment">// deep search & analysis</span>
+├── 💻 Coder             <span class="comment">// + secure sandbox</span>
+├── ✍️  Writer            <span class="comment">// ultra-fast content</span>
+├── 📊 Analyst           <span class="comment">// + secure sandbox</span>
+├── 🧠 Thinker           <span class="comment">// deep reasoning</span>
+├── 🎨 Creator           <span class="comment">// image generation</span>
+├── 🌐 Web Search        <span class="comment">// real-time data</span>
+└── 🛡️  Guardian          <span class="comment">// safety filter</span>
 
-<span class="accent">INFRASTRUCTURE</span> (3 VMs, <span class="green">$0/month</span>)
-┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│ <span class="blue">Oracle CTO</span>   │  │ <span class="blue">Kimi Etalon</span>  │  │ <span class="blue">GCP DevOps</span>   │
-│ 32 services  │  │ 9 services   │  │ 5 services   │
-│ Coordination │  │ Customer ref │  │ Development  │
-└──────┬───────┘  └──────┬───────┘  └──────┬───────┘
-       └─────── <span class="accent">🧠 Distributed Memory</span> ──────┘
-         SQLite+FTS5 | 65 entities | synced
+<span class="accent">INTEGRATIONS</span>
+├── Google Workspace    <span class="comment">// Docs, Sheets, Slides, Gmail</span>
+├── Distributed Memory  <span class="comment">// cross-VM knowledge graph</span>
+├── Quality Gate        <span class="comment">// 0-100 scoring, auto-fix</span>
+└── Smart Router        <span class="comment">// LLM intent detection</span>
 
-<span class="comment">// Pipeline: User → Smart Router → Agents → QA → Google Doc</span>
-<span class="comment">// Speedup: 3.3x on complex tasks (PARL methodology)</span>
-<span class="comment">// All AI APIs: free tier (~19,000 requests/day)</span></pre>
+<span class="comment">// Multi-cloud • Self-healing • Multi-provider AI</span>
+<span class="comment">// PARL methodology: parallel-first orchestration</span></pre>
             </div>
         </section>
         
@@ -405,38 +390,38 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
             <h2 class="section-title">Recent Progress</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">Feb 10</div>
+                    <div class="timeline-date">Day 24</div>
                     <div class="timeline-content">
                         <h4>🧠 Distributed Memory Swarm</h4>
-                        <p>SQLite+FTS5 knowledge graph deployed across 3 VMs with cross-VM sync. PARL-style parallel deployment. Idea #70.</p>
+                        <p>Knowledge graph deployed across multiple VMs with cross-VM sync. Agents now remember context permanently.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Feb 9</div>
+                    <div class="timeline-date">Day 23</div>
                     <div class="timeline-content">
                         <h4>🔧 Code Sandbox + QA + Knowledge Library</h4>
-                        <p>Monty sandbox for safe code execution. Document quality gate (0-100 scoring). Modular knowledge base bots auto-learn from.</p>
+                        <p>Secure sandbox for code execution. Document quality gate (0-100 scoring). Modular knowledge base bots auto-learn from.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Feb 9</div>
+                    <div class="timeline-date">Day 23</div>
                     <div class="timeline-content">
                         <h4>📄 Smart Intent Router + Real Tables</h4>
-                        <p>LLM-powered routing (no keyword matching). Real Google Docs tables via API. "подготовь отчёт" &rarr; beautiful formatted document.</p>
+                        <p>LLM-powered routing (no keyword matching). Real Google Docs tables via API. Natural language &rarr; formatted document.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Feb 6</div>
+                    <div class="timeline-date">Day 20</div>
                     <div class="timeline-content">
-                        <h4>🤖 8-Agent Swarm on Etalon VM</h4>
-                        <p>Full agent roster deployed: Researcher, Coder, Writer, Analyst, Thinker, Creator, Web Search, Guardian. 3.3x parallel speedup.</p>
+                        <h4>🤖 8-Agent Swarm Deployed</h4>
+                        <p>Full agent roster: Researcher, Coder, Writer, Analyst, Thinker, Creator, Web Search, Guardian. 3.3x parallel speedup.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Feb 4</div>
+                    <div class="timeline-date">Day 18</div>
                     <div class="timeline-content">
                         <h4>📊 Google Workspace Integration</h4>
-                        <p>Docs, Sheets, Slides, Gmail, Calendar &mdash; all via OAuth. Agents create real artifacts, not just text responses.</p>
+                        <p>Docs, Sheets, Slides, Gmail, Calendar &mdash; all via OAuth. Agents create real artifacts, not just text.</p>
                     </div>
                 </div>
             </div>
@@ -448,10 +433,10 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
 <pre><span class="comment">// 24 days of building. Zero CS degree. Key insights:</span>
 
 <span class="accent">1.</span> Coordination beats raw power.
-   8 cheap models in parallel > 1 expensive model serial.
+   8 specialized models in parallel > 1 premium model serial.
 
-<span class="accent">2.</span> Constraints breed creativity.
-   1 GB RAM forced architecture that scales to 100 customers.
+<span class="accent">2.</span> Constraints breed architecture.
+   Resource limits forced smart design that scales to customers.
 
 <span class="accent">3.</span> Ship daily, reflect weekly.
    45 ideas in 24 days. Not all perfect, but all shipped.
@@ -508,7 +493,7 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
     <footer>
         <div class="container">
             <p class="footer-text">
-                Built with Claude &bull; 3 VMs &bull; 45 ideas shipped &bull; Day 24 &bull; 
+                Built with AI &bull; Multi-cloud &bull; 45 ideas shipped &bull; Day 24 &bull; 
                 <a href="https://github.com/tikserziku/a2a-agent-saas">Open Source</a>
             </p>
         </div>
