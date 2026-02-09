@@ -1,167 +1,141 @@
 <div align="center">
 
-# Building AGI Solo
+# Building AI Agent Swarms
 
-### From zero coding experience to distributed autonomous AI system
+### 8 parallel agents • distributed memory • $0 infrastructure • Day 24
 
-[![Oracle Cloud](https://img.shields.io/badge/Oracle-Cloud-red?style=for-the-badge&logo=oracle)](https://cloud.oracle.com)
-[![Google Cloud](https://img.shields.io/badge/Google-Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://cloud.google.com)
-[![Fly.io](https://img.shields.io/badge/Fly.io-Deploy-8b5cf6?style=for-the-badge)](https://fly.io)
-[![MCP Protocol](https://img.shields.io/badge/MCP-Protocol-purple?style=for-the-badge)](https://modelcontextprotocol.io)
-[![Claude](https://img.shields.io/badge/Claude_Opus_4.5-Anthropic-cc785c?style=for-the-badge)](https://anthropic.com)
+[![A2A SaaS](https://img.shields.io/badge/A2A_Agent-SaaS-d97706?style=for-the-badge)](https://github.com/tikserziku/a2a-agent-saas)
+[![Speedup](https://img.shields.io/badge/speedup-3.3x-brightgreen?style=for-the-badge)]()
+[![Ideas](https://img.shields.io/badge/ideas_shipped-45-blue?style=for-the-badge)]()
+[![Bot](https://img.shields.io/badge/Try_Bot-Telegram-0088cc?style=for-the-badge)](https://t.me/VisaginasGPT_bot)
 
-**[Portfolio](https://tikserziku.github.io/tikserziku/)** | **[AI Assistant Demo](https://ai-secretary-sergej.fly.dev)**
+**[Portfolio](https://tikserziku.github.io/tikserziku/)** · **[Try the Bot](https://t.me/VisaginasGPT_bot)** · **[Web Demo](https://platform.92-5-72-169.nip.io)**
 
 </div>
 
 ---
 
-## The Mission
+## What I'm Building
 
-I'm building an **Artificial General Intelligence system** through collective AI agent coordination — not by training models, but by orchestrating them.
+**A2A Agent SaaS** — a platform where customers get their own AI agent swarm running on a lightweight cloud VM.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Multi-Agent Swarm  •  Multi-Cloud  •  24/7 Autonomous      │
-│  MCP Protocol  •  Claude Code Agents  •  Self-Healing       │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## Current Achievement: Claude Agent Swarm
-
-Running **3 autonomous Claude Code agents** across different cloud platforms:
+8 specialized agents work in parallel, create real Google Docs/Sheets/Slides, remember context via distributed memory, and execute code safely. All on free-tier infrastructure.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    DISTRIBUTED AI SWARM                     │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐      │
-│   │   Windows   │   │   Oracle    │   │   Google    │      │
-│   │   Claude    │   │   Claude    │   │   Claude    │      │
-│   │   (Local)   │   │  (Leader)   │   │   (Goga)    │      │
-│   └──────┬──────┘   └──────┬──────┘   └──────┬──────┘      │
-│          │                 │                 │              │
-│          └────────────┬────┴────────────────┘              │
-│                       │                                     │
-│              ┌────────▼────────┐                           │
-│              │   Shared Brain  │                           │
-│              │   (Fly.io MCP)  │                           │
-│              └─────────────────┘                           │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+User: "Research AI trends and write a report"
+
+Orchestrator decomposes → 4 agents run in parallel:
+  🔍 Researcher → finds data           (12s)
+  📊 Analyst   → evaluates trends      (10s)
+  ✍️ Writer    → drafts report          (8s)
+  🎨 Creator   → generates charts      (15s)
+
+Sequential: 45s → Parallel: 15s → Speedup: 3.0x
+Result: Real Google Doc with formatted tables + exported .docx
 ```
 
-- **Claude Opus 4.5** with extended thinking and cowork mode
-- **Cross-platform coordination** via MCP Protocol
-- **Shared memory** for context persistence
-- **Self-healing** — agents monitor and fix each other
+## Agent Roster
 
-## What I Build
+| Agent | Model | What It Does |
+|-------|-------|-------------|
+| 🔍 Researcher | Kimi K2 (Groq) | Facts, documentation, deep research |
+| 💻 Coder | Qwen3 32B (Groq) | Code generation + auto-execution |
+| ✍️ Writer | Llama 4 Scout (Groq) | Content, emails, reports |
+| 📊 Analyst | GPT-OSS 120B (Groq) | Data analysis + auto-execution |
+| 🧠 Thinker | Kimi K2.5 (NVIDIA) | Complex reasoning |
+| 🎨 Creator | Gemini Flash (Google) | Image generation |
+| 🌐 Web Search | Compound (Groq) | Real-time web research |
+| 🛡️ Guardian | Llama Guard (Groq) | Safety filter on all outputs |
 
-- **Multi-agent AI orchestration** — multiple Claude Code agents working as a team
-- **Self-healing infrastructure** — systems that detect and fix their own problems
-- **Voice-enabled AI assistants** — natural conversation interfaces
-- **MCP Protocol servers** — extending AI capabilities with 49+ custom tools
+## Key Achievements (45 Ideas Shipped)
 
-## Architecture Philosophy
+- **Parallel Agent Swarm** — 8 agents, 3.3x speedup, PARL methodology
+- **Google Workspace Integration** — Docs, Sheets, Slides, Gmail, Calendar via OAuth
+- **Distributed Memory** — SQLite+FTS5 knowledge graph synced across 3 VMs
+- **Smart Intent Router** — LLM-based function calling, no keyword matching
+- **Code Execution Sandbox** — Rust-based Monty with security gates
+- **Document Quality Gate** — QA scoring (0-100), auto-fix before file creation
+- **Knowledge Library** — Modular JSON rules, bots learn automatically
+- **Real Google Docs Tables** — Native API tables, not markdown text
+- **Self-Healing Infrastructure** — Watchdog services, cross-VM monitoring
+- **Anti-Hallucination Sanitizer** — Catches fake URLs, meta-text, phantom files
+
+## Architecture
 
 ```
-                    ┌──────────────────┐
-                    │   User Devices   │
-                    │   Web / Mobile   │
-                    └────────┬─────────┘
-                             │
-                    ┌────────▼─────────┐
-                    │   MCP Gateway    │
-                    │   Tool Router    │
-                    └────────┬─────────┘
-                             │
-        ┌────────────────────┼────────────────────┐
-        │                    │                    │
-┌───────▼───────┐   ┌───────▼───────┐   ┌───────▼───────┐
-│  Shared Brain │   │  AI Agents    │   │  Capability   │
-│  • Memory     │   │  • Claude     │   │  Registry     │
-│  • Context    │   │  • Multi-VM   │   │  • Routing    │
-└───────────────┘   └───────────────┘   └───────────────┘
+┌─────────────────────────────────────────────────┐
+│           SWARM ORCHESTRATOR                    │
+│  Task → Decompose → Parallel → QA → Synthesize  │
+├──────┬──────┬──────┬──────┬──────┬──────────────┤
+│ 🔍   │ 💻   │ ✍️   │ 📊   │ 🎨   │ 🛡️           │
+│Rsch  │Code  │Write │Anal  │Image │Guard         │
+└──┬───┴──┬───┴──┬───┴──┬───┴──┬───┴──┬───────────┘
+   ↕      ↕      ↕      ↕      ↕      ↕
+ Groq   Groq   Groq   Groq  Gemini  Groq
+(free)  (free) (free) (free) (free) (free)
+   │                              │
+   └──── Google Workspace ────────┘
+   │                              │
+   └──── 🧠 Distributed Memory ──┘
+         3 VMs • 65 entities • synced
 ```
 
-## Try My AI Secretary
+## Infrastructure
 
-Want to see what I build? **Talk to my AI assistant:**
+| VM | Role | Services |
+|----|------|----------|
+| Oracle | CTO Hub, coordination | 32 services |
+| Kimi | Customer reference (etalon) | 9 services |
+| GCP | DevOps, development | 5 services |
 
-<div align="center">
-
-### [**ai-secretary-sergej.fly.dev**](https://ai-secretary-sergej.fly.dev)
-
-*Voice-enabled AI secretary with neural voice synthesis*
-
-</div>
-
-- Voice input (microphone)
-- Voice output (neural TTS)
-- Text chat available
-- Works on mobile
-
-## Key Projects
-
-| Project | Description |
-|---------|-------------|
-| [**mcp-hub**](https://github.com/tikserziku/mcp-hub) | MCP server with 49 tools, multi-VM management, API auth |
-| [**claude-ai-ecosystem**](https://github.com/tikserziku/claude-ai-ecosystem) | Multi-agent orchestration & memory systems |
-| [**backup-agent-memory**](https://github.com/tikserziku/backup-agent-memory) | Agent memory & bootstrap system |
+All running on cloud free tiers. Total monthly cost: **$0**.
 
 ## Tech Stack
 
-<div align="center">
-
 | Category | Technologies |
 |----------|-------------|
-| **Languages** | Python, JavaScript, Bash, PowerShell |
-| **AI/ML** | Claude Opus 4.5, Claude Code, Gemini, MCP Protocol |
-| **Infrastructure** | Oracle Cloud, Google Cloud, Fly.io |
-| **Backend** | Node.js, Flask, FastAPI, PM2, systemd |
-| **Communication** | Telegram Bot API, A2A Protocol, Shared Brain |
-| **Voice** | Edge-TTS, Web Speech API, ElevenLabs |
+| **AI Models** | Kimi K2, Qwen3, Llama 4, GPT-OSS, Gemini, Kimi K2.5 |
+| **Protocols** | Google A2A (JSON-RPC), MCP |
+| **Backend** | Python (Flask), Node.js |
+| **Storage** | SQLite + FTS5, Google Drive |
+| **APIs** | Google Workspace (Docs, Sheets, Slides, Gmail, Calendar) |
+| **Infra** | Oracle Cloud, Google Cloud, Fly.io, Caddy |
+| **Bot** | Telegram Bot API, python-telegram-bot |
+
+## Try It
+
+<div align="center">
+
+### 🤖 [@VisaginasGPT_bot](https://t.me/VisaginasGPT_bot)
+*8 agents working for you in Telegram*
+
+### 🌐 [Web Platform](https://platform.92-5-72-169.nip.io)
+*Demo with subscription flow*
 
 </div>
 
 ## What I Learned
 
-> *"AGI isn't about having the most powerful model — it's about orchestrating intelligence effectively."*
+> *"8 cheap models in parallel beat 1 expensive model serial."*
 
-- Built production systems without formal CS education
-- Learned that **coordination > raw power**
-- Discovered that constraints breed creativity
-- Understood the difference between **training** AI and **using** AI
-- **Optimization > accumulation** — focused services beat scattered ones
-- **Multi-agent > single agent** — collective intelligence scales better
+Built this from zero coding experience in 24 days. Key insights:
+
+- **Coordination > raw power** — orchestration is the product
+- **Constraints breed architecture** — 1 GB RAM forced smart design that scales
+- **Ship daily, reflect weekly** — 45 ideas in 24 days
+- **Memory changes everything** — agents without memory are colleagues with amnesia
+- **The swarm is the moat** — single-agent chatbots are commodity, parallel swarms are rare
 
 ## Looking For
 
-I'm seeking opportunities at companies pushing AI boundaries:
+Open to conversations about AI engineering roles, collaboration, or investment.
 
-<div align="center">
-
-**Anthropic** | **OpenAI** | **Meta AI** | **TESONET**
-
-</div>
-
-If you're building the future of AI and need someone who:
-- Ships production systems
-- Thrives under constraints
-- Learns rapidly
-- Thinks architecturally
-- Orchestrates AI agents
-
-Let's talk: **sergej.drus@gmail.com**
+**Email:** sergej.drus@gmail.com · **Telegram:** [@my_Visaginas360](https://t.me/my_Visaginas360)
 
 ---
 
 <div align="center">
 
-*Building in public from Lithuania*
-
-**"The best way to predict the future is to build it."**
+*Building in public from Lithuania · Day 24 · 45 ideas shipped*
 
 </div>
