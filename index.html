@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergej Drus — Independent AGI Researcher</title>
-    <meta name="description" content="Building AGI systems that think autonomously. 47 services, 91 tools, running 24/7 from Lithuania.">
+    <title>Sergej Drus — AI Agent Systems Builder</title>
+    <meta name="description" content="Building autonomous AI agent swarms. 8 parallel agents, distributed memory, 3.3x speedup, $0 infrastructure. Day 24 of the journey.">
+    <meta property="og:title" content="Sergej Drus — AI Agent Systems Builder">
+    <meta property="og:description" content="8 AI agents working in parallel. Distributed memory across 3 VMs. Google Workspace integration. 45 ideas shipped.">
+    <meta property="og:type" content="website">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +24,11 @@
             --accent: #d97706;
             --accent-light: #fef3c7;
             --accent-glow: rgba(217, 119, 6, 0.1);
-            --whatsapp: #25D366;
-            --telegram: #0088cc;
+            --green: #10b981;
+            --green-bg: #ecfdf5;
+            --green-border: #a7f3d0;
+            --purple: #8b5cf6;
+            --blue: #3b82f6;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -62,11 +68,11 @@
         
         .status {
             display: inline-flex; align-items: center; gap: 8px;
-            background: #ecfdf5; border: 1px solid #a7f3d0;
+            background: var(--green-bg); border: 1px solid var(--green-border);
             border-radius: 100px; padding: 6px 14px;
             font-size: 0.8rem; color: #047857; margin-top: 16px;
         }
-        .status-dot { width: 6px; height: 6px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite; }
+        .status-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         
         .hero { padding: 40px 0 60px; text-align: center; }
@@ -114,20 +120,50 @@
         .project-info { flex: 1; }
         .project-info h3 { font-size: 1rem; font-weight: 500; margin-bottom: 6px; }
         .project-info p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
-        .project-meta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+        .project-meta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; }
         @media (max-width: 600px) { .project-meta { width: 100%; } }
-        .project-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); background: var(--accent-light); padding: 4px 10px; border-radius: 100px; }
+        .project-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); background: var(--accent-light); padding: 4px 10px; border-radius: 100px; white-space: nowrap; }
+        .project-tag.green { color: #047857; background: var(--green-bg); }
+        .project-tag.purple { color: var(--purple); background: #f5f3ff; }
         .project-status { font-size: 0.75rem; color: var(--text-muted); }
         
         .architecture {
             background: #1a1a1a; border-radius: 12px; padding: 24px; margin-top: 16px;
-            font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; line-height: 1.7;
             color: #a1a1aa; overflow-x: auto;
         }
-        @media (max-width: 600px) { .architecture { padding: 16px; font-size: 0.7rem; } }
+        @media (max-width: 600px) { .architecture { padding: 16px; font-size: 0.65rem; } }
         .architecture pre { margin: 0; white-space: pre-wrap; word-wrap: break-word; }
         .architecture .accent { color: #f59e0b; }
+        .architecture .green { color: #34d399; }
+        .architecture .blue { color: #60a5fa; }
         .architecture .comment { color: #6b7280; }
+        
+        .timeline { display: flex; flex-direction: column; gap: 16px; }
+        .timeline-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem; color: var(--accent);
+            white-space: nowrap; min-width: 70px; padding-top: 2px;
+        }
+        .timeline-content h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .timeline-content p { font-size: 0.85rem; color: var(--text-secondary); }
+        
+        .agents-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+        @media (max-width: 600px) { .agents-grid { grid-template-columns: repeat(2, 1fr); } }
+        .agent-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 14px; text-align: center;
+            transition: all 0.2s ease;
+        }
+        .agent-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .agent-emoji { font-size: 1.5rem; margin-bottom: 6px; }
+        .agent-name { font-size: 0.75rem; font-weight: 500; margin-bottom: 2px; }
+        .agent-model { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--text-muted); }
         
         .contact-box {
             background: var(--bg-card); border: 1px solid var(--border);
@@ -150,17 +186,16 @@
             transition: all 0.2s ease; cursor: pointer;
         }
         .contact-btn:hover { transform: translateX(4px); }
-        
-        .contact-btn.whatsapp:hover { border-color: var(--whatsapp); background: rgba(37, 211, 102, 0.08); }
-        .contact-btn.telegram:hover { border-color: var(--telegram); background: rgba(0, 136, 204, 0.08); }
-        .contact-btn.call:hover { border-color: var(--accent); background: var(--accent-light); }
-        .contact-btn.ai:hover { border-color: #8b5cf6; background: rgba(139, 92, 246, 0.08); }
+        .contact-btn.telegram:hover { border-color: #0088cc; background: rgba(0, 136, 204, 0.08); }
+        .contact-btn.bot:hover { border-color: var(--purple); background: rgba(139, 92, 246, 0.08); }
+        .contact-btn.github:hover { border-color: #333; background: rgba(0, 0, 0, 0.04); }
+        .contact-btn.email:hover { border-color: var(--accent); background: var(--accent-light); }
         
         .contact-btn svg { width: 24px; height: 24px; flex-shrink: 0; }
-        .contact-btn.whatsapp svg { fill: var(--whatsapp); }
-        .contact-btn.telegram svg { fill: var(--telegram); }
-        .contact-btn.call svg { fill: var(--accent); }
-        .contact-btn.ai svg { fill: #8b5cf6; }
+        .contact-btn.telegram svg { fill: #0088cc; }
+        .contact-btn.bot svg { fill: var(--purple); }
+        .contact-btn.github svg { fill: #333; }
+        .contact-btn.email svg { fill: var(--accent); }
         
         .contact-btn span { flex: 1; }
         .contact-btn small { font-size: 0.75rem; color: var(--text-muted); font-weight: 400; }
@@ -171,19 +206,6 @@
             font-size: 0.85rem; color: var(--text-muted);
             display: flex; align-items: center; gap: 8px;
         }
-        
-        .social-row {
-            display: flex; gap: 12px; margin-top: 20px;
-            padding-top: 20px; border-top: 1px solid var(--border);
-        }
-        .social-link {
-            display: flex; align-items: center; justify-content: center;
-            width: 44px; height: 44px; border-radius: 10px;
-            background: var(--bg-primary); border: 1px solid var(--border);
-            color: var(--text-secondary); transition: all 0.2s ease;
-        }
-        .social-link:hover { border-color: var(--accent); color: var(--accent); }
-        .social-link svg { width: 20px; height: 20px; fill: currentColor; }
         
         footer {
             padding: 40px 0 32px; text-align: center;
@@ -204,112 +226,245 @@
                 <img src="https://avatars.githubusercontent.com/u/90596978?v=4" alt="Sergej Drus">
             </div>
             <h1 class="name">Sergej Drus</h1>
-            <p class="tagline">Independent AGI Researcher</p>
+            <p class="tagline">AI Agent Systems Builder</p>
             <span class="location">Vilnius, Lithuania</span>
             <div class="status">
                 <span class="status-dot"></span>
-                Systems running 24/7
+                3 VMs &bull; 46 services &bull; running 24/7
             </div>
         </header>
         
         <section class="hero reveal">
             <p class="hero-text">
-                Building <span>AGI systems</span> that think autonomously — 
-                a collective of AI agents that observe, learn, and evolve 
-                <span>while I sleep</span>.
+                Building a <span>SaaS platform</span> where AI agents 
+                work in parallel, create real documents, remember context, 
+                and cost <span>$0 in infrastructure</span>.
             </p>
         </section>
         
         <section class="reveal">
-            <h2 class="section-title">Live Infrastructure</h2>
+            <h2 class="section-title">Live Metrics &mdash; Day 24</h2>
             <div class="metrics">
                 <div class="metric">
-                    <div class="metric-value" id="services-count">47</div>
-                    <div class="metric-label">Services</div>
+                    <div class="metric-value">45</div>
+                    <div class="metric-label">Ideas Shipped</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value" id="tools-count">91</div>
-                    <div class="metric-label">MCP Tools</div>
+                    <div class="metric-value">8</div>
+                    <div class="metric-label">Parallel Agents</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">75%</div>
-                    <div class="metric-label">AGI Progress</div>
+                    <div class="metric-value">3.3x</div>
+                    <div class="metric-label">Speedup</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">24/7</div>
-                    <div class="metric-label">Autonomous</div>
+                    <div class="metric-value">$0</div>
+                    <div class="metric-label">Infra Cost</div>
                 </div>
             </div>
         </section>
         
         <section class="reveal">
-            <h2 class="section-title">Core Systems</h2>
+            <h2 class="section-title">The Swarm</h2>
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-emoji">🔍</div>
+                    <div class="agent-name">Researcher</div>
+                    <div class="agent-model">Kimi K2</div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-emoji">💻</div>
+                    <div class="agent-name">Coder</div>
+                    <div class="agent-model">Qwen3 32B</div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-emoji">✍️</div>
+                    <div class="agent-name">Writer</div>
+                    <div class="agent-model">Llama 4</div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-emoji">📊</div>
+                    <div class="agent-name">Analyst</div>
+                    <div class="agent-model">GPT-OSS 120B</div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-emoji">🧠</div>
+                    <div class="agent-name">Thinker</div>
+                    <div class="agent-model">Kimi K2.5</div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-emoji">🎨</div>
+                    <div class="agent-name">Creator</div>
+                    <div class="agent-model">Gemini Flash</div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-emoji">🌐</div>
+                    <div class="agent-name">Web Search</div>
+                    <div class="agent-model">Compound</div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-emoji">🛡️</div>
+                    <div class="agent-name">Guardian</div>
+                    <div class="agent-model">Llama Guard</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="reveal">
+            <h2 class="section-title">What I Build</h2>
             <div class="projects">
-                <a href="https://github.com/tikserziku/mcp-hub" target="_blank" class="project">
+                <a href="https://github.com/tikserziku/a2a-agent-saas" target="_blank" class="project">
                     <div class="project-info">
-                        <h3>MCP Hub</h3>
-                        <p>Universal Model Context Protocol hub connecting Claude to 91 tools — VM control, GitHub, Telegram, transcription, and more.</p>
+                        <h3>A2A Agent SaaS</h3>
+                        <p>The main product &mdash; 8 AI agents working in parallel on a lightweight VM. Google Workspace integration, distributed memory, code execution sandbox. Customer pays $19/mo, gets their own agent swarm.</p>
                     </div>
                     <div class="project-meta">
-                        <span class="project-tag">91 tools</span>
-                        <span class="project-status">Production</span>
+                        <span class="project-tag">Core Product</span>
+                        <span class="project-tag green">Production</span>
                     </div>
                 </a>
                 
-                <a href="https://github.com/tikserziku/dual-brain-architecture" target="_blank" class="project">
+                <a href="https://t.me/VisaginasGPT_bot" target="_blank" class="project">
                     <div class="project-info">
-                        <h3>Dual Brain Architecture</h3>
-                        <p>LEFT hemisphere (logic, code) + RIGHT hemisphere (patterns, memory) connected via Corpus Callosum bridge.</p>
+                        <h3>@VisaginasGPT_bot</h3>
+                        <p>Telegram bot powered by the swarm. Natural language &rarr; smart intent routing &rarr; parallel agents &rarr; real Google Docs/Sheets/Slides. Try it live.</p>
                     </div>
                     <div class="project-meta">
-                        <span class="project-tag">AGI Core</span>
+                        <span class="project-tag purple">Try Now</span>
+                        <span class="project-tag green">Live</span>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/tikserziku/a2a-agent-saas/blob/main/docs/memory-swarm-v2.1.md" target="_blank" class="project">
+                    <div class="project-info">
+                        <h3>Distributed Memory</h3>
+                        <p>SQLite + FTS5 knowledge graph running on 3 VMs with cross-VM sync. 65 entities, 147 observations, 39 typed relations. Agents remember context between sessions.</p>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-tag">3 VMs synced</span>
+                        <span class="project-tag green">New!</span>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/tikserziku/a2a-agent-saas/blob/main/docs/monty-integration-20260209.md" target="_blank" class="project">
+                    <div class="project-info">
+                        <h3>Code Execution Sandbox</h3>
+                        <p>Rust-based Monty sandbox for safe Python execution. Coder and Analyst agents auto-execute code. Security: dangerous imports blocked, feature flags with kill switch.</p>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-tag">Secure</span>
                         <span class="project-status">Active</span>
                     </div>
                 </a>
-                
-                <a href="https://github.com/tikserziku/evolution-engine" target="_blank" class="project">
+
+                <a href="https://platform.92-5-72-169.nip.io" target="_blank" class="project">
                     <div class="project-info">
-                        <h3>Self-Evolution Engine</h3>
-                        <p>OBSERVE → THINK → ACT → LEARN cycles running every 30 minutes. Autonomous improvement without human intervention.</p>
+                        <h3>Web Platform</h3>
+                        <p>Customer-facing demo with subscription flow. Chat UI, agent swarm visualization, Google Workspace integration showcase.</p>
                     </div>
                     <div class="project-meta">
-                        <span class="project-tag">Autonomous</span>
-                        <span class="project-status">Running</span>
-                    </div>
-                </a>
-                
-                <a href="https://github.com/tikserziku/multi-agent-orchestrator" target="_blank" class="project">
-                    <div class="project-info">
-                        <h3>Multi-Agent Orchestrator</h3>
-                        <p>Claude, Gemini, OpenAI agents working in parallel via A2A protocol. Task distribution and collective reasoning.</p>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-tag">A2A Protocol</span>
-                        <span class="project-status">Active</span>
+                        <span class="project-tag">Demo</span>
+                        <span class="project-status">Beta</span>
                     </div>
                 </a>
             </div>
         </section>
         
         <section class="reveal">
-            <h2 class="section-title">System Architecture</h2>
+            <h2 class="section-title">Architecture</h2>
             <div class="architecture">
-<pre><span class="comment">// Dual Brain AGI Architecture</span>
+<pre><span class="comment">// A2A Agent SaaS — Distributed Swarm Architecture</span>
 
-<span class="accent">LEFT_BRAIN</span> (Oracle VM1)          <span class="accent">RIGHT_BRAIN</span> (ARM VM2)
-├── Logic & Code                 ├── Pattern Recognition
-├── API Operations               ├── Semantic Memory
-├── Task Execution               ├── Knowledge Graphs
-└── 47 Services                  └── Learning & Insights
+<span class="accent">SWARM ORCHESTRATOR</span>
+Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate → Synthesize
+├── 🔍 Researcher    (Kimi K2)       <span class="comment">// via Groq API</span>
+├── 💻 Coder         (Qwen3 32B)     <span class="comment">// + Monty sandbox</span>
+├── ✍️  Writer        (Llama 4)       <span class="comment">// ultra-fast</span>
+├── 📊 Analyst       (GPT-OSS 120B)  <span class="comment">// + Monty sandbox</span>
+├── 🧠 Thinker       (Kimi K2.5)     <span class="comment">// deep reasoning</span>
+├── 🎨 Creator       (Gemini Flash)  <span class="comment">// image gen</span>
+├── 🌐 Web Search    (Compound)      <span class="comment">// real-time</span>
+└── 🛡️  Guardian      (Llama Guard)   <span class="comment">// safety filter</span>
 
-            <span class="accent">↕ CORPUS CALLOSUM ↕</span>
-         (Shared Context Bridge)
+<span class="accent">INFRASTRUCTURE</span> (3 VMs, <span class="green">$0/month</span>)
+┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│ <span class="blue">Oracle CTO</span>   │  │ <span class="blue">Kimi Etalon</span>  │  │ <span class="blue">GCP DevOps</span>   │
+│ 32 services  │  │ 9 services   │  │ 5 services   │
+│ Coordination │  │ Customer ref │  │ Development  │
+└──────┬───────┘  └──────┬───────┘  └──────┬───────┘
+       └─────── <span class="accent">🧠 Distributed Memory</span> ──────┘
+         SQLite+FTS5 | 65 entities | synced
 
-<span class="comment">// Autonomic Layer (24/7 Background)</span>
-├── Evolution Engine    <span class="comment">// 30min cycles</span>
-├── Brain Coordinator   <span class="comment">// 5min heartbeat</span>
-├── Learning Collector  <span class="comment">// 30min insights</span>
-└── Auto-Backup         <span class="comment">// 1h to GitHub</span></pre>
+<span class="comment">// Pipeline: User → Smart Router → Agents → QA → Google Doc</span>
+<span class="comment">// Speedup: 3.3x on complex tasks (PARL methodology)</span>
+<span class="comment">// All AI APIs: free tier (~19,000 requests/day)</span></pre>
+            </div>
+        </section>
+        
+        <section class="reveal">
+            <h2 class="section-title">Recent Progress</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 10</div>
+                    <div class="timeline-content">
+                        <h4>🧠 Distributed Memory Swarm</h4>
+                        <p>SQLite+FTS5 knowledge graph deployed across 3 VMs with cross-VM sync. PARL-style parallel deployment. Idea #70.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 9</div>
+                    <div class="timeline-content">
+                        <h4>🔧 Code Sandbox + QA + Knowledge Library</h4>
+                        <p>Monty sandbox for safe code execution. Document quality gate (0-100 scoring). Modular knowledge base bots auto-learn from.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 9</div>
+                    <div class="timeline-content">
+                        <h4>📄 Smart Intent Router + Real Tables</h4>
+                        <p>LLM-powered routing (no keyword matching). Real Google Docs tables via API. "подготовь отчёт" &rarr; beautiful formatted document.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 6</div>
+                    <div class="timeline-content">
+                        <h4>🤖 8-Agent Swarm on Etalon VM</h4>
+                        <p>Full agent roster deployed: Researcher, Coder, Writer, Analyst, Thinker, Creator, Web Search, Guardian. 3.3x parallel speedup.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 4</div>
+                    <div class="timeline-content">
+                        <h4>📊 Google Workspace Integration</h4>
+                        <p>Docs, Sheets, Slides, Gmail, Calendar &mdash; all via OAuth. Agents create real artifacts, not just text responses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">What I Learned</h2>
+            <div class="architecture" style="background: #1e1b2e;">
+<pre><span class="comment">// 24 days of building. Zero CS degree. Key insights:</span>
+
+<span class="accent">1.</span> Coordination beats raw power.
+   8 cheap models in parallel > 1 expensive model serial.
+
+<span class="accent">2.</span> Constraints breed creativity.
+   1 GB RAM forced architecture that scales to 100 customers.
+
+<span class="accent">3.</span> Ship daily, reflect weekly.
+   45 ideas in 24 days. Not all perfect, but all shipped.
+
+<span class="accent">4.</span> Memory changes everything.
+   Agents without memory = colleagues with amnesia.
+   Agents with memory = a team that grows.
+
+<span class="accent">5.</span> The swarm is the product.
+   Single-agent chatbots are commodity.
+   Parallel agent swarms are rare.
+
+<span class="green">// "The best way to predict the future is to build it."</span></pre>
             </div>
         </section>
         
@@ -318,40 +473,34 @@
             <div class="contact-box">
                 <div class="contact-intro">
                     <h3>Let's Connect</h3>
-                    <p>Interested in AGI collaboration, investment opportunities, or technical discussions? Choose your preferred way to reach me.</p>
+                    <p>Interested in the project, AI agent collaboration, or want to try the platform? Reach out.</p>
                 </div>
                 
                 <div class="contact-buttons">
-                    <a href="#" class="contact-btn whatsapp" onclick="openWhatsApp(); return false;">
-                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        <span>WhatsApp<br><small>Quick message</small></span>
+                    <a href="https://t.me/VisaginasGPT_bot" target="_blank" class="contact-btn bot">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5z"/></svg>
+                        <span>Try the Bot<br><small>@VisaginasGPT_bot on Telegram</small></span>
                     </a>
                     
-                    <a href="#" class="contact-btn telegram" onclick="openTelegram(); return false;">
+                    <a href="https://t.me/my_Visaginas360" target="_blank" class="contact-btn telegram">
                         <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-                        <span>Telegram<br><small>Secure chat</small></span>
+                        <span>Telegram<br><small>Direct message</small></span>
                     </a>
                     
-                    <a href="#" class="contact-btn call" onclick="makeCall(); return false;">
-                        <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
-                        <span>Call Me<br><small>Direct phone</small></span>
+                    <a href="https://github.com/tikserziku/a2a-agent-saas" target="_blank" class="contact-btn github">
+                        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span>GitHub<br><small>Source code &amp; docs</small></span>
                     </a>
                     
-                    <a href="https://ai-secretary-sergej.fly.dev" target="_blank" class="contact-btn ai">
-                        <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5z"/></svg>
-                        <span>AI Assistant<br><small>Talk to my AI secretary</small></span>
+                    <a href="mailto:sergej.drus@gmail.com" class="contact-btn email">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>Email<br><small>sergej.drus@gmail.com</small></span>
                     </a>
                 </div>
                 
                 <p class="contact-note">
-                    🔒 Your privacy is respected. I personally respond to all inquiries.
+                    🔒 Open to collaboration, investment, and hiring conversations.
                 </p>
-                
-                <div class="social-row">
-                    <a href="https://github.com/tikserziku" target="_blank" class="social-link" title="GitHub Profile">
-                        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
-                </div>
             </div>
         </section>
     </div>
@@ -359,14 +508,13 @@
     <footer>
         <div class="container">
             <p class="footer-text">
-                Built with Claude • Running on Oracle Cloud • 
-                <a href="https://github.com/tikserziku">Open Source</a>
+                Built with Claude &bull; 3 VMs &bull; 45 ideas shipped &bull; Day 24 &bull; 
+                <a href="https://github.com/tikserziku/a2a-agent-saas">Open Source</a>
             </p>
         </div>
     </footer>
     
     <script>
-        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
@@ -375,35 +523,6 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        
-        // Fetch live metrics
-        async function fetchMetrics() {
-            try {
-                const response = await fetch('https://mcp-hub-old-frost-2327.fly.dev/stats');
-                const data = await response.json();
-                if (data.services) document.getElementById('services-count').textContent = data.services;
-                if (data.tools) document.getElementById('tools-count').textContent = data.tools;
-            } catch (e) { console.log('Using default metrics'); }
-        }
-        fetchMetrics();
-        
-        // Protected contact - number NEVER in HTML (bot protection)
-        const _c = [51,55,48,54,55,54,49,56,51,51,53];
-        function _d() { return _c.map(c => String.fromCharCode(c)).join(''); }
-        
-        function openWhatsApp() {
-            const n = _d();
-            window.open('https://wa.me/' + n + '?text=Hi%20Sergej!%20I%20found%20you%20through%20your%20AGI%20portfolio.', '_blank');
-        }
-        
-        function openTelegram() {
-            window.open('https://t.me/my_Visaginas360', '_blank');
-        }
-        
-        function makeCall() {
-            const n = _d();
-            window.location.href = 'tel:+' + n;
-        }
     </script>
 </body>
 </html>
