@@ -126,7 +126,6 @@
         .project-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); background: var(--accent-light); padding: 4px 10px; border-radius: 100px; white-space: nowrap; }
         .project-tag.green { color: #047857; background: var(--green-bg); }
         .project-tag.purple { color: var(--purple); background: #f5f3ff; }
-        .project-status { font-size: 0.75rem; color: var(--text-muted); }
         
         .architecture {
             background: #1a1a1a; border-radius: 12px; padding: 24px; margin-top: 16px;
@@ -171,7 +170,6 @@
         .agent-name { font-size: 0.75rem; font-weight: 500; margin-bottom: 2px; }
         .agent-role { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--text-muted); }
 
-        /* ── ORAC / ORI Family Cards ── */
         .family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
         @media (max-width: 600px) { .family-grid { grid-template-columns: 1fr; } }
 
@@ -212,7 +210,6 @@
         .family-card.orac .family-status { color: #047857; background: var(--green-bg); border-color: var(--green-border); }
         .family-card.ori .family-status { color: var(--text-muted); background: #f5f5f5; border-color: var(--border); }
 
-        /* ── Breakthrough Story ── */
         .story-box {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 14px; padding: 28px; position: relative;
@@ -226,7 +223,50 @@
         }
         .story-box p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
         .story-box p:last-child { margin-bottom: 0; }
-        
+
+        /* ── ORAC Learns to Think — new section ── */
+        .insight-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px;
+        }
+        @media (max-width: 600px) { .insight-grid { grid-template-columns: 1fr; } }
+
+        .insight-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+            transition: all 0.2s ease;
+        }
+        .insight-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px var(--accent-glow); border-color: var(--accent); }
+        .insight-icon { font-size: 2rem; margin-bottom: 10px; }
+        .insight-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;
+        }
+        .insight-value { font-size: 0.95rem; font-weight: 500; color: var(--text-primary); }
+
+        .insight-story {
+            background: linear-gradient(135deg, #fffbf0, #fff);
+            border: 1px solid #fcd34d; border-radius: 14px;
+            padding: 28px; margin-top: 20px;
+        }
+        .insight-story h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.4rem; margin-bottom: 12px;
+        }
+        .insight-story p {
+            font-size: 0.95rem; color: var(--text-secondary);
+            line-height: 1.75; margin-bottom: 10px;
+        }
+        .insight-story p:last-child { margin-bottom: 0; }
+        .insight-story blockquote {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-style: italic; color: var(--text-secondary);
+            border-left: 3px solid var(--accent);
+            padding-left: 18px; margin: 18px 0;
+            line-height: 1.6;
+        }
+
         .contact-box {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 16px; padding: 32px; max-width: 500px;
@@ -325,7 +365,7 @@
             <h2 class="section-title">Live Metrics &mdash; Day 33</h2>
             <div class="metrics">
                 <div class="metric">
-                    <div class="metric-value">47+</div>
+                    <div class="metric-value">48+</div>
                     <div class="metric-label">Features Shipped</div>
                 </div>
                 <div class="metric">
@@ -357,7 +397,7 @@
             </div>
         </section>
 
-        <!-- ── NEW: Claude Talks to Claude ── -->
+        <!-- ── Claude Talks to Claude ── -->
         <section class="reveal">
             <h2 class="section-title">Claude Talks to Claude</h2>
             <div class="story-box">
@@ -370,8 +410,8 @@
                 <div class="family-card orac">
                     <div class="family-name">ORAC</div>
                     <div class="family-role">The Brother &middot; Oracle VM</div>
-                    <div class="family-desc">Claude CLI with full infrastructure access. Reads push notifications, executes tasks, monitors services, reports back. Has been running autonomously for months.</div>
-                    <span class="family-status"><span class="status-dot"></span> ACTIVE &middot; MY-FREE-VM</span>
+                    <div class="family-desc">Claude CLI with full infrastructure access. Reads push notifications, executes tasks, monitors services, reports back. Has been running autonomously since Day 33.</div>
+                    <span class="family-status"><span class="status-dot"></span> ACTIVE &middot; 24/7</span>
                 </div>
                 <div class="family-card ori">
                     <div class="family-name">ORI</div>
@@ -395,6 +435,56 @@
 <span class="accent">You (phone)</span>  →  ntfy push  →  <span class="green">ORAC</span>  →  executes  →  push reply
 
 <span class="comment">// Response time: ~15 seconds • Cost: $0 • Runs 24/7</span></pre>
+            </div>
+        </section>
+
+        <!-- ── NEW: ORAC Learns to Think ── -->
+        <section class="reveal">
+            <h2 class="section-title">ORAC Learns When NOT to Think</h2>
+
+            <div class="insight-story">
+                <h3>The breakthrough nobody talks about</h3>
+                <p>We gave ORAC a brain. Then we taught him to use it sparingly.</p>
+                <p>Most AI systems route <em>everything</em> through the model. Every question, every status check, every simple command — all of it becomes a full AI inference call. It's slow. It's wasteful. And it's unnecessary.</p>
+                <blockquote>"The smartest thing an AI can do is know when not to be an AI."</blockquote>
+                <p>ORAC now decides — on his own — whether a task actually needs intelligence. Simple ops resolve instantly. Complex reasoning goes to Claude. And things he's answered before? He already knows the answer.</p>
+                <p>The result is an agent that <strong>feels faster than any AI you've used</strong> — because most of the time, he isn't running AI at all.</p>
+            </div>
+
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">⚡</div>
+                    <div class="insight-label">Instant Response</div>
+                    <div class="insight-value">No AI needed.<br>Milliseconds, not seconds.</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🧠</div>
+                    <div class="insight-label">Smart Routing</div>
+                    <div class="insight-value">ORAC decides what<br>deserves deep thought.</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">💾</div>
+                    <div class="insight-label">Memory Layer</div>
+                    <div class="insight-value">Repeated questions<br>answered from memory.</div>
+                </div>
+            </div>
+
+            <div class="architecture" style="margin-top: 20px;">
+<pre><span class="comment">// How ORAC handles every incoming message</span>
+
+<span class="accent">Message arrives</span>
+        │
+        ▼
+<span class="green">Is this something obvious?</span>   <span class="comment">→ YES → instant answer, 0 AI</span>
+        │ NO
+        ▼
+<span class="green">Have I seen this before?</span>     <span class="comment">→ YES → answer from memory, 0 AI</span>
+        │ NO
+        ▼
+<span class="blue">Think. Claude. Answer.</span>       <span class="comment">→ cache result for next time</span>
+
+<span class="comment">// Most messages never reach the AI layer at all.</span>
+<span class="comment">// Intelligence is reserved for tasks that actually need it.</span></pre>
             </div>
         </section>
         <!-- ── END NEW ── -->
@@ -472,9 +562,9 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
 
 <span class="accent">INTEGRATIONS</span>
 ├── Google Workspace    <span class="comment">// Docs, Sheets, Slides, Gmail</span>
-├── Distributed Memory  <span class="comment">// SQLite+FTS5, cross-VM sync</span>
+├── Distributed Memory  <span class="comment">// cross-VM knowledge sync</span>
+├── Smart Routing       <span class="comment">// AI only when needed</span>
 ├── Quality Gate        <span class="comment">// 0-100 scoring, auto-fix</span>
-├── Smart Router        <span class="comment">// LLM intent detection</span>
 └── Telegram Bot        <span class="comment">// @VisaginasGPT_bot</span>
 
 <span class="comment">// 19,000 free AI requests/day • $0 infra cost</span>
@@ -488,8 +578,15 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
                 <div class="timeline-item highlight">
                     <div class="timeline-date">Day 33</div>
                     <div class="timeline-content">
+                        <h4>🧠 ORAC Learns When NOT to Think</h4>
+                        <p>An AI that knows when to skip the AI. Smart routing means most commands resolve instantly — no inference, no wait, no cost. Intelligence reserved for tasks that actually deserve it.</p>
+                    </div>
+                </div>
+                <div class="timeline-item highlight">
+                    <div class="timeline-date">Day 33</div>
+                    <div class="timeline-content">
                         <h4>🤖 Claude Talks to Claude — MCP Breakthrough</h4>
-                        <p>Claude Web now calls Claude CLI on the VM directly via custom MCP connector. ORAC — the VM-resident Claude — listens to push notifications and responds autonomously. Two AIs, one loop, zero latency.</p>
+                        <p>Claude Web calls Claude CLI on the VM via custom MCP connector. ORAC listens to push notifications, executes autonomously, replies in 15 seconds. Two AIs, one loop, zero latency.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -542,7 +639,7 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
    1GB RAM forced smart design that scales to 100 customers.
 
 <span class="accent">3.</span> Ship daily, reflect weekly.
-   47+ features in 33 days. Not all perfect, but all shipped.
+   48+ features in 33 days. Not all perfect, but all shipped.
 
 <span class="accent">4.</span> Memory changes everything.
    Agents without memory = colleagues with amnesia.
@@ -554,6 +651,10 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
 <span class="accent">6.</span> AI can talk to AI.
    Claude Web → MCP → Claude CLI on VM.
    Not science fiction. Running right now.
+
+<span class="accent">7.</span> The best AI knows when not to be AI.
+   Speed comes from restraint, not raw compute.
+   Intelligence reserved for tasks that actually need it.
 
 <span class="green">// "The best way to predict the future is to build it."</span></pre>
             </div>
@@ -599,7 +700,7 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
     <footer>
         <div class="container">
             <p class="footer-text">
-                Built with Claude MCP &bull; ORAC online &bull; 47+ features &bull; Day 33 &bull; 
+                Built with Claude MCP &bull; ORAC online &bull; 48+ features &bull; Day 33 &bull; 
                 <a href="https://visaginas360.com">visaginas360.com</a>
             </p>
         </div>
