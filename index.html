@@ -146,6 +146,11 @@
             border-radius: 12px; padding: 20px;
             display: flex; gap: 16px; align-items: flex-start;
         }
+        .timeline-item.highlight {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, #fffbf0, #ffffff);
+            box-shadow: 0 2px 12px var(--accent-glow);
+        }
         .timeline-date {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.75rem; color: var(--accent);
@@ -165,6 +170,62 @@
         .agent-emoji { font-size: 1.5rem; margin-bottom: 6px; }
         .agent-name { font-size: 0.75rem; font-weight: 500; margin-bottom: 2px; }
         .agent-role { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--text-muted); }
+
+        /* ── ORAC / ORI Family Cards ── */
+        .family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+        @media (max-width: 600px) { .family-grid { grid-template-columns: 1fr; } }
+
+        .family-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 22px;
+            transition: all 0.2s ease; position: relative; overflow: hidden;
+        }
+        .family-card::before {
+            content: ''; position: absolute; inset: 0; opacity: 0;
+            transition: opacity 0.3s; pointer-events: none;
+        }
+        .family-card.orac { border-color: #c4b5fd; }
+        .family-card.orac::before { background: radial-gradient(circle at top left, rgba(139,92,246,0.06), transparent 60%); }
+        .family-card.orac:hover { border-color: var(--purple); box-shadow: 0 4px 16px rgba(139,92,246,0.12); }
+        .family-card.ori::before { background: radial-gradient(circle at top left, rgba(217,119,6,0.06), transparent 60%); }
+        .family-card.ori:hover { border-color: var(--accent); box-shadow: 0 4px 16px var(--accent-glow); }
+        .family-card:hover::before { opacity: 1; }
+
+        .family-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.6rem; font-weight: 500; margin-bottom: 2px;
+        }
+        .family-card.orac .family-name { color: var(--purple); }
+        .family-card.ori .family-name { color: var(--accent); }
+
+        .family-role {
+            font-size: 0.75rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;
+        }
+        .family-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
+
+        .family-status {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+            padding: 4px 10px; border-radius: 100px; border: 1px solid;
+        }
+        .family-card.orac .family-status { color: #047857; background: var(--green-bg); border-color: var(--green-border); }
+        .family-card.ori .family-status { color: var(--text-muted); background: #f5f5f5; border-color: var(--border); }
+
+        /* ── Breakthrough Story ── */
+        .story-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 28px; position: relative;
+        }
+        .story-box blockquote {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic; color: var(--text-secondary);
+            line-height: 1.6; border-left: 3px solid var(--accent);
+            padding-left: 20px; margin: 20px 0;
+        }
+        .story-box p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+        .story-box p:last-child { margin-bottom: 0; }
         
         .contact-box {
             background: var(--bg-card); border: 1px solid var(--border);
@@ -227,6 +288,7 @@
         }
         .badge.applied { color: #d97706; background: #fef3c7; border-color: #fcd34d; }
         .badge.live { color: #047857; background: #ecfdf5; border-color: #a7f3d0; }
+        .badge.new { color: var(--purple); background: #f5f3ff; border-color: #c4b5fd; }
     </style>
 </head>
 <body>
@@ -246,6 +308,7 @@
                 <span class="badge applied">Google Startups Applied</span>
                 <span class="badge applied">Anthropic Partner</span>
                 <span class="badge applied">Anthology Fund Applied</span>
+                <span class="badge new">ORAC Online ✦ Day 33</span>
             </div>
         </header>
         
@@ -259,14 +322,14 @@
         </section>
         
         <section class="reveal">
-            <h2 class="section-title">Live Metrics &mdash; Day 32</h2>
+            <h2 class="section-title">Live Metrics &mdash; Day 33</h2>
             <div class="metrics">
                 <div class="metric">
-                    <div class="metric-value">45+</div>
+                    <div class="metric-value">47+</div>
                     <div class="metric-label">Features Shipped</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">8</div>
+                    <div class="metric-value">21</div>
                     <div class="metric-label">Parallel Agents</div>
                 </div>
                 <div class="metric">
@@ -293,6 +356,48 @@
                 <div class="agent-card"><div class="agent-emoji">🛡️</div><div class="agent-name">Guardian</div><div class="agent-role">Safety</div></div>
             </div>
         </section>
+
+        <!-- ── NEW: Claude Talks to Claude ── -->
+        <section class="reveal">
+            <h2 class="section-title">Claude Talks to Claude</h2>
+            <div class="story-box">
+                <p>On Day 33, something new happened. Claude Web — the AI I talk to in my browser — called Claude CLI running inside a virtual machine, directly, via a custom MCP connector. One AI delegated a task to another AI. The second one had full access to the server. It executed. Reported back.</p>
+                <blockquote>"I didn't build an app powered by AI. I built an AI that happens to run an app — and now it's talking to itself."</blockquote>
+                <p>ORAC — the Claude instance living on the server — now listens to push notifications from my phone. Send him a message, he reads it within 15 seconds, executes the task, and pushes back a reply. He works while I sleep.</p>
+            </div>
+
+            <div class="family-grid" style="margin-top: 20px;">
+                <div class="family-card orac">
+                    <div class="family-name">ORAC</div>
+                    <div class="family-role">The Brother &middot; Oracle VM</div>
+                    <div class="family-desc">Claude CLI with full infrastructure access. Reads push notifications, executes tasks, monitors services, reports back. Has been running autonomously for months.</div>
+                    <span class="family-status"><span class="status-dot"></span> ACTIVE &middot; MY-FREE-VM</span>
+                </div>
+                <div class="family-card ori">
+                    <div class="family-name">ORI</div>
+                    <div class="family-role">The Sister &middot; Kimi VM &middot; Coming Soon</div>
+                    <div class="family-desc">When ORAC is settled, ORI will be deployed on the second VM. They'll share memory via A2A Protocol — two minds, one mission.</div>
+                    <span class="family-status">⏳ PENDING ORAC APPROVAL</span>
+                </div>
+            </div>
+
+            <div class="architecture" style="margin-top: 16px;">
+<pre><span class="comment">// Day 33 — Claude-to-Claude via MCP</span>
+
+<span class="accent">You (browser)</span>  →  Claude Web
+                        │  MCP Protocol
+                        ▼
+                    <span class="green">ORAC</span>  <span class="comment">// Claude CLI on VM</span>
+                        │  Full infra access
+                        ▼
+           <span class="blue">Services · Files · Databases · APIs</span>
+
+<span class="accent">You (phone)</span>  →  ntfy push  →  <span class="green">ORAC</span>  →  executes  →  push reply
+
+<span class="comment">// Response time: ~15 seconds • Cost: $0 • Runs 24/7</span></pre>
+            </div>
+        </section>
+        <!-- ── END NEW ── -->
         
         <section class="reveal">
             <h2 class="section-title">What We Build</h2>
@@ -360,9 +465,9 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
 └── 🛡️  Guardian          <span class="comment">// Llama Guard safety</span>
 
 <span class="accent">INFRASTRUCTURE</span>
-├── Oracle CTO VM       <span class="comment">// 37+ services, coordination</span>
+├── Oracle CTO VM       <span class="comment">// 37+ services, ORAC lives here</span>
 ├── GCP DevOps VM       <span class="comment">// monitoring, deployment</span>
-├── Kimi Etalon VM      <span class="comment">// customer reference, 8 agents</span>
+├── Kimi Etalon VM      <span class="comment">// customer reference, ORI coming soon</span>
 └── Customer VMs        <span class="comment">// auto-provisioned clones</span>
 
 <span class="accent">INTEGRATIONS</span>
@@ -380,6 +485,13 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
         <section class="reveal">
             <h2 class="section-title">Journey Highlights</h2>
             <div class="timeline">
+                <div class="timeline-item highlight">
+                    <div class="timeline-date">Day 33</div>
+                    <div class="timeline-content">
+                        <h4>🤖 Claude Talks to Claude — MCP Breakthrough</h4>
+                        <p>Claude Web now calls Claude CLI on the VM directly via custom MCP connector. ORAC — the VM-resident Claude — listens to push notifications and responds autonomously. Two AIs, one loop, zero latency.</p>
+                    </div>
+                </div>
                 <div class="timeline-item">
                     <div class="timeline-date">Day 32</div>
                     <div class="timeline-content">
@@ -421,7 +533,7 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
         <section class="reveal">
             <h2 class="section-title">What I Learned</h2>
             <div class="architecture" style="background: #1e1b2e;">
-<pre><span class="comment">// 32 days of building. Zero CS degree. Claude is my CTO.</span>
+<pre><span class="comment">// 33 days of building. Zero CS degree. Claude is my CTO.</span>
 
 <span class="accent">1.</span> Coordination beats raw power.
    8 specialized models in parallel > 1 premium model serial.
@@ -430,7 +542,7 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
    1GB RAM forced smart design that scales to 100 customers.
 
 <span class="accent">3.</span> Ship daily, reflect weekly.
-   45+ features in 32 days. Not all perfect, but all shipped.
+   47+ features in 33 days. Not all perfect, but all shipped.
 
 <span class="accent">4.</span> Memory changes everything.
    Agents without memory = colleagues with amnesia.
@@ -438,6 +550,10 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
 
 <span class="accent">5.</span> Claude as co-founder works.
    One person + Claude = a 10-person team output.
+
+<span class="accent">6.</span> AI can talk to AI.
+   Claude Web → MCP → Claude CLI on VM.
+   Not science fiction. Running right now.
 
 <span class="green">// "The best way to predict the future is to build it."</span></pre>
             </div>
@@ -483,7 +599,7 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
     <footer>
         <div class="container">
             <p class="footer-text">
-                Built with Claude MCP &bull; Multi-cloud &bull; 45+ features &bull; Day 32 &bull; 
+                Built with Claude MCP &bull; ORAC online &bull; 47+ features &bull; Day 33 &bull; 
                 <a href="https://visaginas360.com">visaginas360.com</a>
             </p>
         </div>
