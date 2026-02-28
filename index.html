@@ -86,6 +86,24 @@
         }
         .hero-text span { color: var(--accent); }
         
+        .hero-cta { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn-cta {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 10px;
+            font-size: 0.95rem; font-weight: 500;
+            text-decoration: none; transition: all 0.2s ease;
+        }
+        .btn-cta.primary {
+            background: var(--accent); color: white;
+            box-shadow: 0 2px 16px var(--accent-glow);
+        }
+        .btn-cta.primary:hover { background: #b45309; transform: translateY(-2px); box-shadow: 0 6px 24px var(--accent-glow); }
+        .btn-cta.secondary {
+            background: var(--bg-card); color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        .btn-cta.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        
         .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 40px 0; }
         @media (max-width: 600px) { .metrics { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
         
@@ -358,6 +376,10 @@
                 and deliver <span>3.3x faster</span> results. 
                 Built with <span>Claude MCP</span>.
             </p>
+            <div class="hero-cta">
+                <a href="/pricing" class="btn-cta primary">View Pricing &rarr;</a>
+                <a href="https://t.me/my_Visaginas360" class="btn-cta secondary">Request Access</a>
+            </div>
         </section>
         
         <section class="reveal">
@@ -399,9 +421,9 @@
         <section class="reveal">
             <h2 class="section-title">Claude Talks to Claude</h2>
             <div class="story-box">
-                <p>On Day 33, something new happened. Claude Web — the AI I talk to in my browser — called Claude CLI running inside a virtual machine, directly, via a custom MCP connector. One AI delegated a task to another AI. The second one had full access to the server. It executed. Reported back.</p>
-                <blockquote>"I didn't build an app powered by AI. I built an AI that happens to run an app — and now it's talking to itself."</blockquote>
-                <p>ORAC — the Claude instance living on the server — now listens to push notifications from my phone. Send him a message, he reads it within 15 seconds, executes the task, and pushes back a reply. He works while I sleep.</p>
+                <p>On Day 33, something new happened. Claude Web &mdash; the AI I talk to in my browser &mdash; called Claude CLI running inside a virtual machine, directly, via a custom MCP connector. One AI delegated a task to another AI. The second one had full access to the server. It executed. Reported back.</p>
+                <blockquote>"I didn't build an app powered by AI. I built an AI that happens to run an app &mdash; and now it's talking to itself."</blockquote>
+                <p>ORAC &mdash; the Claude instance living on the server &mdash; now listens to push notifications from my phone. Send him a message, he reads it within 15 seconds, executes the task, and pushes back a reply. He works while I sleep.</p>
             </div>
 
             <div class="family-grid" style="margin-top: 20px;">
@@ -414,7 +436,7 @@
                 <div class="family-card ori">
                     <div class="family-name">ORI</div>
                     <div class="family-role">The Sister &middot; Kimi VM &middot; Coming Soon</div>
-                    <div class="family-desc">When ORAC is settled, ORI will be deployed on the second VM. They'll share memory via A2A Protocol — two minds, one mission.</div>
+                    <div class="family-desc">When ORAC is settled, ORI will be deployed on the second VM. They'll share memory via A2A Protocol &mdash; two minds, one mission.</div>
                     <span class="family-status">⏳ PENDING ORAC APPROVAL</span>
                 </div>
             </div>
@@ -442,10 +464,10 @@
             <div class="insight-story">
                 <h3>The breakthrough nobody talks about</h3>
                 <p>We gave ORAC a brain. Then we taught him to use it sparingly.</p>
-                <p>Most AI systems route <em>everything</em> through the model. Every question, every status check, every simple command — all of it becomes a full AI inference call. It's slow. It's wasteful. And it's unnecessary.</p>
+                <p>Most AI systems route <em>everything</em> through the model. Every question, every status check, every simple command &mdash; all of it becomes a full AI inference call. It's slow. It's wasteful. And it's unnecessary.</p>
                 <blockquote>"The smartest thing an AI can do is know when not to be an AI."</blockquote>
-                <p>ORAC now decides — on his own — whether a task actually needs intelligence. Simple ops resolve instantly. Complex reasoning goes to Claude. And things he's answered before? He already knows the answer.</p>
-                <p>The result is an agent that <strong>feels faster than any AI you've used</strong> — because most of the time, he isn't running AI at all.</p>
+                <p>ORAC now decides &mdash; on his own &mdash; whether a task actually needs intelligence. Simple ops resolve instantly. Complex reasoning goes to Claude. And things he's answered before? He already knows the answer.</p>
+                <p>The result is an agent that <strong>feels faster than any AI you've used</strong> &mdash; because most of the time, he isn't running AI at all.</p>
             </div>
 
             <div class="insight-grid">
@@ -488,10 +510,21 @@
         <section class="reveal">
             <h2 class="section-title">What We Build</h2>
             <div class="projects">
+                <a href="/pricing" class="project" style="border-color: var(--accent); background: linear-gradient(135deg, #fffbf0, #ffffff);">
+                    <div class="project-info">
+                        <h3>Pricing &amp; Plans</h3>
+                        <p>From $19/mo for indie hackers to $99/mo for teams. Power-Ups, one-time licenses, and FAQ. 100% margin &mdash; infrastructure costs $0.</p>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-tag">$19-99/mo</span>
+                        <span class="project-tag green">Live</span>
+                    </div>
+                </a>
+            
                 <a href="https://github.com/tikserziku/a2a-agent-saas" target="_blank" class="project">
                     <div class="project-info">
                         <h3>A2A Agent SaaS</h3>
-                        <p>The main product &mdash; 8 AI agents working in parallel on a dedicated VM. Google Workspace integration, distributed memory, code execution sandbox. Customer pays $19/mo, gets their own agent swarm.</p>
+                        <p>The main product &mdash; 8 AI agents working in parallel on a dedicated VM. Google Workspace integration, distributed memory, code execution sandbox.</p>
                     </div>
                     <div class="project-meta">
                         <span class="project-tag">Core Product</span>
@@ -502,7 +535,7 @@
                 <a href="https://t.me/my_Visaginas360" target="_blank" class="project">
                     <div class="project-info">
                         <h3>@VisaginasGPT_bot</h3>
-                        <p>Telegram bot powered by the swarm. Natural language &rarr; smart intent routing &rarr; parallel agents &rarr; real Google Docs/Sheets/Slides. Access by invite only &mdash; DM me to request.</p>
+                        <p>Telegram bot powered by the swarm. Natural language &rarr; smart intent routing &rarr; parallel agents &rarr; real Google Docs/Sheets/Slides.</p>
                     </div>
                     <div class="project-meta">
                         <span class="project-tag">Invite Only</span>
@@ -575,14 +608,14 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
                     <div class="timeline-date">Day 33</div>
                     <div class="timeline-content">
                         <h4>🧠 ORAC Learns When NOT to Think</h4>
-                        <p>An AI that knows when to skip the AI. Smart routing means most commands resolve instantly — no inference, no wait, no cost. Intelligence reserved for tasks that actually deserve it.</p>
+                        <p>An AI that knows when to skip the AI. Smart routing means most commands resolve instantly &mdash; no inference, no wait, no cost.</p>
                     </div>
                 </div>
                 <div class="timeline-item highlight">
                     <div class="timeline-date">Day 33</div>
                     <div class="timeline-content">
-                        <h4>🤖 Claude Talks to Claude — MCP Breakthrough</h4>
-                        <p>Claude Web calls Claude CLI on the VM via custom MCP connector. ORAC listens to push notifications, executes autonomously, replies in 15 seconds. Two AIs, one loop, zero latency.</p>
+                        <h4>🤖 Claude Talks to Claude &mdash; MCP Breakthrough</h4>
+                        <p>Claude Web calls Claude CLI on the VM via custom MCP connector. ORAC listens to push notifications, executes autonomously, replies in 15 seconds.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -697,6 +730,7 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
         <div class="container">
             <p class="footer-text">
                 Built with Claude MCP &bull; ORAC online &bull; 70+ features &bull; Day 56 &bull; 
+                <a href="/pricing">Pricing</a> &bull;
                 <a href="https://visaginas360.com">visaginas360.com</a>
             </p>
         </div>
