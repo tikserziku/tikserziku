@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing — Visaginas360 AI Agent SaaS</title>
-    <meta name="description" content="Get your own AI agent swarm starting at $19/month. 8 parallel agents, Google Workspace integration, $0 infrastructure cost.">
+    <meta name="description" content="Get your own AI agent swarm starting at $19/month. 8 parallel agents, Google Workspace integration, dedicated VM included.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -33,327 +33,68 @@
             line-height: 1.6;
         }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-
-        /* Nav */
-        nav {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-logo {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
+        nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Instrument Serif', serif; font-size: 1.4rem; color: var(--text-primary); text-decoration: none; }
         .nav-links { display: flex; gap: 24px; align-items: center; }
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
         .nav-links a:hover { color: var(--accent); }
-
-        /* Hero */
-        .hero {
-            text-align: center;
-            padding: 80px 0 40px;
-        }
-        .hero h1 {
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 400;
-            margin-bottom: 16px;
-        }
-        .hero p {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .hero-note {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 20px;
-            padding: 8px 16px;
-            background: var(--green-bg);
-            border: 1px solid var(--green-border);
-            border-radius: 100px;
-            font-size: 0.8rem;
-            color: #047857;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* Pricing Grid */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 40px 0 60px;
-        }
-        @media (max-width: 768px) {
-            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-        }
-
-        .plan {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px 28px;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .plan:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-        }
-        .plan.featured {
-            border-color: var(--accent);
-            box-shadow: 0 4px 20px var(--accent-glow);
-        }
-        .plan.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: white;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            padding: 4px 14px;
-            border-radius: 100px;
-        }
-
-        .plan-name {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-        .plan-price {
-            font-family: 'Instrument Serif', serif;
-            font-size: 3rem;
-            font-weight: 400;
-            margin-bottom: 4px;
-        }
+        .hero { text-align: center; padding: 80px 0 40px; }
+        .hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; margin-bottom: 16px; }
+        .hero p { color: var(--text-secondary); font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+        .hero-note { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 8px 16px; background: var(--green-bg); border: 1px solid var(--green-border); border-radius: 100px; font-size: 0.8rem; color: #047857; font-family: 'JetBrains Mono', monospace; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px 0 60px; }
+        @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
+        .plan { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; }
+        .plan:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+        .plan.featured { border-color: var(--accent); box-shadow: 0 4px 20px var(--accent-glow); }
+        .plan.featured::before { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; padding: 4px 14px; border-radius: 100px; }
+        .plan-name { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 8px; }
+        .plan-price { font-family: 'Instrument Serif', serif; font-size: 3rem; font-weight: 400; margin-bottom: 4px; }
         .plan-price .currency { font-size: 1.5rem; vertical-align: top; color: var(--text-muted); }
         .plan-price .period { font-size: 1rem; color: var(--text-muted); font-family: 'Outfit', sans-serif; }
-        .plan-desc {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-            min-height: 44px;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin-bottom: 28px;
-            flex: 1;
-        }
-        .plan-features li {
-            padding: 8px 0;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            border-bottom: 1px solid #f5f5f5;
-        }
+        .plan-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; min-height: 44px; }
+        .plan-features { list-style: none; margin-bottom: 28px; flex: 1; }
+        .plan-features li { padding: 8px 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px solid #f5f5f5; }
         .plan-features li:last-child { border-bottom: none; }
-        .plan-features li::before {
-            content: '✓';
-            color: var(--green);
-            font-weight: 600;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-
-        .plan-btn {
-            display: block;
-            text-align: center;
-            padding: 14px 24px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .plan-btn.primary {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 2px 12px var(--accent-glow);
-        }
-        .plan-btn.primary:hover {
-            background: #b45309;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px var(--accent-glow);
-        }
-        .plan-btn.secondary {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-        .plan-btn.secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* One-time section */
-        .onetime {
-            padding: 40px 0 60px;
-            border-top: 1px solid var(--border);
-        }
-        .onetime h2 {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .onetime-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+        .plan-features li::before { content: '✓'; color: var(--green); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+        .plan-btn { display: block; text-align: center; padding: 14px 24px; border-radius: 10px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: none; cursor: pointer; }
+        .plan-btn.primary { background: var(--accent); color: white; box-shadow: 0 2px 12px var(--accent-glow); }
+        .plan-btn.primary:hover { background: #b45309; transform: translateY(-1px); box-shadow: 0 4px 16px var(--accent-glow); }
+        .plan-btn.secondary { background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border); }
+        .plan-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        .onetime { padding: 40px 0 60px; border-top: 1px solid var(--border); }
+        .onetime h2 { font-family: 'Instrument Serif', serif; font-size: 1.8rem; font-weight: 400; text-align: center; margin-bottom: 32px; }
+        .onetime-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         @media (max-width: 600px) { .onetime-grid { grid-template-columns: 1fr; } }
-
-        .onetime-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px;
-            transition: all 0.2s ease;
-        }
+        .onetime-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: all 0.2s ease; }
         .onetime-card:hover { border-color: var(--accent); }
-        .onetime-price {
-            font-family: 'Instrument Serif', serif;
-            font-size: 2.2rem;
-            margin-bottom: 4px;
-        }
-        .onetime-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 12px;
-        }
-        .onetime-desc {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Power-Ups */
-        .powerups {
-            padding: 40px 0 60px;
-            border-top: 1px solid var(--border);
-        }
-        .powerups h2 {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .powerups-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 32px;
-        }
-        .powerups-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-        }
-        .powerup {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
+        .onetime-price { font-family: 'Instrument Serif', serif; font-size: 2.2rem; margin-bottom: 4px; }
+        .onetime-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px; }
+        .onetime-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+        .powerups { padding: 40px 0 60px; border-top: 1px solid var(--border); }
+        .powerups h2 { font-family: 'Instrument Serif', serif; font-size: 1.8rem; font-weight: 400; text-align: center; margin-bottom: 8px; }
+        .powerups-subtitle { text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 32px; }
+        .powerups-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .powerup { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; transition: all 0.2s ease; }
         .powerup:hover { border-color: var(--accent); transform: translateY(-2px); }
         .powerup-emoji { font-size: 1.8rem; margin-bottom: 8px; }
         .powerup-name { font-size: 0.85rem; font-weight: 500; margin-bottom: 4px; }
-        .powerup-price {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--accent);
-        }
-        .powerup-tier {
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 40px 0 60px;
-            border-top: 1px solid var(--border);
-        }
-        .faq h2 {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 32px;
-        }
+        .powerup-price { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); }
+        .powerup-tier { font-size: 0.65rem; color: var(--text-muted); margin-top: 4px; }
+        .faq { padding: 40px 0 60px; border-top: 1px solid var(--border); }
+        .faq h2 { font-family: 'Instrument Serif', serif; font-size: 1.8rem; font-weight: 400; text-align: center; margin-bottom: 32px; }
         .faq-list { max-width: 700px; margin: 0 auto; }
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-        }
-        .faq-q {
-            font-weight: 500;
-            font-size: 1rem;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
-        .faq-a {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-
-        /* CTA */
-        .cta {
-            text-align: center;
-            padding: 60px 0;
-            border-top: 1px solid var(--border);
-        }
-        .cta h2 {
-            font-family: 'Instrument Serif', serif;
-            font-size: 2rem;
-            margin-bottom: 12px;
-        }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+        .faq-q { font-weight: 500; font-size: 1rem; margin-bottom: 8px; cursor: pointer; }
+        .faq-a { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .cta { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); }
+        .cta h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; margin-bottom: 12px; }
         .cta p { color: var(--text-secondary); margin-bottom: 24px; }
         .cta .plan-btn { display: inline-block; }
-
-        footer {
-            padding: 32px 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
+        footer { padding: 32px 0; text-align: center; border-top: 1px solid var(--border); }
         .footer-text { color: var(--text-muted); font-size: 0.8rem; }
         .footer-text a { color: var(--accent); text-decoration: none; }
-
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
@@ -376,30 +117,28 @@
 
     <section class="hero reveal">
         <h1>Simple pricing, infinite agents</h1>
-        <p>Your own AI agent swarm on a dedicated VM. No hidden fees. Infrastructure costs $0 &mdash; Google pays for compute.</p>
-        <div class="hero-note">💡 All plans run on GCP Free Tier &mdash; $0 infrastructure forever</div>
+        <p>Your own AI agent swarm on a dedicated VM. No hidden fees. No usage caps. Your data stays on your server.</p>
+        <div class="hero-note">💡 Dedicated VM included in every plan &mdash; no separate infrastructure bills</div>
     </section>
 
     <section class="pricing-grid reveal">
-        <!-- Pro -->
         <div class="plan">
             <div class="plan-name">Pro</div>
             <div class="plan-price"><span class="currency">$</span>19<span class="period">/mo</span></div>
             <p class="plan-desc">Perfect for indie hackers and solo developers.</p>
             <ul class="plan-features">
-                <li>Dedicated GCP VM (yours, not shared)</li>
+                <li>Dedicated VM (yours, not shared)</li>
                 <li>8 AI agents working in parallel</li>
-                <li>19,000 free API calls/day</li>
+                <li>19,000+ API requests per day</li>
                 <li>3.3x parallel speedup</li>
                 <li>Telegram bot interface</li>
                 <li>System dashboard</li>
                 <li>Auto-healing &amp; monitoring</li>
                 <li>Email support</li>
             </ul>
-            <a href="https://t.me/my_Visaginas360" class="plan-btn secondary">Get Started →</a>
+            <a href="https://t.me/my_Visaginas360" class="plan-btn secondary">Get Started &rarr;</a>
         </div>
 
-        <!-- Team -->
         <div class="plan featured">
             <div class="plan-name">Team</div>
             <div class="plan-price"><span class="currency">$</span>49<span class="period">/mo</span></div>
@@ -414,10 +153,9 @@
                 <li>Distributed memory (cross-session)</li>
                 <li>Priority support via Telegram</li>
             </ul>
-            <a href="https://t.me/my_Visaginas360" class="plan-btn primary">Get Started →</a>
+            <a href="https://t.me/my_Visaginas360" class="plan-btn primary">Get Started &rarr;</a>
         </div>
 
-        <!-- Business -->
         <div class="plan">
             <div class="plan-name">Business</div>
             <div class="plan-price"><span class="currency">$</span>99<span class="period">/mo</span></div>
@@ -429,10 +167,10 @@
                 <li>Webhook integrations</li>
                 <li>API access to your swarm</li>
                 <li>Advanced analytics dashboard</li>
-                <li>VM upgrade support (e2-small+)</li>
+                <li>Upgraded VM resources</li>
                 <li>1-on-1 onboarding call</li>
             </ul>
-            <a href="https://t.me/my_Visaginas360" class="plan-btn secondary">Contact Us →</a>
+            <a href="https://t.me/my_Visaginas360" class="plan-btn secondary">Contact Us &rarr;</a>
         </div>
     </section>
 
@@ -511,12 +249,12 @@
         <h2>Common questions</h2>
         <div class="faq-list">
             <div class="faq-item">
-                <div class="faq-q">How is the infrastructure really free?</div>
-                <div class="faq-a">Google Cloud offers an "Always Free" tier that includes one e2-micro VM forever at $0. Your agent swarm runs on this VM. AI compute comes from free-tier APIs (Groq, Gemini, OpenRouter) &mdash; combined, that's 19,000+ requests per day at zero cost.</div>
+                <div class="faq-q">Do I need to pay for server infrastructure?</div>
+                <div class="faq-a">No. Every plan includes a dedicated virtual machine &mdash; you don't pay for infrastructure separately. We handle provisioning, monitoring, and maintenance. Your agents use multiple AI providers for redundancy and speed, with over 19,000 requests per day included.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Is my data private?</div>
-                <div class="faq-a">Yes. Each customer gets their own dedicated VM. Your data never leaves your VM. We don't have access to your files, conversations, or generated content. You own everything.</div>
+                <div class="faq-a">Yes. Each customer gets their own dedicated VM. Your data never leaves your server. We don't have access to your files, conversations, or generated content. You own everything.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">What can 8 agents actually do?</div>
@@ -540,7 +278,7 @@
     <section class="cta reveal">
         <h2>Ready to deploy your swarm?</h2>
         <p>Join the early access program. DM on Telegram for an invite code.</p>
-        <a href="https://t.me/my_Visaginas360" class="plan-btn primary" style="font-size: 1.1rem; padding: 16px 40px;">Request Access →</a>
+        <a href="https://t.me/my_Visaginas360" class="plan-btn primary" style="font-size: 1.1rem; padding: 16px 40px;">Request Access &rarr;</a>
     </section>
 
 </div>
