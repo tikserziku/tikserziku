@@ -53,6 +53,8 @@
         .btn-cta.primary:hover { background: #b45309; transform: translateY(-2px); box-shadow: 0 6px 24px var(--accent-glow); }
         .btn-cta.secondary { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); }
         .btn-cta.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-cta.product { background: #1a1a1a; color: #f5f5f5; }
+        .btn-cta.product:hover { background: #2a2a2a; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
         .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 40px 0; }
         @media (max-width: 600px) { .metrics { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
         .metric { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 16px; text-align: center; transition: all 0.2s ease; }
@@ -168,7 +170,8 @@
                 and deliver <span>3.3x faster</span> results.
             </p>
             <div class="hero-cta">
-                <a href="/pricing" class="btn-cta primary">View Pricing &rarr;</a>
+                <a href="/product" class="btn-cta product">Try the Product &rarr;</a>
+                <a href="/pricing" class="btn-cta primary">View Pricing</a>
                 <a href="https://t.me/my_Visaginas360" class="btn-cta secondary">Request Access</a>
             </div>
         </section>
@@ -309,7 +312,17 @@
         <section class="reveal">
             <h2 class="section-title">What We Build</h2>
             <div class="projects">
-                <a href="/pricing" class="project" style="border-color: var(--accent); background: linear-gradient(135deg, #fffbf0, #ffffff);">
+                <a href="/product" class="project" style="border-color: var(--accent); background: linear-gradient(135deg, #fffbf0, #ffffff);">
+                    <div class="project-info">
+                        <h3>A2A Agent SaaS — For Customers</h3>
+                        <p>8 AI agents working in parallel. Reports, analytics and content delivered to your Google Docs in 15 seconds. Via Telegram.</p>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-tag">Try Free</span>
+                        <span class="project-tag green">Live</span>
+                    </div>
+                </a>
+                <a href="/pricing" class="project">
                     <div class="project-info">
                         <h3>Pricing &amp; Plans</h3>
                         <p>From $19/mo for indie hackers to $99/mo for teams. Dedicated VM included. No surprise bills.</p>
@@ -319,16 +332,6 @@
                         <span class="project-tag green">Live</span>
                     </div>
                 </a>
-                <div class="project">
-                    <div class="project-info">
-                        <h3>A2A Agent SaaS</h3>
-                        <p>The core product — AI agents working in parallel on dedicated infrastructure. Google Workspace integration, distributed memory, MCP orchestration.</p>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-tag">Core Product</span>
-                        <span class="project-tag green">Production</span>
-                    </div>
-                </div>
                 <a href="https://t.me/my_Visaginas360" target="_blank" class="project">
                     <div class="project-info">
                         <h3>Telegram Bot Interface</h3>
@@ -487,6 +490,7 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
         <div class="container">
             <p class="footer-text">
                 Built with Claude MCP &bull; 35 services &bull; 30+ days autonomous &bull;
+                <a href="/product">Product</a> &bull;
                 <a href="/pricing">Pricing</a> &bull;
                 <a href="https://visaginas360.com">visaginas360.com</a>
             </p>
