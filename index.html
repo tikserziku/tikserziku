@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visaginas360 — AI Agent SaaS Platform</title>
-    <meta name="description" content="8 AI agents working in parallel on your own VM. Distributed memory, Google Workspace integration, 3.3x speedup. $19/month.">
+    <meta name="description" content="Autonomous AI agent swarm: 35 self-healing services, MCP protocol orchestration, Google Cloud integration. Enterprise-grade infrastructure from $19/month.">
     <meta property="og:title" content="Visaginas360 — AI Agent SaaS Platform">
-    <meta property="og:description" content="8 AI agents working in parallel. Distributed memory. Google Workspace integration. Built with Claude MCP.">
+    <meta property="og:description" content="21 parallel AI agents. Self-healing infrastructure. MCP protocol. Google Workspace integration. Built to run autonomously.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://visaginas360.com">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --bg-primary: #faf9f6;
@@ -42,7 +40,7 @@
         .name { font-family: 'Instrument Serif', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; margin-bottom: 8px; }
         .tagline { font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 16px; }
         .location { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 0.9rem; }
-        .location::before { content: '📍'; }
+        .location::before { content: ''; }
         .status { display: inline-flex; align-items: center; gap: 8px; background: var(--green-bg); border: 1px solid var(--green-border); border-radius: 100px; padding: 6px 14px; font-size: 0.8rem; color: #047857; margin-top: 16px; }
         .status-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
@@ -97,28 +95,13 @@
         .agent-emoji { font-size: 1.5rem; margin-bottom: 6px; }
         .agent-name { font-size: 0.75rem; font-weight: 500; margin-bottom: 2px; }
         .agent-role { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--text-muted); }
-        .family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
-        @media (max-width: 600px) { .family-grid { grid-template-columns: 1fr; } }
-        .family-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; transition: all 0.2s ease; position: relative; overflow: hidden; }
-        .family-card::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
-        .family-card.orac { border-color: #c4b5fd; }
-        .family-card.orac::before { background: radial-gradient(circle at top left, rgba(139,92,246,0.06), transparent 60%); }
-        .family-card.orac:hover { border-color: var(--purple); box-shadow: 0 4px 16px rgba(139,92,246,0.12); }
-        .family-card.ori::before { background: radial-gradient(circle at top left, rgba(217,119,6,0.06), transparent 60%); }
-        .family-card.ori:hover { border-color: var(--accent); box-shadow: 0 4px 16px var(--accent-glow); }
-        .family-card:hover::before { opacity: 1; }
-        .family-name { font-family: 'JetBrains Mono', monospace; font-size: 1.6rem; font-weight: 500; margin-bottom: 2px; }
-        .family-card.orac .family-name { color: var(--purple); }
-        .family-card.ori .family-name { color: var(--accent); }
-        .family-role { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
-        .family-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
-        .family-status { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 4px 10px; border-radius: 100px; border: 1px solid; }
-        .family-card.orac .family-status { color: #047857; background: var(--green-bg); border-color: var(--green-border); }
-        .family-card.ori .family-status { color: var(--text-muted); background: #f5f5f5; border-color: var(--border); }
-        .story-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; position: relative; }
-        .story-box blockquote { font-family: 'Instrument Serif', serif; font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-style: italic; color: var(--text-secondary); line-height: 1.6; border-left: 3px solid var(--accent); padding-left: 20px; margin: 20px 0; }
-        .story-box p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
-        .story-box p:last-child { margin-bottom: 0; }
+        .mcp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+        @media (max-width: 600px) { .mcp-grid { grid-template-columns: 1fr; } }
+        .mcp-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: all 0.2s ease; }
+        .mcp-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px var(--accent-glow); }
+        .mcp-card h4 { font-size: 0.95rem; margin-bottom: 6px; }
+        .mcp-card .tools { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); margin-bottom: 4px; }
+        .mcp-card p { font-size: 0.8rem; color: var(--text-muted); }
         .insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
         @media (max-width: 600px) { .insight-grid { grid-template-columns: 1fr; } }
         .insight-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; transition: all 0.2s ease; }
@@ -126,42 +109,35 @@
         .insight-icon { font-size: 2rem; margin-bottom: 10px; }
         .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
         .insight-value { font-size: 0.95rem; font-weight: 500; color: var(--text-primary); }
-        .insight-story { background: linear-gradient(135deg, #fffbf0, #fff); border: 1px solid #fcd34d; border-radius: 14px; padding: 28px; margin-top: 20px; }
-        .insight-story h3 { font-family: 'Instrument Serif', serif; font-size: 1.4rem; margin-bottom: 12px; }
-        .insight-story p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 10px; }
-        .insight-story p:last-child { margin-bottom: 0; }
-        .insight-story blockquote { font-family: 'Instrument Serif', serif; font-size: clamp(1rem, 2vw, 1.2rem); font-style: italic; color: var(--text-secondary); border-left: 3px solid var(--accent); padding-left: 18px; margin: 18px 0; line-height: 1.6; }
+        .story-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+        .story-box blockquote { font-family: 'Instrument Serif', serif; font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-style: italic; color: var(--text-secondary); line-height: 1.6; border-left: 3px solid var(--accent); padding-left: 20px; margin: 20px 0; }
+        .story-box p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+        .story-box p:last-child { margin-bottom: 0; }
         .contact-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 500px; }
         @media (max-width: 600px) { .contact-box { padding: 24px; } }
         .contact-intro { margin-bottom: 28px; }
         .contact-intro h3 { font-family: 'Instrument Serif', serif; font-size: 1.5rem; margin-bottom: 8px; }
         .contact-intro p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
         .contact-buttons { display: flex; flex-direction: column; gap: 12px; }
-        .contact-btn { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); text-decoration: none; font-size: 1rem; font-weight: 500; transition: all 0.2s ease; cursor: pointer; }
+        .contact-btn { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); text-decoration: none; font-size: 1rem; font-weight: 500; transition: all 0.2s ease; }
         .contact-btn:hover { transform: translateX(4px); }
         .contact-btn.telegram:hover { border-color: #0088cc; background: rgba(0, 136, 204, 0.08); }
-        .contact-btn.bot:hover { border-color: var(--purple); background: rgba(139, 92, 246, 0.08); }
-        .contact-btn.github:hover { border-color: #333; background: rgba(0, 0, 0, 0.04); }
         .contact-btn.email:hover { border-color: var(--accent); background: var(--accent-light); }
         .contact-btn svg { width: 24px; height: 24px; flex-shrink: 0; }
-        .contact-btn.telegram svg { fill: #0088cc; }
-        .contact-btn.bot svg { fill: var(--purple); }
-        .contact-btn.github svg { fill: #333; }
-        .contact-btn.email svg { fill: var(--accent); }
         .contact-btn span { flex: 1; }
         .contact-btn small { font-size: 0.75rem; color: var(--text-muted); font-weight: 400; }
         .contact-note { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+        .badge-row { display: flex; gap: 10px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+        .badge { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 4px 12px; border-radius: 100px; border: 1px solid; }
+        .badge.applied { color: #d97706; background: #fef3c7; border-color: #fcd34d; }
+        .badge.live { color: #047857; background: #ecfdf5; border-color: #a7f3d0; }
+        .badge.new { color: var(--purple); background: #f5f3ff; border-color: #c4b5fd; }
         footer { padding: 40px 0 32px; text-align: center; border-top: 1px solid var(--border); margin-top: 40px; }
         .footer-text { color: var(--text-muted); font-size: 0.85rem; }
         .footer-text a { color: var(--accent); text-decoration: none; }
         .footer-text a:hover { text-decoration: underline; }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        .badge-row { display: flex; gap: 10px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
-        .badge { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 4px 12px; border-radius: 100px; border: 1px solid; }
-        .badge.applied { color: #d97706; background: #fef3c7; border-color: #fcd34d; }
-        .badge.live { color: #047857; background: #ecfdf5; border-color: #a7f3d0; }
-        .badge.new { color: var(--purple); background: #f5f3ff; border-color: #c4b5fd; }
     </style>
 </head>
 <body>
@@ -175,51 +151,50 @@
             <span class="location">Vilnius, Lithuania</span>
             <div class="status">
                 <span class="status-dot"></span>
-                3 VMs &bull; 37+ services &bull; running 24/7
+                35 services &bull; 2 cloud regions &bull; running 24/7
             </div>
             <div class="badge-row">
                 <span class="badge applied">Google Startups Applied</span>
                 <span class="badge applied">Anthropic Partner</span>
-                <span class="badge applied">Anthology Fund Applied</span>
-                <span class="badge new">ORAC Online ✦ Day 56</span>
+                <span class="badge new">MCP Protocol &bull; 6 Connectors Live</span>
             </div>
         </header>
-        
+
         <section class="hero reveal">
             <p class="hero-text">
-                Building a <span>SaaS platform</span> where 8 AI agents 
-                work in parallel on your own VM, create real Google Docs, 
-                and deliver <span>3.3x faster</span> results. 
-                Built with <span>Claude MCP</span>.
+                Building a <span>SaaS platform</span> where AI agents 
+                manage themselves across cloud infrastructure via 
+                <span>MCP protocol</span>, self-heal for 30+ days, 
+                and deliver <span>3.3x faster</span> results.
             </p>
             <div class="hero-cta">
                 <a href="/pricing" class="btn-cta primary">View Pricing &rarr;</a>
                 <a href="https://t.me/my_Visaginas360" class="btn-cta secondary">Request Access</a>
             </div>
         </section>
-        
+
         <section class="reveal">
-            <h2 class="section-title">Live Metrics &mdash; Day 56</h2>
+            <h2 class="section-title">Live Metrics</h2>
             <div class="metrics">
                 <div class="metric">
-                    <div class="metric-value">70+</div>
-                    <div class="metric-label">Features Shipped</div>
+                    <div class="metric-value">35</div>
+                    <div class="metric-label">Running Services</div>
                 </div>
                 <div class="metric">
                     <div class="metric-value">21</div>
                     <div class="metric-label">Parallel Agents</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">3.3x</div>
-                    <div class="metric-label">Speedup</div>
+                    <div class="metric-value">7,500+</div>
+                    <div class="metric-label">Watchdog Cycles</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">24/7</div>
-                    <div class="metric-label">Uptime</div>
+                    <div class="metric-value">30+</div>
+                    <div class="metric-label">Days Autonomous</div>
                 </div>
             </div>
         </section>
-        
+
         <section class="reveal">
             <h2 class="section-title">The Swarm</h2>
             <div class="agents-grid">
@@ -235,231 +210,222 @@
         </section>
 
         <section class="reveal">
-            <h2 class="section-title">Claude Talks to Claude</h2>
+            <h2 class="section-title">MCP Protocol — AI Controls Infrastructure</h2>
             <div class="story-box">
-                <p>On Day 33, something new happened. Claude Web &mdash; the AI I talk to in my browser &mdash; called Claude CLI running inside a virtual machine, directly, via a custom MCP connector. One AI delegated a task to another AI. The second one had full access to the server. It executed. Reported back.</p>
-                <blockquote>"I didn't build an app powered by AI. I built an AI that happens to run an app &mdash; and now it's talking to itself."</blockquote>
-                <p>ORAC &mdash; the Claude instance living on the server &mdash; now listens to push notifications from my phone. Send him a message, he reads it within 15 seconds, executes the task, and pushes back a reply. He works while I sleep.</p>
+                <p>The breakthrough: Claude AI in the browser controls real cloud infrastructure through MCP (Model Context Protocol). No SSH. No dashboards. Just natural language to the AI, and it manages servers, deploys code, sends emails, scrapes the web, and orchestrates 21 Telegram bots.</p>
+                <blockquote>"We didn't build an app powered by AI. We built AI that runs the infrastructure — and it hasn't needed a human in 30 days."</blockquote>
+                <p>6 MCP connectors are live in production. The AI can manage services, read Gmail, deploy to cloud, scrape data, and communicate with users — all autonomously.</p>
             </div>
 
-            <div class="family-grid" style="margin-top: 20px;">
-                <div class="family-card orac">
-                    <div class="family-name">ORAC</div>
-                    <div class="family-role">The Brother &middot; Oracle VM</div>
-                    <div class="family-desc">Claude CLI with full infrastructure access. Reads push notifications, executes tasks, monitors services, reports back. Has been running autonomously since Day 33.</div>
-                    <span class="family-status"><span class="status-dot"></span> ACTIVE &middot; 24/7</span>
+            <div class="mcp-grid" style="margin-top: 20px;">
+                <div class="mcp-card">
+                    <h4>Cloud Control</h4>
+                    <div class="tools">40+ tools</div>
+                    <p>Full VM management, service lifecycle, file operations</p>
                 </div>
-                <div class="family-card ori">
-                    <div class="family-name">ORI</div>
-                    <div class="family-role">The Sister &middot; Kimi VM &middot; Coming Soon</div>
-                    <div class="family-desc">When ORAC is settled, ORI will be deployed on the second VM. They'll share memory via A2A Protocol &mdash; two minds, one mission.</div>
-                    <span class="family-status">⏳ PENDING ORAC APPROVAL</span>
+                <div class="mcp-card">
+                    <h4>Gmail Integration</h4>
+                    <div class="tools">7 tools</div>
+                    <p>Search, read, send emails — AI handles communication</p>
+                </div>
+                <div class="mcp-card">
+                    <h4>Web Scraping</h4>
+                    <div class="tools">2 tools</div>
+                    <p>Headless Chrome scraping for real-time data</p>
+                </div>
+                <div class="mcp-card">
+                    <h4>BigQuery MCP</h4>
+                    <div class="tools">5 tools</div>
+                    <p>SQL analytics on AI agent operational data</p>
+                </div>
+                <div class="mcp-card">
+                    <h4>Firestore MCP</h4>
+                    <div class="tools">14 tools</div>
+                    <p>Real-time document database for agent state</p>
+                </div>
+                <div class="mcp-card">
+                    <h4>Vertex AI Search</h4>
+                    <div class="tools">2 tools</div>
+                    <p>Semantic search across knowledge base</p>
                 </div>
             </div>
 
             <div class="architecture" style="margin-top: 16px;">
-<pre><span class="comment">// Day 33 — Claude-to-Claude via MCP</span>
+<pre><span class="comment">// MCP Protocol — How AI manages infrastructure</span>
 
-<span class="accent">You (browser)</span>  →  Claude Web
-                        │  MCP Protocol
-                        ▼
-                    <span class="green">ORAC</span>  <span class="comment">// Claude CLI on VM</span>
-                        │  Full infra access
-                        ▼
-           <span class="blue">Services · Files · Databases · APIs</span>
+<span class="accent">Claude (browser)</span>  →  MCP Protocol  →  <span class="green">Cloud Infrastructure</span>
+                                              │
+                         ┌────────────────────┼────────────────────┐
+                         │                    │                    │
+                    <span class="blue">VM Region 1</span>         <span class="blue">VM Region 2</span>         <span class="blue">Google Cloud</span>
+                    23 services          12 services          BigQuery
+                    Task API             Gmail MCP            Firestore
+                    Swarm (21 bots)      Web Scraping         Vertex AI
+                    Memory Graph         Telegram Bot
+                    Self-healing         Cloud Control
 
-<span class="accent">You (phone)</span>  →  ntfy push  →  <span class="green">ORAC</span>  →  executes  →  push reply
-
-<span class="comment">// Response time: ~15 seconds • Always-on • Runs 24/7</span></pre>
+<span class="comment">// 6 MCP connectors • 70+ tools • 30+ days autonomous • Self-healing</span></pre>
             </div>
         </section>
 
         <section class="reveal">
-            <h2 class="section-title">ORAC Learns When NOT to Think</h2>
-            <div class="insight-story">
-                <h3>The breakthrough nobody talks about</h3>
-                <p>We gave ORAC a brain. Then we taught him to use it sparingly.</p>
-                <p>Most AI systems route <em>everything</em> through the model. Every question, every status check, every simple command &mdash; all of it becomes a full AI inference call. It's slow. It's wasteful. And it's unnecessary.</p>
-                <blockquote>"The smartest thing an AI can do is know when not to be an AI."</blockquote>
-                <p>ORAC now decides &mdash; on his own &mdash; whether a task actually needs intelligence. Simple ops resolve instantly. Complex reasoning goes to Claude. And things he's answered before? He already knows the answer.</p>
-                <p>The result is an agent that <strong>feels faster than any AI you've used</strong> &mdash; because most of the time, he isn't running AI at all.</p>
-            </div>
+            <h2 class="section-title">Self-Healing Intelligence</h2>
             <div class="insight-grid">
                 <div class="insight-card">
                     <div class="insight-icon">⚡</div>
-                    <div class="insight-label">Instant Response</div>
-                    <div class="insight-value">No AI needed.<br>Milliseconds, not seconds.</div>
+                    <div class="insight-label">Smart Routing</div>
+                    <div class="insight-value">AI decides what<br>deserves deep thought.</div>
                 </div>
                 <div class="insight-card">
-                    <div class="insight-icon">🧠</div>
-                    <div class="insight-label">Smart Routing</div>
-                    <div class="insight-value">ORAC decides what<br>deserves deep thought.</div>
+                    <div class="insight-icon">🛡️</div>
+                    <div class="insight-label">Watchdog v3</div>
+                    <div class="insight-value">7,500+ cycles.<br>Zero manual restarts.</div>
                 </div>
                 <div class="insight-card">
                     <div class="insight-icon">💾</div>
-                    <div class="insight-label">Memory Layer</div>
-                    <div class="insight-value">Repeated questions<br>answered from memory.</div>
+                    <div class="insight-label">Distributed Memory</div>
+                    <div class="insight-value">Cross-VM knowledge<br>graph with sync.</div>
                 </div>
             </div>
             <div class="architecture" style="margin-top: 20px;">
-<pre><span class="comment">// How ORAC handles every incoming message</span>
+<pre><span class="comment">// How the system handles every situation</span>
 
-<span class="accent">Message arrives</span>
+<span class="accent">Event arrives</span>
         │
         ▼
-<span class="green">Is this something obvious?</span>   <span class="comment">→ YES → instant answer, 0 AI</span>
+<span class="green">Is this a known pattern?</span>    <span class="comment">→ YES → instant response, no AI cost</span>
         │ NO
         ▼
-<span class="green">Have I seen this before?</span>     <span class="comment">→ YES → answer from memory, 0 AI</span>
+<span class="green">Can watchdog auto-fix?</span>     <span class="comment">→ YES → restart service, log, continue</span>
         │ NO
         ▼
-<span class="blue">Think. Claude. Answer.</span>       <span class="comment">→ cache result for next time</span>
+<span class="blue">Route to AI agent</span>          <span class="comment">→ analyze, fix, cache for next time</span>
 
-<span class="comment">// Most messages never reach the AI layer at all.</span>
+<span class="comment">// Most operations never reach the AI layer.</span>
 <span class="comment">// Intelligence is reserved for tasks that actually need it.</span></pre>
             </div>
         </section>
-        
+
         <section class="reveal">
             <h2 class="section-title">What We Build</h2>
             <div class="projects">
                 <a href="/pricing" class="project" style="border-color: var(--accent); background: linear-gradient(135deg, #fffbf0, #ffffff);">
                     <div class="project-info">
                         <h3>Pricing &amp; Plans</h3>
-                        <p>From $19/mo for indie hackers to $99/mo for teams. Power-Ups, one-time licenses, and FAQ. No surprise bills &mdash; VM included.</p>
+                        <p>From $19/mo for indie hackers to $99/mo for teams. Dedicated VM included. No surprise bills.</p>
                     </div>
                     <div class="project-meta">
                         <span class="project-tag">$19-99/mo</span>
                         <span class="project-tag green">Live</span>
                     </div>
                 </a>
-                <a href="https://github.com/tikserziku/a2a-agent-saas" target="_blank" class="project">
+                <div class="project">
                     <div class="project-info">
                         <h3>A2A Agent SaaS</h3>
-                        <p>The main product &mdash; 8 AI agents working in parallel on a dedicated VM. Google Workspace integration, distributed memory, code execution sandbox.</p>
+                        <p>The core product — AI agents working in parallel on dedicated infrastructure. Google Workspace integration, distributed memory, MCP orchestration.</p>
                     </div>
                     <div class="project-meta">
                         <span class="project-tag">Core Product</span>
                         <span class="project-tag green">Production</span>
                     </div>
-                </a>
+                </div>
                 <a href="https://t.me/my_Visaginas360" target="_blank" class="project">
                     <div class="project-info">
-                        <h3>@VisaginasGPT_bot</h3>
-                        <p>Telegram bot powered by the swarm. Natural language &rarr; smart intent routing &rarr; parallel agents &rarr; real Google Docs/Sheets/Slides.</p>
+                        <h3>Telegram Bot Interface</h3>
+                        <p>Natural language to agent swarm. Send a task, agents decompose, execute in parallel, deliver results with real Google Docs.</p>
                     </div>
                     <div class="project-meta">
                         <span class="project-tag">Invite Only</span>
                         <span class="project-tag green">Live</span>
                     </div>
                 </a>
-                <a href="https://arch.92-5-72-169.sslip.io" target="_blank" class="project">
+                <div class="project">
                     <div class="project-info">
-                        <h3>Live Architecture Dashboard</h3>
-                        <p>Real-time visualization of multi-VM architecture. 37+ services, cross-VM monitoring, distributed memory graph.</p>
+                        <h3>SaaS Demo API</h3>
+                        <p>Isolated sandbox API for investors and partners. Architecture overview, agent metrics, real-time health status — all via REST.</p>
                     </div>
                     <div class="project-meta">
-                        <span class="project-tag">Multi-VM</span>
+                        <span class="project-tag">API</span>
                         <span class="project-tag green">Live</span>
                     </div>
-                </a>
-                <a href="https://swarm.92-5-72-169.sslip.io" target="_blank" class="project">
-                    <div class="project-info">
-                        <h3>Swarm Dashboard</h3>
-                        <p>Monitor parallel agent execution in real-time. See task decomposition, agent assignment, and 3.3x speedup metrics.</p>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-tag">Parallel</span>
-                        <span class="project-tag green">Live</span>
-                    </div>
-                </a>
+                </div>
             </div>
         </section>
-        
+
         <section class="reveal">
             <h2 class="section-title">Architecture</h2>
             <div class="architecture">
-<pre><span class="comment">// A2A Agent SaaS — Multi-VM Swarm Architecture</span>
+<pre><span class="comment">// A2A Agent SaaS — Multi-Region Swarm Architecture</span>
 
 <span class="accent">ORCHESTRATOR</span> <span class="comment">// Claude MCP + Google A2A Protocol</span>
 Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate → Synthesize
-├── 🔍 Researcher       <span class="comment">// Kimi K2 via Groq</span>
-├── 💻 Coder             <span class="comment">// Qwen3 32B + sandbox</span>
-├── ✍️  Writer            <span class="comment">// Llama 4 Scout</span>
-├── 📊 Analyst           <span class="comment">// GPT-OSS 120B</span>
-├── 🧠 Thinker           <span class="comment">// deep reasoning</span>
-├── 🎨 Creator           <span class="comment">// Gemini 2.5 Flash</span>
+├── 🔍 Researcher       <span class="comment">// deep search + citations</span>
+├── 💻 Coder             <span class="comment">// code generation + sandbox</span>
+├── ✍️  Writer            <span class="comment">// content + formatting</span>
+├── 📊 Analyst           <span class="comment">// data + execution</span>
+├── 🧠 Thinker           <span class="comment">// complex reasoning</span>
+├── 🎨 Creator           <span class="comment">// image generation</span>
 ├── 🌐 Web Search        <span class="comment">// real-time data</span>
-└── 🛡️  Guardian          <span class="comment">// Llama Guard safety</span>
+└── 🛡️  Guardian          <span class="comment">// safety filter</span>
 
 <span class="accent">INFRASTRUCTURE</span>
-├── Oracle CTO VM       <span class="comment">// 37+ services, ORAC lives here</span>
-├── GCP DevOps VM       <span class="comment">// monitoring, deployment</span>
-├── Kimi Etalon VM      <span class="comment">// customer reference, ORI coming soon</span>
-└── Customer VMs        <span class="comment">// auto-provisioned clones</span>
+├── Region 1            <span class="comment">// 23 services, primary swarm</span>
+├── Region 2            <span class="comment">// 12 services, MCP bridge, scraping</span>
+├── Google Cloud MCP    <span class="comment">// BigQuery, Firestore, Vertex AI</span>
+└── Customer Sandboxes  <span class="comment">// isolated containers per customer</span>
 
 <span class="accent">INTEGRATIONS</span>
+├── MCP Protocol        <span class="comment">// 6 connectors, 70+ tools</span>
 ├── Google Workspace    <span class="comment">// Docs, Sheets, Slides, Gmail</span>
-├── Distributed Memory  <span class="comment">// cross-VM knowledge sync</span>
-├── Smart Routing       <span class="comment">// AI only when needed</span>
-├── Quality Gate        <span class="comment">// 0-100 scoring, auto-fix</span>
-└── Telegram Bot        <span class="comment">// @VisaginasGPT_bot</span>
-
-<span class="comment">// 19,000+ API requests/day &bull; dedicated VM included</span>
-<span class="comment">// PARL methodology: parallel-first orchestration</span></pre>
+├── Distributed Memory  <span class="comment">// cross-region knowledge sync</span>
+├── Self-Healing        <span class="comment">// 7,500+ watchdog cycles</span>
+└── Telegram Bots       <span class="comment">// 21 coordinated bots</span></pre>
             </div>
         </section>
-        
+
         <section class="reveal">
             <h2 class="section-title">Journey Highlights</h2>
             <div class="timeline">
                 <div class="timeline-item highlight">
-                    <div class="timeline-date">Day 33</div>
+                    <div class="timeline-date">Mar 2026</div>
                     <div class="timeline-content">
-                        <h4>🧠 ORAC Learns When NOT to Think</h4>
-                        <p>An AI that knows when to skip the AI. Smart routing means most commands resolve instantly &mdash; no inference, no wait, no cost.</p>
+                        <h4>🔌 MCP Protocol — 6 Live Connectors</h4>
+                        <p>AI controls cloud infrastructure from the browser. Gmail, BigQuery, Firestore, Vertex AI Search — all connected via MCP. Google Managed MCP servers integrated.</p>
                     </div>
                 </div>
                 <div class="timeline-item highlight">
-                    <div class="timeline-date">Day 33</div>
+                    <div class="timeline-date">Feb 2026</div>
                     <div class="timeline-content">
-                        <h4>🤖 Claude Talks to Claude &mdash; MCP Breakthrough</h4>
-                        <p>Claude Web calls Claude CLI on the VM via custom MCP connector. ORAC listens to push notifications, executes autonomously, replies in 15 seconds.</p>
+                        <h4>🛡️ 30+ Days Autonomous Operation</h4>
+                        <p>Infrastructure runs without human intervention. Watchdog v3 completed 7,500+ monitoring cycles. Zero unplanned downtime.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Day 32</div>
+                    <div class="timeline-date">Feb 2026</div>
                     <div class="timeline-content">
-                        <h4>🚀 Applied to 3 Startup Programs</h4>
-                        <p>Google for Startups ($2K+), Anthropic Sales Partnership, Menlo Ventures Anthology Fund ($25K credits + $100K+ investment).</p>
+                        <h4>🤖 Claude-to-Claude Communication</h4>
+                        <p>AI in the browser delegates tasks to AI on the server via MCP. Autonomous execution, task queues, cross-instance memory sharing.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Day 30</div>
-                    <div class="timeline-content">
-                        <h4>🤖 Smart Intent Router v3.0</h4>
-                        <p>LLM-powered routing replaces keyword matching. "Prepare a report" auto-creates Google Doc, "make a table" creates Sheet.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Day 24</div>
+                    <div class="timeline-date">Jan 2026</div>
                     <div class="timeline-content">
                         <h4>🧠 Distributed Memory Swarm</h4>
-                        <p>Knowledge graph deployed across 3 VMs with cross-VM sync. Agents remember context permanently.</p>
+                        <p>Knowledge graph deployed across regions with cross-VM sync. Agents remember context permanently across sessions.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Day 20</div>
+                    <div class="timeline-date">Jan 2026</div>
                     <div class="timeline-content">
-                        <h4>⚡ 8-Agent Parallel Swarm</h4>
-                        <p>Full agent roster deployed. 3.3x parallel speedup achieved using PARL methodology.</p>
+                        <h4>⚡ 21-Agent Parallel Swarm</h4>
+                        <p>Full agent swarm deployed. 3.3x parallel speedup achieved using PARL methodology. 21 coordinated Telegram bots.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Day 18</div>
+                    <div class="timeline-date">Dec 2025</div>
                     <div class="timeline-content">
                         <h4>📊 Google Workspace Integration</h4>
-                        <p>Docs, Sheets, Slides, Gmail, Calendar &mdash; all via OAuth. Agents create real artifacts.</p>
+                        <p>Docs, Sheets, Slides, Gmail, Calendar — all via OAuth. Agents create real artifacts in Google Workspace.</p>
                     </div>
                 </div>
             </div>
@@ -468,76 +434,65 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
         <section class="reveal">
             <h2 class="section-title">What I Learned</h2>
             <div class="architecture" style="background: #1e1b2e;">
-<pre><span class="comment">// 56 days of building. Zero CS degree. Claude is my CTO.</span>
+<pre><span class="comment">// 90+ days of building. Claude is my CTO.</span>
 
 <span class="accent">1.</span> Coordination beats raw power.
-   8 specialized models in parallel > 1 premium model serial.
+   21 specialized agents in parallel > 1 premium model serial.
 
-<span class="accent">2.</span> Constraints breed architecture.
-   1GB RAM forced smart design that scales to 100 customers.
+<span class="accent">2.</span> Self-healing is non-negotiable.
+   7,500 watchdog cycles. Zero manual restarts in 30+ days.
 
-<span class="accent">3.</span> Ship daily, reflect weekly.
-   70+ features in 56 days. Not all perfect, but all shipped.
+<span class="accent">3.</span> MCP protocol changes everything.
+   AI managing infrastructure from a browser tab.
+   No SSH, no dashboards. Natural language only.
 
-<span class="accent">4.</span> Memory changes everything.
+<span class="accent">4.</span> Memory makes agents a team.
    Agents without memory = colleagues with amnesia.
-   Agents with memory = a team that grows.
+   Agents with distributed memory = a growing organization.
 
-<span class="accent">5.</span> Claude as co-founder works.
-   One person + Claude = a 10-person team output.
+<span class="accent">5.</span> Ship daily, reflect weekly.
+   90+ features shipped. Not all perfect, but all shipped.
 
-<span class="accent">6.</span> AI can talk to AI.
-   Claude Web → MCP → Claude CLI on VM.
-   Not science fiction. Running right now.
-
-<span class="accent">7.</span> The best AI knows when not to be AI.
+<span class="accent">6.</span> The best AI knows when NOT to think.
    Speed comes from restraint, not raw compute.
    Intelligence reserved for tasks that actually need it.
 
 <span class="green">// "The best way to predict the future is to build it."</span></pre>
             </div>
         </section>
-        
+
         <section class="reveal">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-box">
                 <div class="contact-intro">
                     <h3>Let's Connect</h3>
-                    <p>Interested in the project, AI agent collaboration, or want to try the platform? Reach out.</p>
+                    <p>Interested in the platform, AI agent collaboration, or investment? Reach out.</p>
                 </div>
                 <div class="contact-buttons">
-                    <a href="https://t.me/my_Visaginas360" target="_blank" class="contact-btn bot">
-                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5z"/></svg>
-                        <span>Request Bot Access<br><small>Invite only &mdash; DM for access code</small></span>
-                    </a>
                     <a href="https://t.me/my_Visaginas360" target="_blank" class="contact-btn telegram">
-                        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-                        <span>Telegram<br><small>Direct message</small></span>
-                    </a>
-                    <a href="https://github.com/tikserziku/a2a-agent-saas" target="_blank" class="contact-btn github">
-                        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        <span>GitHub<br><small>Source code &amp; docs</small></span>
+                        <svg viewBox="0 0 24 24"><path fill="#0088cc" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        <span>Telegram<br><small>Direct message or request demo</small></span>
                     </a>
                     <a href="mailto:sergej@visaginas360.com" class="contact-btn email">
-                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path fill="#d97706" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         <span>Email<br><small>sergej@visaginas360.com</small></span>
                     </a>
                 </div>
-                <p class="contact-note">🔒 Open to collaboration, investment, and partnership conversations.</p>
+                <p class="contact-note">Open to collaboration, investment, and partnership conversations.</p>
             </div>
         </section>
     </div>
-    
+
     <footer>
         <div class="container">
             <p class="footer-text">
-                Built with Claude MCP &bull; ORAC online &bull; 70+ features &bull; Day 56 &bull; 
+                Built with Claude MCP &bull; 35 services &bull; 30+ days autonomous &bull;
                 <a href="/pricing">Pricing</a> &bull;
                 <a href="https://visaginas360.com">visaginas360.com</a>
             </p>
         </div>
     </footer>
-    
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
