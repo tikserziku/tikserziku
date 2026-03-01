@@ -1,130 +1,135 @@
 <div align="center">
 
-# Building AI Agent Swarms
+# Building AI Agent Infrastructure
 
-### 8 parallel agents • distributed memory • 3.3x speedup • Day 24
+### 35 services • 21 agents • MCP protocol • 30+ days autonomous • Day 90+
 
-[![A2A SaaS](https://img.shields.io/badge/A2A_Agent-SaaS-d97706?style=for-the-badge)](https://github.com/tikserziku/a2a-agent-saas)
+[![A2A SaaS](https://img.shields.io/badge/A2A_Agent-SaaS-d97706?style=for-the-badge)](https://visaginas360.com/product)
+[![MCP](https://img.shields.io/badge/MCP-6_Connectors-8b5cf6?style=for-the-badge)]()
 [![Speedup](https://img.shields.io/badge/speedup-3.3x-brightgreen?style=for-the-badge)]()
-[![Ideas](https://img.shields.io/badge/ideas_shipped-45-blue?style=for-the-badge)]()
-[![Bot](https://img.shields.io/badge/Try_Bot-Telegram-0088cc?style=for-the-badge)](https://t.me/VisaginasGPT_bot)
+[![Autonomous](https://img.shields.io/badge/autonomous-30+_days-10b981?style=for-the-badge)]()
+[![Bot](https://img.shields.io/badge/Try_Bot-Telegram-0088cc?style=for-the-badge)](https://t.me/my_Visaginas360)
 
-**[Portfolio](https://tikserziku.github.io/tikserziku/)** · **[Try the Bot](https://t.me/VisaginasGPT_bot)**
+**[Portfolio](https://visaginas360.com)** · **[Product](https://visaginas360.com/product)** · **[Pricing](https://visaginas360.com/pricing)** · **[Telegram](https://t.me/my_Visaginas360)**
 
 </div>
+
+---
+
+> **Note:** Core infrastructure, orchestration engine, and SaaS platform repositories are **private** to protect proprietary architecture and trade secrets. Public repos contain demos and open-source components. For technical deep-dives or code review, please [reach out directly](https://t.me/my_Visaginas360).
 
 ---
 
 ## What I'm Building
 
-**A2A Agent SaaS** — a platform where customers get their own AI agent swarm running on a dedicated cloud VM.
+**A2A Agent SaaS** — a platform where AI agents manage themselves across cloud infrastructure via MCP protocol, self-heal autonomously, and deliver 3.3x faster results to customers through Telegram.
 
-8 specialized agents work in parallel, create real Google Docs/Sheets/Slides, remember context via distributed memory, and execute code safely.
+35 services running across 2 cloud regions. 6 MCP connectors giving AI direct control over infrastructure. 30+ days of autonomous operation with zero human intervention.
 
 ```
-User: "Research AI trends and write a report"
+User (Telegram): "Research AI trends and write a report"
 
-Orchestrator decomposes → 4 agents run in parallel:
-  🔍 Researcher → finds data           (12s)
-  📊 Analyst   → evaluates trends      (10s)
-  ✍️ Writer    → drafts report          (8s)
-  🎨 Creator   → generates charts      (15s)
+Orchestrator decomposes → 8 agents run in parallel:
+  🔍 Researcher → finds data + citations    (12s)
+  📊 Analyst   → evaluates trends           (10s)
+  ✍️  Writer    → drafts report              (8s)
+  🎨 Creator   → generates charts           (15s)
+  🧠 Thinker   → verifies reasoning         (10s)
+  🌐 Web       → real-time data             (8s)
+  💻 Coder     → code examples              (12s)
+  🛡️ Guardian  → safety check               (2s)
 
-Sequential: 45s → Parallel: 15s → Speedup: 3.0x
-Result: Real Google Doc with formatted tables + exported .docx
+Sequential: 77s → Parallel: 15s → Speedup: 5.1x
+Result: Formatted Google Doc in your Drive. With sources.
 ```
 
-## The Swarm
+## MCP Protocol — AI Controls Infrastructure
 
-8 AI agents, each specialized for a different task type. The orchestrator decomposes complex requests and runs agents in parallel using the PARL methodology (inspired by Kimi K2.5 research).
+The breakthrough: Claude AI in the browser controls real cloud infrastructure through **MCP (Model Context Protocol)**. No SSH. No dashboards. Natural language only.
 
-| Agent | Specialization |
-|-------|----------------|
-| 🔍 Researcher | Facts, documentation, deep research |
-| 💻 Coder | Code generation + safe auto-execution |
-| ✍️ Writer | Content, emails, reports |
-| 📊 Analyst | Data analysis + safe auto-execution |
-| 🧠 Thinker | Complex reasoning and planning |
-| 🎨 Creator | Image generation |
-| 🌐 Web Search | Real-time web research |
-| 🛡️ Guardian | Safety filter on all outputs |
+| MCP Connector | Tools | What It Does |
+|---------------|-------|-------------|
+| Cloud Control | 40+ | VM management, service lifecycle, deployments |
+| Gmail | 7 | Search, read, send — AI handles communication |
+| BigQuery | 5 | SQL analytics on operational data |
+| Firestore | 14 | Real-time document database for agent state |
+| Vertex AI Search | 2 | Semantic search across knowledge base |
+| Web Scraping | 2 | Headless Chrome for real-time data |
 
-## Key Achievements (45 Ideas Shipped)
+## The Swarm — 21 Parallel Agents
 
-- **Parallel Agent Swarm** — 8 agents, 3.3x speedup on complex tasks
+| Agent | Role | Agent | Role |
+|-------|------|-------|------|
+| 🔍 Researcher | Deep search + citations | 🧠 Thinker | Complex reasoning |
+| 💻 Coder | Code + safe execution | 🎨 Creator | Image generation |
+| ✍️ Writer | Content + formatting | 🌐 Web Search | Real-time data |
+| 📊 Analyst | Data + execution | 🛡️ Guardian | Safety filter |
+
+8 core agents + 13 specialized workers coordinated via Telegram bots.
+
+## Key Achievements (90+ Days)
+
+- **MCP Protocol** — 6 live connectors, 70+ tools, AI manages infrastructure from browser
+- **30+ Days Autonomous** — Watchdog v3: 7,500+ monitoring cycles, zero manual restarts
+- **21-Agent Parallel Swarm** — 3.3x speedup using PARL methodology
+- **Google Cloud MCP** — BigQuery, Firestore, Vertex AI Search via Managed MCP
+- **Claude-to-Claude Communication** — Browser AI delegates to server AI via MCP
+- **Distributed Memory** — Cross-region knowledge graph with permanent context
 - **Google Workspace Integration** — Docs, Sheets, Slides, Gmail, Calendar via OAuth
-- **Distributed Memory** — Knowledge graph synced across multiple VMs
-- **Smart Intent Router** — LLM-based function calling, no keyword matching
-- **Code Execution Sandbox** — Secure sandbox with safety gates
-- **Document Quality Gate** — QA scoring (0-100), auto-fix before file creation
-- **Knowledge Library** — Modular rules, bots learn automatically
-- **Real Google Docs Tables** — Native API tables, not markdown text
-- **Self-Healing Infrastructure** — Watchdog services, cross-VM monitoring
-- **Anti-Hallucination Sanitizer** — Catches fake URLs, meta-text, phantom files
+- **Self-Healing Infrastructure** — 35 services across 2 cloud regions
+- **Security Hardened** — 70+ rule scanner, OWASP Top 10, automated on every edit
 
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────┐
-│           SWARM ORCHESTRATOR                    │
-│  Task → Decompose → Parallel → QA → Synthesize  │
-├──────┬──────┬──────┬──────┬──────┬──────────────┤
-│ 🔍   │ 💻   │ ✍️   │ 📊   │ 🎨   │ 🛡️           │
-│Rsch  │Code  │Write │Anal  │Image │Guard         │
-└──┬───┴──┬───┴──┬───┴──┬───┴──┬───┴──┬───────────┘
-   ↕      ↕      ↕      ↕      ↕      ↕
-   AI API endpoints (high-speed inference)
-   │                              │
-   └──── Google Workspace ────────┘
-   │                              │
-   └──── 🧠 Distributed Memory ──┘
-         Multi-VM knowledge graph
+┌──────────────────────────────────────────────────────────┐
+│              MCP ORCHESTRATOR (Claude)                    │
+│  Browser → MCP Protocol → Cloud Infrastructure            │
+├───────┬───────┬───────┬───────┬───────┬───────┬──────────┤
+│ 🔍    │ 💻    │ ✍️    │ 📊    │ 🧠    │ 🎨    │ 🛡️       │
+│Rsch   │Code   │Write  │Anal   │Think  │Image  │Guard     │
+└──┬────┴──┬────┴──┬────┴──┬────┴──┬────┴──┬────┴──┬───────┘
+   ↕       ↕       ↕       ↕       ↕       ↕       ↕
+┌──────────────────────────────────────────────────────────┐
+│              INFRASTRUCTURE (Multi-Region)                │
+│  Region 1: 23 services │ Region 2: 12 services           │
+│  Watchdog v3 │ Self-healing │ Telegram (21 bots)          │
+├──────────────────────────────────────────────────────────┤
+│              GOOGLE CLOUD MCP                            │
+│  BigQuery │ Firestore │ Vertex AI │ Gmail │ Drive         │
+└──────────────────────────────────────────────────────────┘
 ```
 
-Multi-cloud infrastructure with self-healing and cross-VM monitoring.
+## Timeline
 
-## Tech Stack
-
-| Category | Technologies |
-|----------|-------------|
-| **AI/ML** | 8 specialized models, multi-provider |
-| **Protocols** | Google A2A (JSON-RPC), MCP |
-| **Backend** | Python, Node.js |
-| **Storage** | SQLite + FTS5, Google Drive |
-| **APIs** | Google Workspace (Docs, Sheets, Slides, Gmail, Calendar) |
-| **Bot** | Telegram Bot API |
-
-## Try It
-
-<div align="center">
-
-### 🤖 [@VisaginasGPT_bot](https://t.me/VisaginasGPT_bot)
-*8 agents working for you in Telegram*
-
-</div>
+| Date | Milestone |
+|------|-----------|
+| **Mar 2026** | MCP Protocol — 6 live connectors, Google Managed MCP |
+| **Feb 2026** | 30+ days autonomous, Claude-to-Claude via MCP |
+| **Jan 2026** | 21-agent parallel swarm, distributed memory |
+| **Dec 2025** | Google Workspace integration, self-healing v3 |
 
 ## What I Learned
 
-> *"8 specialized models in parallel beat 1 premium model serial."*
+> *"We didn't build an app powered by AI. We built AI that runs the infrastructure — and it hasn't needed a human in 30 days."*
 
-Built this from zero coding experience in 24 days. Key insights:
+- **Coordination > raw power** — 21 agents in parallel beat 1 premium model
+- **MCP changes everything** — AI managing infrastructure from a browser tab
+- **Self-healing is non-negotiable** — 7,500 watchdog cycles, zero manual restarts
+- **Memory makes agents a team** — without it, they're colleagues with amnesia
+- **Ship daily, reflect weekly** — 90+ features in 90+ days
+- **The best AI knows when NOT to think** — intelligence reserved for tasks that need it
 
-- **Coordination > raw power** — orchestration is the product
-- **Constraints breed architecture** — resource limits forced smart design that scales
-- **Ship daily, reflect weekly** — 45 ideas in 24 days
-- **Memory changes everything** — agents without memory are colleagues with amnesia
-- **The swarm is the moat** — single-agent chatbots are commodity, parallel swarms are rare
+## Open to Opportunities
 
-## Looking For
+Looking for: AI engineering roles, technical co-founder partnerships, investment conversations.
 
-Open to conversations about AI engineering roles, collaboration, or investment.
-
-**Email:** sergej.drus@gmail.com · **Telegram:** [@my_Visaginas360](https://t.me/my_Visaginas360)
+**Portfolio:** [visaginas360.com](https://visaginas360.com) · **Telegram:** [@my_Visaginas360](https://t.me/my_Visaginas360) · **Email:** sergej@visaginas360.com
 
 ---
 
 <div align="center">
 
-*Building in public from Lithuania · Day 24 · 45 ideas shipped*
+*Solo founder building from Lithuania · Day 90+ · 35 services · 30+ days autonomous*
 
 </div>
