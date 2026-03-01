@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A2A Agent SaaS — Ваш AI-отдел за $19/мес</title>
-    <meta name="description" content="8 AI-агентов работают параллельно. Отчёты, аналитика и контент появляются в Google Docs за 15 секунд. Через Telegram.">
-    <meta property="og:title" content="A2A Agent SaaS — AI-отдел за $19/мес">
-    <meta property="og:description" content="8 агентов одновременно. Результат в Google Docs за 15 секунд. Работает через Telegram 24/7.">
+    <title>A2A Agent SaaS — Your AI Department for $19/mo</title>
+    <meta name="description" content="8 AI agents work in parallel. Reports, analytics and content appear in your Google Docs in 15 seconds. Via Telegram.">
+    <meta property="og:title" content="A2A Agent SaaS — AI Department for $19/mo">
+    <meta property="og:description" content="8 agents simultaneously. Results in Google Docs in 15 seconds. Works via Telegram 24/7.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://visaginas360.com/product">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,6 @@
         :root {
             --bg: #0a0a0b;
             --bg-card: #141416;
-            --bg-card-hover: #1a1a1e;
             --text: #f5f5f5;
             --text-secondary: #a1a1aa;
             --text-muted: #71717a;
@@ -35,19 +34,20 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
         .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-
-        /* Sticky Header */
-        .sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10, 10, 11, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 0; transform: translateY(-100%); transition: transform 0.3s ease; }
+        .sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,11,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 0; transform: translateY(-100%); transition: transform 0.3s ease; }
         .sticky-header.visible { transform: translateY(0); }
         .sticky-header .container { display: flex; justify-content: space-between; align-items: center; }
         .sticky-logo { font-weight: 700; font-size: 0.95rem; color: var(--gold); }
+        .sticky-right { display: flex; align-items: center; gap: 12px; }
         .sticky-cta { background: var(--gold); color: #000; padding: 8px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; }
-        .sticky-cta:hover { background: var(--gold-dark); transform: translateY(-1px); }
-
-        /* Hero */
+        .sticky-cta:hover { background: var(--gold-dark); }
+        .lang-switch { display: flex; gap: 4px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 2px; }
+        .lang-btn { background: none; border: none; color: var(--text-muted); font-size: 0.75rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+        .lang-btn.active { background: var(--gold); color: #000; }
+        .lang-btn:hover:not(.active) { color: var(--text); }
         .hero { padding: 100px 0 80px; text-align: center; }
         @media (max-width: 600px) { .hero { padding: 80px 0 60px; } }
-        .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--gold-glow); border: 1px solid rgba(247, 183, 49, 0.25); border-radius: 100px; padding: 6px 16px; font-size: 0.8rem; color: var(--gold); margin-bottom: 28px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--gold-glow); border: 1px solid rgba(247,183,49,0.25); border-radius: 100px; padding: 6px 16px; font-size: 0.8rem; color: var(--gold); margin-bottom: 28px; }
         .hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
         .hero h1 .gold { color: var(--gold); }
         .hero-sub { font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--text-secondary); max-width: 600px; margin: 0 auto 36px; line-height: 1.6; }
@@ -57,60 +57,39 @@
         .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 8px 32px var(--gold-glow-strong); }
         .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border-light); }
         .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-        /* Pain Section */
         section { padding: 60px 0; }
         .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; }
         .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; margin-bottom: 40px; letter-spacing: -0.01em; }
-        .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        @media (max-width: 700px) { .pain-grid { grid-template-columns: 1fr; } }
-        .pain-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; transition: all 0.2s; }
+        .pain-grid, .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        @media (max-width: 700px) { .pain-grid, .solution-grid { grid-template-columns: 1fr; } }
+        .pain-card, .solution-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; transition: all 0.2s; }
         .pain-card:hover { border-color: var(--red); background: var(--red-bg); }
-        .pain-icon { font-size: 2rem; margin-bottom: 14px; }
-        .pain-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
-        .pain-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
-        .pain-stat { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--red); margin-top: 10px; }
-
-        /* Solution */
-        .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        @media (max-width: 700px) { .solution-grid { grid-template-columns: 1fr; } }
-        .solution-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; transition: all 0.2s; }
         .solution-card:hover { border-color: var(--green); background: var(--green-bg); }
-        .solution-icon { font-size: 2rem; margin-bottom: 14px; }
-        .solution-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
-        .solution-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
-        .solution-stat { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--green); margin-top: 10px; }
-
-        /* How It Works */
-        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: relative; }
+        .card-icon { font-size: 2rem; margin-bottom: 14px; }
+        .pain-card h3, .solution-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+        .pain-card p, .solution-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+        .card-stat { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; margin-top: 10px; }
+        .card-stat.red { color: var(--red); }
+        .card-stat.green { color: var(--green); }
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         @media (max-width: 700px) { .steps { grid-template-columns: 1fr; } }
         .step { text-align: center; padding: 32px 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; position: relative; }
         .step-number { width: 48px; height: 48px; background: var(--gold); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; margin: 0 auto 16px; }
         .step h3 { font-size: 1.1rem; margin-bottom: 8px; }
         .step p { font-size: 0.9rem; color: var(--text-muted); }
         .step-arrow { display: none; }
-        @media (min-width: 701px) {
-            .step-arrow { display: block; position: absolute; right: -22px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 1.5rem; z-index: 1; }
-        }
-
-        /* Comparison */
+        @media (min-width: 701px) { .step-arrow { display: block; position: absolute; right: -22px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 1.5rem; z-index: 1; } }
         .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         .compare-table th, .compare-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
         .compare-table th { color: var(--text-muted); font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        .compare-table td:first-child { font-weight: 500; }
-        .compare-table tr:last-child td { border-bottom: none; }
-        .compare-table .highlight { background: var(--gold-glow); }
-        .compare-table .highlight td { color: var(--gold); font-weight: 600; }
         .check { color: var(--green); }
         .cross { color: var(--text-muted); }
         @media (max-width: 600px) { .compare-table { font-size: 0.8rem; } .compare-table th, .compare-table td { padding: 10px 8px; } }
-
-        /* Pricing */
         .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         @media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; } }
         .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 24px; text-align: center; transition: all 0.2s; }
         .price-card.featured { border-color: var(--gold); box-shadow: 0 4px 32px var(--gold-glow); position: relative; }
-        .price-card.featured::before { content: 'Популярный'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #000; font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .price-card.featured::before { content: attr(data-badge); position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #000; font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
         .price-name { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
         .price-amount { font-size: 2.5rem; font-weight: 700; margin-bottom: 4px; }
         .price-amount .currency { font-size: 1.2rem; vertical-align: super; }
@@ -118,14 +97,12 @@
         .price-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; }
         .price-features { list-style: none; text-align: left; margin-bottom: 28px; }
         .price-features li { padding: 6px 0; font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
-        .price-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+        .price-features li::before { content: '\2713'; color: var(--green); font-weight: 700; flex-shrink: 0; }
         .price-btn { display: block; width: 100%; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; transition: all 0.2s; }
         .price-btn.gold { background: var(--gold); color: #000; }
         .price-btn.gold:hover { background: var(--gold-dark); }
         .price-btn.outline { background: transparent; color: var(--text); border: 1px solid var(--border-light); }
         .price-btn.outline:hover { border-color: var(--gold); color: var(--gold); }
-
-        /* FAQ */
         .faq-list { max-width: 700px; }
         .faq-item { border-bottom: 1px solid var(--border); }
         .faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: inherit; font-size: 1rem; font-weight: 500; text-align: left; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
@@ -134,309 +111,382 @@
         .faq-q.open::after { transform: rotate(45deg); color: var(--gold); }
         .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
         .faq-a p { padding: 0 0 20px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
-
-        /* Final CTA */
         .final-cta { text-align: center; padding: 80px 0; }
         .final-cta h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); margin-bottom: 16px; }
         .final-cta p { color: var(--text-secondary); margin-bottom: 32px; font-size: 1.05rem; }
-
-        /* Footer */
         footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
         footer p { color: var(--text-muted); font-size: 0.8rem; }
         footer a { color: var(--gold); text-decoration: none; }
         footer a:hover { text-decoration: underline; }
-
-        /* Reveal animation */
         .reveal { opacity: 0; transform: translateY(24px); transition: all 0.6s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
-    <!-- Sticky Header -->
     <div class="sticky-header" id="stickyHeader">
         <div class="container">
             <span class="sticky-logo">A2A Agent SaaS</span>
-            <a href="https://t.me/my_Visaginas360" class="sticky-cta">Попробовать бесплатно</a>
+            <div class="sticky-right">
+                <div class="lang-switch">
+                    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+                    <button class="lang-btn" onclick="setLang('lt')">LT</button>
+                </div>
+                <a href="https://t.me/my_Visaginas360" class="sticky-cta" data-i18n="cta_free"></a>
+            </div>
         </div>
     </div>
 
     <div class="container">
-        <!-- Hero -->
+        <!-- Language selector (top) -->
+        <div style="display:flex;justify-content:flex-end;padding:20px 0 0;">
+            <div class="lang-switch" id="topLang">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('ru')">RU</button>
+                <button class="lang-btn" onclick="setLang('lt')">LT</button>
+            </div>
+        </div>
+
         <section class="hero reveal">
-            <div class="hero-badge">&#9889; 8 агентов работают прямо сейчас</div>
-            <h1>Ваш <span class="gold">AI-отдел</span><br>за $19 в месяц</h1>
-            <p class="hero-sub">
-                8 AI-агентов работают параллельно. Отчёты, аналитика и контент 
-                появляются в ваших Google Docs за 15 секунд. Через Telegram.
-            </p>
+            <div class="hero-badge" data-i18n="hero_badge"></div>
+            <h1><span data-i18n="hero_h1_1"></span> <span class="gold" data-i18n="hero_h1_gold"></span><br><span data-i18n="hero_h1_2"></span></h1>
+            <p class="hero-sub" data-i18n="hero_sub"></p>
             <div class="hero-cta">
-                <a href="https://t.me/my_Visaginas360" class="btn btn-gold">Попробовать бесплатно &rarr;</a>
-                <a href="#how" class="btn btn-outline">Как это работает</a>
+                <a href="https://t.me/my_Visaginas360" class="btn btn-gold" data-i18n="cta_free_arrow"></a>
+                <a href="#how" class="btn btn-outline" data-i18n="cta_how"></a>
             </div>
         </section>
 
-        <!-- Pain -->
         <section class="reveal">
-            <p class="section-label">Проблема</p>
-            <h2 class="section-title">Знакомо?</h2>
+            <p class="section-label" data-i18n="label_problem"></p>
+            <h2 class="section-title" data-i18n="title_problem"></h2>
             <div class="pain-grid">
                 <div class="pain-card">
-                    <div class="pain-icon">&#9203;</div>
-                    <h3>ChatGPT думает 60 секунд</h3>
-                    <p>Вы ждёте ответ, копируете текст из чата, вставляете в документ, форматируете. Снова и снова.</p>
-                    <div class="pain-stat">~ 20 мин на один отчёт</div>
+                    <div class="card-icon">&#9203;</div>
+                    <h3 data-i18n="pain1_h"></h3>
+                    <p data-i18n="pain1_p"></p>
+                    <div class="card-stat red" data-i18n="pain1_stat"></div>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-icon">&#128256;</div>
-                    <h3>Один AI — один поток</h3>
-                    <p>Нужен анализ, текст И презентация? Три задачи — три очереди. Последовательно. Медленно.</p>
-                    <div class="pain-stat">3x потеря времени</div>
+                    <div class="card-icon">&#128256;</div>
+                    <h3 data-i18n="pain2_h"></h3>
+                    <p data-i18n="pain2_p"></p>
+                    <div class="card-stat red" data-i18n="pain2_stat"></div>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-icon">&#128203;</div>
-                    <h3>Результат — текст в чате</h3>
-                    <p>Ни таблиц, ни графиков, ни готового документа. Только стена текста, которую нужно оформить руками.</p>
-                    <div class="pain-stat">+30 мин копирование</div>
+                    <div class="card-icon">&#128203;</div>
+                    <h3 data-i18n="pain3_h"></h3>
+                    <p data-i18n="pain3_p"></p>
+                    <div class="card-stat red" data-i18n="pain3_stat"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Solution -->
         <section class="reveal">
-            <p class="section-label">Решение</p>
-            <h2 class="section-title">8 агентов. 15 секунд. Google Docs.</h2>
+            <p class="section-label" data-i18n="label_solution"></p>
+            <h2 class="section-title" data-i18n="title_solution"></h2>
             <div class="solution-grid">
                 <div class="solution-card">
-                    <div class="solution-icon">&#9889;</div>
-                    <h3>3.3x быстрее</h3>
-                    <p>8 специализированных агентов работают одновременно: аналитик, копирайтер, исследователь — каждый на своей задаче.</p>
-                    <div class="solution-stat">15 сек вместо 60</div>
+                    <div class="card-icon">&#9889;</div>
+                    <h3 data-i18n="sol1_h"></h3>
+                    <p data-i18n="sol1_p"></p>
+                    <div class="card-stat green" data-i18n="sol1_stat"></div>
                 </div>
                 <div class="solution-card">
-                    <div class="solution-icon">&#128196;</div>
-                    <h3>Сразу в Google Docs</h3>
-                    <p>Результат появляется готовым документом в вашем Google Drive. С форматированием, таблицами, графиками.</p>
-                    <div class="solution-stat">0 минут на оформление</div>
+                    <div class="card-icon">&#128196;</div>
+                    <h3 data-i18n="sol2_h"></h3>
+                    <p data-i18n="sol2_p"></p>
+                    <div class="card-stat green" data-i18n="sol2_stat"></div>
                 </div>
                 <div class="solution-card">
-                    <div class="solution-icon">&#128241;</div>
-                    <h3>Через Telegram 24/7</h3>
-                    <p>Напишите задачу в Telegram бот — получите результат. Ночью, в выходные, в отпуске. Агенты не спят.</p>
-                    <div class="solution-stat">Работает всегда</div>
+                    <div class="card-icon">&#128241;</div>
+                    <h3 data-i18n="sol3_h"></h3>
+                    <p data-i18n="sol3_p"></p>
+                    <div class="card-stat green" data-i18n="sol3_stat"></div>
                 </div>
             </div>
         </section>
 
-        <!-- How It Works -->
         <section id="how" class="reveal">
-            <p class="section-label">Как это работает</p>
-            <h2 class="section-title">Три шага. Ноль настройки.</h2>
+            <p class="section-label" data-i18n="label_how"></p>
+            <h2 class="section-title" data-i18n="title_how"></h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Напишите в Telegram</h3>
-                    <p>Опишите задачу на обычном языке: «Сделай отчёт по рынку электромобилей в Европе»</p>
+                    <h3 data-i18n="step1_h"></h3>
+                    <p data-i18n="step1_p"></p>
                     <span class="step-arrow">&rarr;</span>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Агенты работают</h3>
-                    <p>8 агентов параллельно: ищут данные, анализируют, пишут текст, строят таблицы, проверяют факты</p>
+                    <h3 data-i18n="step2_h"></h3>
+                    <p data-i18n="step2_p"></p>
                     <span class="step-arrow">&rarr;</span>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Документ готов</h3>
-                    <p>Готовый Google Doc с отчётом появляется в вашем Drive. Отформатированный. С источниками.</p>
+                    <h3 data-i18n="step3_h"></h3>
+                    <p data-i18n="step3_p"></p>
                 </div>
             </div>
         </section>
 
-        <!-- Comparison -->
         <section class="reveal">
-            <p class="section-label">Сравнение</p>
-            <h2 class="section-title">Почему не ChatGPT?</h2>
-            <div style="overflow-x: auto;">
+            <p class="section-label" data-i18n="label_compare"></p>
+            <h2 class="section-title" data-i18n="title_compare"></h2>
+            <div style="overflow-x:auto;">
                 <table class="compare-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>ChatGPT Plus</th>
-                            <th>Claude Pro</th>
-                            <th>Activepieces</th>
-                            <th style="color: var(--gold);">A2A Agent</th>
-                        </tr>
-                    </thead>
+                    <thead><tr>
+                        <th></th><th>ChatGPT Plus</th><th>Claude Pro</th><th>Activepieces</th>
+                        <th style="color:var(--gold);">A2A Agent</th>
+                    </tr></thead>
                     <tbody>
-                        <tr>
-                            <td>Цена</td>
-                            <td>$20/мес</td>
-                            <td>$20/мес</td>
-                            <td>$37/мес</td>
-                            <td style="color: var(--gold); font-weight: 600;">$19/мес</td>
-                        </tr>
-                        <tr>
-                            <td>Агенты</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1-3</td>
-                            <td style="color: var(--gold); font-weight: 600;">8 параллельно</td>
-                        </tr>
-                        <tr>
-                            <td>Google Docs</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="check">&#10003; Нативно</td>
-                        </tr>
-                        <tr>
-                            <td>Telegram бот</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="check">&#10003; 24/7</td>
-                        </tr>
-                        <tr>
-                            <td>Скорость</td>
-                            <td>1x</td>
-                            <td>1x</td>
-                            <td>1x</td>
-                            <td style="color: var(--gold); font-weight: 600;">3.3x</td>
-                        </tr>
-                        <tr>
-                            <td>Своя VM</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="cross">&#10005;</td>
-                            <td class="check">&#10003; Изолированная</td>
-                        </tr>
+                        <tr><td data-i18n="cmp_price"></td><td>$20/mo</td><td>$20/mo</td><td>$37/mo</td><td style="color:var(--gold);font-weight:600;">$19/mo</td></tr>
+                        <tr><td data-i18n="cmp_agents"></td><td>1</td><td>1</td><td>1-3</td><td style="color:var(--gold);font-weight:600;" data-i18n="cmp_8parallel"></td></tr>
+                        <tr><td>Google Docs</td><td class="cross">&#10005;</td><td class="cross">&#10005;</td><td class="cross">&#10005;</td><td class="check" data-i18n="cmp_native"></td></tr>
+                        <tr><td>Telegram</td><td class="cross">&#10005;</td><td class="cross">&#10005;</td><td class="cross">&#10005;</td><td class="check">&#10003; 24/7</td></tr>
+                        <tr><td data-i18n="cmp_speed"></td><td>1x</td><td>1x</td><td>1x</td><td style="color:var(--gold);font-weight:600;">3.3x</td></tr>
+                        <tr><td data-i18n="cmp_vm"></td><td class="cross">&#10005;</td><td class="cross">&#10005;</td><td class="cross">&#10005;</td><td class="check" data-i18n="cmp_isolated"></td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Pricing -->
         <section id="pricing" class="reveal">
-            <p class="section-label">Тарифы</p>
-            <h2 class="section-title">Простые цены. Без сюрпризов.</h2>
+            <p class="section-label" data-i18n="label_pricing"></p>
+            <h2 class="section-title" data-i18n="title_pricing"></h2>
             <div class="pricing-grid">
                 <div class="price-card">
                     <div class="price-name">Free</div>
-                    <div class="price-amount"><span class="currency">$</span>0<span class="period">/мес</span></div>
-                    <div class="price-desc">Попробовать и понять</div>
+                    <div class="price-amount"><span class="currency">$</span>0<span class="period" data-i18n="per_mo"></span></div>
+                    <div class="price-desc" data-i18n="free_desc"></div>
                     <ul class="price-features">
-                        <li>5 задач в день</li>
-                        <li>3 агента</li>
-                        <li>Результат в чате</li>
-                        <li>Базовый поиск</li>
+                        <li data-i18n="free_f1"></li>
+                        <li data-i18n="free_f2"></li>
+                        <li data-i18n="free_f3"></li>
+                        <li data-i18n="free_f4"></li>
                     </ul>
-                    <a href="https://t.me/my_Visaginas360" class="price-btn outline">Начать бесплатно</a>
+                    <a href="https://t.me/my_Visaginas360" class="price-btn outline" data-i18n="free_btn"></a>
                 </div>
-                <div class="price-card featured">
+                <div class="price-card featured" data-badge="Popular">
                     <div class="price-name">Pro</div>
-                    <div class="price-amount"><span class="currency">$</span>19<span class="period">/мес</span></div>
-                    <div class="price-desc">Для предпринимателей</div>
+                    <div class="price-amount"><span class="currency">$</span>19<span class="period" data-i18n="per_mo"></span></div>
+                    <div class="price-desc" data-i18n="pro_desc"></div>
                     <ul class="price-features">
-                        <li>Безлимит задач</li>
-                        <li>8 агентов параллельно</li>
+                        <li data-i18n="pro_f1"></li>
+                        <li data-i18n="pro_f2"></li>
                         <li>Google Docs / Sheets / Slides</li>
-                        <li>Своя изолированная VM</li>
-                        <li>Приоритетная поддержка</li>
+                        <li data-i18n="pro_f4"></li>
+                        <li data-i18n="pro_f5"></li>
                     </ul>
-                    <a href="https://t.me/my_Visaginas360" class="price-btn gold">Выбрать Pro</a>
+                    <a href="https://t.me/my_Visaginas360" class="price-btn gold" data-i18n="pro_btn"></a>
                 </div>
                 <div class="price-card">
                     <div class="price-name">Team</div>
-                    <div class="price-amount"><span class="currency">$</span>49<span class="period">/мес</span></div>
-                    <div class="price-desc">Для команд до 5 человек</div>
+                    <div class="price-amount"><span class="currency">$</span>49<span class="period" data-i18n="per_mo"></span></div>
+                    <div class="price-desc" data-i18n="team_desc"></div>
                     <ul class="price-features">
-                        <li>Всё из Pro</li>
-                        <li>5 пользователей</li>
-                        <li>Общее рабочее пространство</li>
-                        <li>Командные шаблоны</li>
-                        <li>API доступ</li>
+                        <li data-i18n="team_f1"></li>
+                        <li data-i18n="team_f2"></li>
+                        <li data-i18n="team_f3"></li>
+                        <li data-i18n="team_f4"></li>
+                        <li data-i18n="team_f5"></li>
                     </ul>
-                    <a href="https://t.me/my_Visaginas360" class="price-btn outline">Связаться</a>
+                    <a href="https://t.me/my_Visaginas360" class="price-btn outline" data-i18n="team_btn"></a>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ -->
         <section class="reveal">
-            <p class="section-label">Вопросы</p>
-            <h2 class="section-title">Частые вопросы</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.style.maxHeight = this.classList.contains('open') ? this.nextElementSibling.scrollHeight + 'px' : '0'">Чем это отличается от ChatGPT?</button>
-                    <div class="faq-a"><p>ChatGPT — один агент, один поток. Вы получаете текст в чате и копируете его вручную. У нас 8 специализированных агентов работают параллельно, а результат появляется готовым документом в вашем Google Drive.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.style.maxHeight = this.classList.contains('open') ? this.nextElementSibling.scrollHeight + 'px' : '0'">Нужно что-то устанавливать?</button>
-                    <div class="faq-a"><p>Нет. Вы пишете в Telegram бот — и всё. Никаких установок, настроек, паролей. Авторизация через Telegram.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.style.maxHeight = this.classList.contains('open') ? this.nextElementSibling.scrollHeight + 'px' : '0'">Какие задачи можно давать агентам?</button>
-                    <div class="faq-a"><p>Исследования рынка, аналитические отчёты, контент-планы, конкурентный анализ, SEO-тексты, финансовые сводки, презентации — всё, что можно описать словами.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.style.maxHeight = this.classList.contains('open') ? this.nextElementSibling.scrollHeight + 'px' : '0'">Мои данные в безопасности?</button>
-                    <div class="faq-a"><p>Каждый клиент Pro получает изолированную виртуальную машину. Ваши данные не пересекаются с другими пользователями. Google Workspace интеграция через OAuth2 — мы не храним ваши пароли.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.style.maxHeight = this.classList.contains('open') ? this.nextElementSibling.scrollHeight + 'px' : '0'">Что если мне не подойдёт?</button>
-                    <div class="faq-a"><p>Начните с бесплатного плана — 5 задач в день, без карты, без обязательств. Если понравится, переходите на Pro. Отмена в один клик.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.style.maxHeight = this.classList.contains('open') ? this.nextElementSibling.scrollHeight + 'px' : '0'">Как быстро появляется результат?</button>
-                    <div class="faq-a"><p>Простые задачи — 10-15 секунд. Комплексные исследования — 2-5 минут. 8 агентов работают параллельно, поэтому даже сложные задачи выполняются в 3.3 раза быстрее одного AI.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.style.maxHeight = this.classList.contains('open') ? this.nextElementSibling.scrollHeight + 'px' : '0'">На каких языках работает?</button>
-                    <div class="faq-a"><p>Русский, English, Lietuvių — и ещё 50+ языков. Агенты автоматически определяют язык задачи и отвечают на нём.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.style.maxHeight = this.classList.contains('open') ? this.nextElementSibling.scrollHeight + 'px' : '0'">Есть ли API для разработчиков?</button>
-                    <div class="faq-a"><p>Да, на плане Team. REST API с документацией и примерами. Интегрируйте агентов в свой продукт.</p></div>
-                </div>
-            </div>
+            <p class="section-label" data-i18n="label_faq"></p>
+            <h2 class="section-title" data-i18n="title_faq"></h2>
+            <div class="faq-list" id="faqList"></div>
         </section>
 
-        <!-- Final CTA -->
         <section class="final-cta reveal">
-            <h2>Попробуйте бесплатно.<br><span style="color: var(--gold);">Прямо сейчас.</span></h2>
-            <p>5 задач в день. Без карты. Без обязательств.</p>
-            <a href="https://t.me/my_Visaginas360" class="btn btn-gold">Открыть Telegram бот &rarr;</a>
+            <h2><span data-i18n="final_h1"></span><br><span style="color:var(--gold);" data-i18n="final_h2"></span></h2>
+            <p data-i18n="final_p"></p>
+            <a href="https://t.me/my_Visaginas360" class="btn btn-gold" data-i18n="final_btn"></a>
         </section>
     </div>
 
     <footer>
         <div class="container">
             <p>
-                A2A Agent SaaS &bull; 
-                <a href="/">О создателе</a> &bull; 
-                <a href="/pricing">Pricing (EN)</a> &bull; 
-                <a href="https://t.me/my_Visaginas360">Telegram</a> &bull; 
+                A2A Agent SaaS &bull;
+                <a href="./" data-i18n="footer_about"></a> &bull;
+                <a href="pricing.html" data-i18n="footer_pricing"></a> &bull;
+                <a href="https://t.me/my_Visaginas360">Telegram</a> &bull;
                 &copy; 2026 Visaginas360
             </p>
         </div>
     </footer>
 
     <script>
-        // Sticky header on scroll
-        const sticky = document.getElementById('stickyHeader');
-        window.addEventListener('scroll', () => {
-            sticky.classList.toggle('visible', window.scrollY > 400);
-        });
+    const T = {
+      en: {
+        cta_free: "Try free", cta_free_arrow: "Try free \u2192", cta_how: "How it works",
+        hero_badge: "\u26A1 8 agents working right now",
+        hero_h1_1: "Your", hero_h1_gold: "AI Department", hero_h1_2: "for $19 a month",
+        hero_sub: "8 AI agents work in parallel. Reports, analytics and content appear in your Google Docs in 15 seconds. Via Telegram.",
+        label_problem: "Problem", title_problem: "Sound familiar?",
+        pain1_h: "ChatGPT thinks for 60 seconds", pain1_p: "You wait for a response, copy text from chat, paste into a document, format it. Over and over.", pain1_stat: "~ 20 min per report",
+        pain2_h: "One AI \u2014 one thread", pain2_p: "Need analysis, text AND a presentation? Three tasks \u2014 three queues. Sequential. Slow.", pain2_stat: "3x time wasted",
+        pain3_h: "Result \u2014 text in chat", pain3_p: "No tables, no charts, no ready document. Just a wall of text you need to format by hand.", pain3_stat: "+30 min copy-pasting",
+        label_solution: "Solution", title_solution: "8 agents. 15 seconds. Google Docs.",
+        sol1_h: "3.3x faster", sol1_p: "8 specialized agents work simultaneously: analyst, copywriter, researcher \u2014 each on their own task.", sol1_stat: "15 sec instead of 60",
+        sol2_h: "Straight to Google Docs", sol2_p: "Results appear as a ready document in your Google Drive. With formatting, tables, charts.", sol2_stat: "0 min formatting",
+        sol3_h: "Via Telegram 24/7", sol3_p: "Send a task to the Telegram bot \u2014 get the result. At night, on weekends, on vacation. Agents never sleep.", sol3_stat: "Always working",
+        label_how: "How it works", title_how: "Three steps. Zero setup.",
+        step1_h: "Write in Telegram", step1_p: "Describe the task in plain language: \u201CCreate a report on the EV market in Europe\u201D",
+        step2_h: "Agents work", step2_p: "8 agents in parallel: search data, analyze, write text, build tables, verify facts",
+        step3_h: "Document ready", step3_p: "A finished Google Doc appears in your Drive. Formatted. With sources.",
+        label_compare: "Comparison", title_compare: "Why not ChatGPT?",
+        cmp_price: "Price", cmp_agents: "Agents", cmp_8parallel: "8 parallel", cmp_native: "\u2713 Native", cmp_speed: "Speed", cmp_vm: "Own VM", cmp_isolated: "\u2713 Isolated",
+        label_pricing: "Pricing", title_pricing: "Simple prices. No surprises.",
+        per_mo: "/mo", free_desc: "Try and understand", free_f1: "5 tasks per day", free_f2: "3 agents", free_f3: "Results in chat", free_f4: "Basic search", free_btn: "Start free",
+        pro_desc: "For entrepreneurs", pro_f1: "Unlimited tasks", pro_f2: "8 agents in parallel", pro_f4: "Dedicated isolated VM", pro_f5: "Priority support", pro_btn: "Choose Pro",
+        team_desc: "For teams up to 5", team_f1: "Everything in Pro", team_f2: "5 users", team_f3: "Shared workspace", team_f4: "Team templates", team_f5: "API access", team_btn: "Contact us",
+        badge_popular: "Popular",
+        label_faq: "FAQ", title_faq: "Frequently asked questions",
+        faq: [
+          ["How is this different from ChatGPT?", "ChatGPT is one agent, one thread. You get text in chat and copy it manually. We have 8 specialized agents working in parallel, and the result appears as a ready document in your Google Drive."],
+          ["Do I need to install anything?", "No. You write to a Telegram bot \u2014 and that's it. No installations, no setup, no passwords. Auth via Telegram."],
+          ["What tasks can I give to agents?", "Market research, analytical reports, content plans, competitive analysis, SEO copy, financial summaries, presentations \u2014 anything you can describe in words."],
+          ["Is my data safe?", "Every Pro customer gets an isolated virtual machine. Your data never mixes with other users. Google Workspace integration via OAuth2 \u2014 we never store your passwords."],
+          ["What if it's not for me?", "Start with the free plan \u2014 5 tasks per day, no card, no obligations. If you like it, upgrade to Pro. Cancel in one click."],
+          ["How fast do I get results?", "Simple tasks \u2014 10-15 seconds. Complex research \u2014 2-5 minutes. 8 agents work in parallel, so even complex tasks run 3.3x faster than a single AI."],
+          ["What languages are supported?", "English, Russian, Lietuvi\u0173 \u2014 and 50+ more. Agents auto-detect the task language and respond in it."],
+          ["Is there an API for developers?", "Yes, on the Team plan. REST API with documentation and examples. Integrate agents into your product."]
+        ],
+        final_h1: "Try it free.", final_h2: "Right now.", final_p: "5 tasks per day. No card. No obligations.", final_btn: "Open Telegram bot \u2192",
+        footer_about: "About the founder", footer_pricing: "Pricing"
+      },
+      ru: {
+        cta_free: "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E", cta_free_arrow: "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E \u2192", cta_how: "\u041A\u0430\u043A \u044D\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442",
+        hero_badge: "\u26A1 8 \u0430\u0433\u0435\u043D\u0442\u043E\u0432 \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0442 \u043F\u0440\u044F\u043C\u043E \u0441\u0435\u0439\u0447\u0430\u0441",
+        hero_h1_1: "\u0412\u0430\u0448", hero_h1_gold: "AI-\u043E\u0442\u0434\u0435\u043B", hero_h1_2: "\u0437\u0430 $19 \u0432 \u043C\u0435\u0441\u044F\u0446",
+        hero_sub: "8 AI-\u0430\u0433\u0435\u043D\u0442\u043E\u0432 \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0442 \u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u044C\u043D\u043E. \u041E\u0442\u0447\u0451\u0442\u044B, \u0430\u043D\u0430\u043B\u0438\u0442\u0438\u043A\u0430 \u0438 \u043A\u043E\u043D\u0442\u0435\u043D\u0442 \u043F\u043E\u044F\u0432\u043B\u044F\u044E\u0442\u0441\u044F \u0432 \u0432\u0430\u0448\u0438\u0445 Google Docs \u0437\u0430 15 \u0441\u0435\u043A\u0443\u043D\u0434. \u0427\u0435\u0440\u0435\u0437 Telegram.",
+        label_problem: "\u041F\u0440\u043E\u0431\u043B\u0435\u043C\u0430", title_problem: "\u0417\u043D\u0430\u043A\u043E\u043C\u043E?",
+        pain1_h: "ChatGPT \u0434\u0443\u043C\u0430\u0435\u0442 60 \u0441\u0435\u043A\u0443\u043D\u0434", pain1_p: "\u0412\u044B \u0436\u0434\u0451\u0442\u0435 \u043E\u0442\u0432\u0435\u0442, \u043A\u043E\u043F\u0438\u0440\u0443\u0435\u0442\u0435 \u0442\u0435\u043A\u0441\u0442 \u0438\u0437 \u0447\u0430\u0442\u0430, \u0432\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442\u0435 \u0432 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442, \u0444\u043E\u0440\u043C\u0430\u0442\u0438\u0440\u0443\u0435\u0442\u0435. \u0421\u043D\u043E\u0432\u0430 \u0438 \u0441\u043D\u043E\u0432\u0430.", pain1_stat: "~ 20 \u043C\u0438\u043D \u043D\u0430 \u043E\u0434\u0438\u043D \u043E\u0442\u0447\u0451\u0442",
+        pain2_h: "\u041E\u0434\u0438\u043D AI \u2014 \u043E\u0434\u0438\u043D \u043F\u043E\u0442\u043E\u043A", pain2_p: "\u041D\u0443\u0436\u0435\u043D \u0430\u043D\u0430\u043B\u0438\u0437, \u0442\u0435\u043A\u0441\u0442 \u0418 \u043F\u0440\u0435\u0437\u0435\u043D\u0442\u0430\u0446\u0438\u044F? \u0422\u0440\u0438 \u0437\u0430\u0434\u0430\u0447\u0438 \u2014 \u0442\u0440\u0438 \u043E\u0447\u0435\u0440\u0435\u0434\u0438. \u041F\u043E\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u043E. \u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E.", pain2_stat: "3x \u043F\u043E\u0442\u0435\u0440\u044F \u0432\u0440\u0435\u043C\u0435\u043D\u0438",
+        pain3_h: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u2014 \u0442\u0435\u043A\u0441\u0442 \u0432 \u0447\u0430\u0442\u0435", pain3_p: "\u041D\u0438 \u0442\u0430\u0431\u043B\u0438\u0446, \u043D\u0438 \u0433\u0440\u0430\u0444\u0438\u043A\u043E\u0432, \u043D\u0438 \u0433\u043E\u0442\u043E\u0432\u043E\u0433\u043E \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430. \u0422\u043E\u043B\u044C\u043A\u043E \u0441\u0442\u0435\u043D\u0430 \u0442\u0435\u043A\u0441\u0442\u0430, \u043A\u043E\u0442\u043E\u0440\u0443\u044E \u043D\u0443\u0436\u043D\u043E \u043E\u0444\u043E\u0440\u043C\u0438\u0442\u044C \u0440\u0443\u043A\u0430\u043C\u0438.", pain3_stat: "+30 \u043C\u0438\u043D \u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435",
+        label_solution: "\u0420\u0435\u0448\u0435\u043D\u0438\u0435", title_solution: "8 \u0430\u0433\u0435\u043D\u0442\u043E\u0432. 15 \u0441\u0435\u043A\u0443\u043D\u0434. Google Docs.",
+        sol1_h: "3.3x \u0431\u044B\u0441\u0442\u0440\u0435\u0435", sol1_p: "8 \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445 \u0430\u0433\u0435\u043D\u0442\u043E\u0432 \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0442 \u043E\u0434\u043D\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u043E: \u0430\u043D\u0430\u043B\u0438\u0442\u0438\u043A, \u043A\u043E\u043F\u0438\u0440\u0430\u0439\u0442\u0435\u0440, \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C.", sol1_stat: "15 \u0441\u0435\u043A \u0432\u043C\u0435\u0441\u0442\u043E 60",
+        sol2_h: "\u0421\u0440\u0430\u0437\u0443 \u0432 Google Docs", sol2_p: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u043F\u043E\u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0433\u043E\u0442\u043E\u0432\u044B\u043C \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u043E\u043C \u0432 \u0432\u0430\u0448\u0435\u043C Google Drive. \u0421 \u0444\u043E\u0440\u043C\u0430\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\u043C, \u0442\u0430\u0431\u043B\u0438\u0446\u0430\u043C\u0438, \u0433\u0440\u0430\u0444\u0438\u043A\u0430\u043C\u0438.", sol2_stat: "0 \u043C\u0438\u043D\u0443\u0442 \u043D\u0430 \u043E\u0444\u043E\u0440\u043C\u043B\u0435\u043D\u0438\u0435",
+        sol3_h: "\u0427\u0435\u0440\u0435\u0437 Telegram 24/7", sol3_p: "\u041D\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0443 \u0432 Telegram \u0431\u043E\u0442 \u2014 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u0435 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442. \u041D\u043E\u0447\u044C\u044E, \u0432 \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u0435, \u0432 \u043E\u0442\u043F\u0443\u0441\u043A\u0435.", sol3_stat: "\u0420\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0432\u0441\u0435\u0433\u0434\u0430",
+        label_how: "\u041A\u0430\u043A \u044D\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442", title_how: "\u0422\u0440\u0438 \u0448\u0430\u0433\u0430. \u041D\u043E\u043B\u044C \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438.",
+        step1_h: "\u041D\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0432 Telegram", step1_p: "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0443: \u00AB\u0421\u0434\u0435\u043B\u0430\u0439 \u043E\u0442\u0447\u0451\u0442 \u043F\u043E \u0440\u044B\u043D\u043A\u0443 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439 \u0432 \u0415\u0432\u0440\u043E\u043F\u0435\u00BB",
+        step2_h: "\u0410\u0433\u0435\u043D\u0442\u044B \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0442", step2_p: "8 \u0430\u0433\u0435\u043D\u0442\u043E\u0432 \u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u044C\u043D\u043E: \u0438\u0449\u0443\u0442 \u0434\u0430\u043D\u043D\u044B\u0435, \u0430\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u0443\u044E\u0442, \u043F\u0438\u0448\u0443\u0442 \u0442\u0435\u043A\u0441\u0442, \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u044E\u0442 \u0444\u0430\u043A\u0442\u044B",
+        step3_h: "\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442 \u0433\u043E\u0442\u043E\u0432", step3_p: "\u0413\u043E\u0442\u043E\u0432\u044B\u0439 Google Doc \u043F\u043E\u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0432 \u0432\u0430\u0448\u0435\u043C Drive. \u041E\u0442\u0444\u043E\u0440\u043C\u0430\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439. \u0421 \u0438\u0441\u0442\u043E\u0447\u043D\u0438\u043A\u0430\u043C\u0438.",
+        label_compare: "\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435", title_compare: "\u041F\u043E\u0447\u0435\u043C\u0443 \u043D\u0435 ChatGPT?",
+        cmp_price: "\u0426\u0435\u043D\u0430", cmp_agents: "\u0410\u0433\u0435\u043D\u0442\u044B", cmp_8parallel: "8 \u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u044C\u043D\u043E", cmp_native: "\u2713 \u041D\u0430\u0442\u0438\u0432\u043D\u043E", cmp_speed: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C", cmp_vm: "\u0421\u0432\u043E\u044F VM", cmp_isolated: "\u2713 \u0418\u0437\u043E\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0430\u044F",
+        label_pricing: "\u0422\u0430\u0440\u0438\u0444\u044B", title_pricing: "\u041F\u0440\u043E\u0441\u0442\u044B\u0435 \u0446\u0435\u043D\u044B. \u0411\u0435\u0437 \u0441\u044E\u0440\u043F\u0440\u0438\u0437\u043E\u0432.",
+        per_mo: "/\u043C\u0435\u0441", free_desc: "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u0438 \u043F\u043E\u043D\u044F\u0442\u044C", free_f1: "5 \u0437\u0430\u0434\u0430\u0447 \u0432 \u0434\u0435\u043D\u044C", free_f2: "3 \u0430\u0433\u0435\u043D\u0442\u0430", free_f3: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0432 \u0447\u0430\u0442\u0435", free_f4: "\u0411\u0430\u0437\u043E\u0432\u044B\u0439 \u043F\u043E\u0438\u0441\u043A", free_btn: "\u041D\u0430\u0447\u0430\u0442\u044C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E",
+        pro_desc: "\u0414\u043B\u044F \u043F\u0440\u0435\u0434\u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u0435\u0439", pro_f1: "\u0411\u0435\u0437\u043B\u0438\u043C\u0438\u0442 \u0437\u0430\u0434\u0430\u0447", pro_f2: "8 \u0430\u0433\u0435\u043D\u0442\u043E\u0432 \u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u044C\u043D\u043E", pro_f4: "\u0421\u0432\u043E\u044F \u0438\u0437\u043E\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0430\u044F VM", pro_f5: "\u041F\u0440\u0438\u043E\u0440\u0438\u0442\u0435\u0442\u043D\u0430\u044F \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u0430", pro_btn: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C Pro",
+        team_desc: "\u0414\u043B\u044F \u043A\u043E\u043C\u0430\u043D\u0434 \u0434\u043E 5 \u0447\u0435\u043B\u043E\u0432\u0435\u043A", team_f1: "\u0412\u0441\u0451 \u0438\u0437 Pro", team_f2: "5 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439", team_f3: "\u041E\u0431\u0449\u0435\u0435 \u0440\u0430\u0431\u043E\u0447\u0435\u0435 \u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0441\u0442\u0432\u043E", team_f4: "\u041A\u043E\u043C\u0430\u043D\u0434\u043D\u044B\u0435 \u0448\u0430\u0431\u043B\u043E\u043D\u044B", team_f5: "API \u0434\u043E\u0441\u0442\u0443\u043F", team_btn: "\u0421\u0432\u044F\u0437\u0430\u0442\u044C\u0441\u044F",
+        badge_popular: "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0439",
+        label_faq: "\u0412\u043E\u043F\u0440\u043E\u0441\u044B", title_faq: "\u0427\u0430\u0441\u0442\u044B\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B",
+        faq: [
+          ["\u0427\u0435\u043C \u044D\u0442\u043E \u043E\u0442\u043B\u0438\u0447\u0430\u0435\u0442\u0441\u044F \u043E\u0442 ChatGPT?", "ChatGPT \u2014 \u043E\u0434\u0438\u043D \u0430\u0433\u0435\u043D\u0442, \u043E\u0434\u0438\u043D \u043F\u043E\u0442\u043E\u043A. \u0423 \u043D\u0430\u0441 8 \u0430\u0433\u0435\u043D\u0442\u043E\u0432 \u043F\u0430\u0440\u0430\u043B\u043B\u0435\u043B\u044C\u043D\u043E, \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0441\u0440\u0430\u0437\u0443 \u0432 Google Drive."],
+          ["\u041D\u0443\u0436\u043D\u043E \u0447\u0442\u043E-\u0442\u043E \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0442\u044C?", "\u041D\u0435\u0442. \u041F\u0438\u0448\u0435\u0442\u0435 \u0432 Telegram \u0431\u043E\u0442 \u2014 \u0438 \u0432\u0441\u0451."],
+          ["\u041A\u0430\u043A\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \u043C\u043E\u0436\u043D\u043E \u0434\u0430\u0432\u0430\u0442\u044C?", "\u0418\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u044F, \u043E\u0442\u0447\u0451\u0442\u044B, \u043A\u043E\u043D\u0442\u0435\u043D\u0442-\u043F\u043B\u0430\u043D\u044B, \u043A\u043E\u043D\u043A\u0443\u0440\u0435\u043D\u0442\u043D\u044B\u0439 \u0430\u043D\u0430\u043B\u0438\u0437, SEO, \u043F\u0440\u0435\u0437\u0435\u043D\u0442\u0430\u0446\u0438\u0438."],
+          ["\u041C\u043E\u0438 \u0434\u0430\u043D\u043D\u044B\u0435 \u0432 \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0438?", "\u041A\u0430\u0436\u0434\u044B\u0439 Pro \u043A\u043B\u0438\u0435\u043D\u0442 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442 \u0438\u0437\u043E\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0443\u044E VM. \u0412\u0430\u0448\u0438 \u0434\u0430\u043D\u043D\u044B\u0435 \u043D\u0435 \u043F\u0435\u0440\u0435\u0441\u0435\u043A\u0430\u044E\u0442\u0441\u044F \u0441 \u0434\u0440\u0443\u0433\u0438\u043C\u0438."],
+          ["\u0427\u0442\u043E \u0435\u0441\u043B\u0438 \u043D\u0435 \u043F\u043E\u0434\u043E\u0439\u0434\u0451\u0442?", "\u041D\u0430\u0447\u043D\u0438\u0442\u0435 \u0441 Free \u2014 5 \u0437\u0430\u0434\u0430\u0447/\u0434\u0435\u043D\u044C, \u0431\u0435\u0437 \u043A\u0430\u0440\u0442\u044B. \u041E\u0442\u043C\u0435\u043D\u0430 \u0432 1 \u043A\u043B\u0438\u043A."],
+          ["\u041A\u0430\u043A \u0431\u044B\u0441\u0442\u0440\u043E \u043F\u043E\u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442?", "\u041F\u0440\u043E\u0441\u0442\u044B\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \u2014 10-15 \u0441\u0435\u043A. \u0421\u043B\u043E\u0436\u043D\u044B\u0435 \u2014 2-5 \u043C\u0438\u043D. \u0412 3.3x \u0431\u044B\u0441\u0442\u0440\u0435\u0435 \u043E\u0434\u043D\u043E\u0433\u043E AI."],
+          ["\u041D\u0430 \u043A\u0430\u043A\u0438\u0445 \u044F\u0437\u044B\u043A\u0430\u0445?", "RU, EN, LT \u0438 50+ \u0434\u0440\u0443\u0433\u0438\u0445. \u0410\u0432\u0442\u043E\u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u044F\u0437\u044B\u043A\u0430."],
+          ["\u0415\u0441\u0442\u044C API?", "\u0414\u0430, \u043D\u0430 Team \u043F\u043B\u0430\u043D\u0435. REST API \u0441 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430\u0446\u0438\u0435\u0439."]
+        ],
+        final_h1: "\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E.", final_h2: "\u041F\u0440\u044F\u043C\u043E \u0441\u0435\u0439\u0447\u0430\u0441.", final_p: "5 \u0437\u0430\u0434\u0430\u0447 \u0432 \u0434\u0435\u043D\u044C. \u0411\u0435\u0437 \u043A\u0430\u0440\u0442\u044B. \u0411\u0435\u0437 \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u0441\u0442\u0432.", final_btn: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C Telegram \u0431\u043E\u0442 \u2192",
+        footer_about: "\u041E \u0441\u043E\u0437\u0434\u0430\u0442\u0435\u043B\u0435", footer_pricing: "\u0422\u0430\u0440\u0438\u0444\u044B"
+      },
+      lt: {
+        cta_free: "I\u0161bandyti nemokamai", cta_free_arrow: "I\u0161bandyti nemokamai \u2192", cta_how: "Kaip tai veikia",
+        hero_badge: "\u26A1 8 agentai dirba dabar",
+        hero_h1_1: "J\u016Bs\u0173", hero_h1_gold: "AI skyrius", hero_h1_2: "u\u017E $19 per m\u0117n.",
+        hero_sub: "8 AI agentai dirba lygiagre\u010Diai. Ataskaitos, analitika ir turinys atsiranda j\u016Bs\u0173 Google Docs per 15 sekund\u017Ei\u0173. Per Telegram.",
+        label_problem: "Problema", title_problem: "Pa\u017E\u012Fstama?",
+        pain1_h: "ChatGPT galvoja 60 sekund\u017Ei\u0173", pain1_p: "Laukiate atsakymo, kopijuojate tekst\u0105 i\u0161 pokalbio, \u012Fklijuojate \u012F dokument\u0105, formatuojate. V\u0117l ir v\u0117l.", pain1_stat: "~ 20 min vienai ataskaitai",
+        pain2_h: "Vienas AI \u2014 viena gija", pain2_p: "Reikia analiz\u0117s, teksto IR prezentacijos? Trys u\u017Eduotys \u2014 trys eil\u0117s. Nuosekliai. L\u0117tai.", pain2_stat: "3x laiko praradimas",
+        pain3_h: "Rezultatas \u2014 tekstas pokalbyje", pain3_p: "Joki\u0173 lenteli\u0173, grafik\u0173 ar paruo\u0161to dokumento. Tik teksto siena, kuri\u0105 reikia formatuoti rankomis.", pain3_stat: "+30 min kopijavimas",
+        label_solution: "Sprendimas", title_solution: "8 agentai. 15 sekund\u017Ei\u0173. Google Docs.",
+        sol1_h: "3.3x grei\u010Diau", sol1_p: "8 specializuoti agentai dirba vienu metu: analitikas, kopiraitininkas, tyr\u0117jas \u2014 kiekvienas prie savo u\u017Eduoties.", sol1_stat: "15 sek. vietoj 60",
+        sol2_h: "Tiesiai \u012F Google Docs", sol2_p: "Rezultatas atsiranda kaip paruoštas dokumentas j\u016Bs\u0173 Google Drive. Su formatavimu, lentel\u0117mis.", sol2_stat: "0 min formatavimui",
+        sol3_h: "Per Telegram 24/7", sol3_p: "Para\u0161ykite u\u017Eduot\u012F Telegram botui \u2014 gaukite rezultat\u0105. Nakt\u012F, savaitgaliais, atostog\u0173 metu.", sol3_stat: "Veikia visada",
+        label_how: "Kaip tai veikia", title_how: "Trys \u017Eingsniai. Nulin\u0117 s\u0105ranka.",
+        step1_h: "Ra\u0161ykite Telegram", step1_p: "Apra\u0161ykite u\u017Eduot\u012F paprasta kalba: \u201EParuošk ataskait\u0105 apie elektromobili\u0173 rink\u0105 Europoje\u201C",
+        step2_h: "Agentai dirba", step2_p: "8 agentai lygiagre\u010Diai: ie\u0161ko duomen\u0173, analizuoja, ra\u0161o tekst\u0105, tikrina faktus",
+        step3_h: "Dokumentas paruoštas", step3_p: "Paruo\u0161tas Google Doc atsiranda j\u016Bs\u0173 Drive. Suformatuotas. Su \u0161altiniais.",
+        label_compare: "Palyginimas", title_compare: "Kod\u0117l ne ChatGPT?",
+        cmp_price: "Kaina", cmp_agents: "Agentai", cmp_8parallel: "8 lygiagre\u010Diai", cmp_native: "\u2713 Natyv\u016Bs", cmp_speed: "Greitis", cmp_vm: "Sava VM", cmp_isolated: "\u2713 Izoliuota",
+        label_pricing: "Kainos", title_pricing: "Paprastos kainos. Be staigmen\u0173.",
+        per_mo: "/m\u0117n.", free_desc: "I\u0161bandyti ir suprasti", free_f1: "5 u\u017Eduotys per dien\u0105", free_f2: "3 agentai", free_f3: "Rezultatas pokalbyje", free_f4: "Paprasta paie\u0161ka", free_btn: "Prad\u0117ti nemokamai",
+        pro_desc: "Verslininkams", pro_f1: "Neribota u\u017Eduo\u010Di\u0173", pro_f2: "8 agentai lygiagre\u010Diai", pro_f4: "Sava izoliuota VM", pro_f5: "Prioritetin\u0117 pagalba", pro_btn: "Rinktis Pro",
+        team_desc: "Komandoms iki 5 \u017Emoni\u0173", team_f1: "Viskas i\u0161 Pro", team_f2: "5 naudotojai", team_f3: "Bendra darbo erdv\u0117", team_f4: "\u0160ablonai komandai", team_f5: "API prieiga", team_btn: "Susisiekti",
+        badge_popular: "Populiarus",
+        label_faq: "DUK", title_faq: "Da\u017Enai u\u017Eduodami klausimai",
+        faq: [
+          ["Kuo tai skiriasi nuo ChatGPT?", "ChatGPT \u2014 vienas agentas, viena gija. Mes turime 8 agentus lygiagre\u010Diai, rezultatas i\u0161kart Google Drive."],
+          ["Ar reikia k\u0105 nors diegti?", "Ne. Ra\u0161ote Telegram botui \u2014 ir viskas."],
+          ["Kokias u\u017Eduotis galima duoti?", "Rinkos tyrimus, ataskaitas, turinio planus, konkurent\u0173 analiz\u0119, SEO, prezentacijas."],
+          ["Ar mano duomenys saug\u016Bs?", "Kiekvienas Pro klientas gauna izoliuot\u0105 VM. J\u016Bs\u0173 duomenys nesikerta su kitais."],
+          ["O jei netiks?", "Prad\u0117kite su Free \u2014 5 u\u017Eduotys/dien\u0105, be kortel\u0117s. At\u0161aukimas vienu paspaudimu."],
+          ["Kaip greitai gausiu rezultat\u0105?", "Paprastos u\u017Eduotys \u2014 10-15 sek. Sud\u0117tingos \u2014 2-5 min. 3.3x grei\u010Diau nei vienas AI."],
+          ["Kokiomis kalbomis?", "LT, EN, RU ir 50+ kit\u0173. Automatinis kalbos atpa\u017Einimas."],
+          ["Ar yra API?", "Taip, Team plane. REST API su dokumentacija."]
+        ],
+        final_h1: "I\u0161bandykite nemokamai.", final_h2: "Dabar.", final_p: "5 u\u017Eduotys per dien\u0105. Be kortel\u0117s. Be \u012Fsipareigojim\u0173.", final_btn: "Atidaryti Telegram bot\u0105 \u2192",
+        footer_about: "Apie k\u016Br\u0117j\u0105", footer_pricing: "Kainos"
+      }
+    };
 
-        // Reveal on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 100);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    let currentLang = 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      const t = T[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key]) el.textContent = t[key];
+      });
+      // Update badge on featured price card
+      document.querySelectorAll('.price-card.featured').forEach(el => {
+        el.dataset.badge = t.badge_popular;
+      });
+      // Update FAQ
+      const faqList = document.getElementById('faqList');
+      faqList.innerHTML = '';
+      t.faq.forEach(([q, a]) => {
+        const item = document.createElement('div');
+        item.className = 'faq-item';
+        item.innerHTML = '<button class="faq-q" onclick="this.classList.toggle(\'open\');this.nextElementSibling.style.maxHeight=this.classList.contains(\'open\')?this.nextElementSibling.scrollHeight+\'px\':\'0\'">' + q + '</button><div class="faq-a"><p>' + a + '</p></div>';
+        faqList.appendChild(item);
+      });
+      // Update lang buttons
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.classList.toggle('active', b.textContent === lang.toUpperCase());
+      });
+      // Update html lang
+      document.documentElement.lang = lang === 'lt' ? 'lt' : lang === 'ru' ? 'ru' : 'en';
+      // Save preference
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+    }
+
+    // Init
+    const saved = (() => { try { return localStorage.getItem('lang'); } catch(e) { return null; } })();
+    setLang(saved || 'en');
+
+    // Sticky header
+    const sticky = document.getElementById('stickyHeader');
+    window.addEventListener('scroll', () => { sticky.classList.toggle('visible', window.scrollY > 400); });
+
+    // Reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
