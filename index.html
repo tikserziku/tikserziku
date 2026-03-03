@@ -309,6 +309,90 @@
             </div>
         </section>
 
+
+        <section class="reveal">
+            <h2 class="section-title">Security &mdash; Hardened by Paranoia</h2>
+            <div class="story-box">
+                <p>On February 23, 2026, we ran a full penetration test against our own production infrastructure. Not a scan &mdash; a real attack simulation. We tested write exploits, agent injection, data exfiltration, and privilege escalation. We found 18 vulnerabilities. We fixed all 18 the same day.</p>
+                <blockquote>&ldquo;We don&rsquo;t just build AI agents. We build AI agents that can&rsquo;t be hijacked, can&rsquo;t leak data, and can&rsquo;t be turned against the customer.&rdquo;</blockquote>
+                <p>Security isn&rsquo;t a feature we added later. It&rsquo;s a 5-layer architecture baked into every service, every route, every file permission. Documented in a private audit repository with full remediation reports.</p>
+            </div>
+
+            <div class="insight-grid" style="margin-top: 20px;">
+                <div class="insight-card" style="border-color: #ef4444;">
+                    <div class="insight-icon">&#128308;</div>
+                    <div class="insight-label">Vulnerabilities Found</div>
+                    <div class="insight-value">18 total<br><span style="font-size:0.75rem;color:#ef4444;">4 critical &middot; 6 high &middot; 5 med &middot; 3 low</span></div>
+                </div>
+                <div class="insight-card" style="border-color: var(--green);">
+                    <div class="insight-icon">&#9989;</div>
+                    <div class="insight-label">Vulnerabilities Fixed</div>
+                    <div class="insight-value">18 of 18<br><span style="font-size:0.75rem;color:var(--green);">Same day. Zero remaining.</span></div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">&#128737;&#65039;</div>
+                    <div class="insight-label">Defense Layers</div>
+                    <div class="insight-value">5 layers deep<br><span style="font-size:0.75rem;color:var(--text-muted);">Network &rarr; Proxy &rarr; Auth &rarr; Files &rarr; Isolation</span></div>
+                </div>
+            </div>
+
+            <div class="architecture" style="margin-top: 20px; background: #1a0a0a; border: 1px solid rgba(239,68,68,0.2);">
+<pre><span class="comment">// 5-Layer Security Architecture</span>
+
+<span class="accent">LAYER 1 &mdash; FIREWALL</span>
+Before audit:  22+ ports open to the internet
+After audit:   <span class="green">3 ports only</span> (SSH, HTTP redirect, HTTPS)
+All services behind reverse proxy. Zero direct port access.
+
+<span class="accent">LAYER 2 &mdash; REVERSE PROXY (Caddy)</span>
+98 routes analyzed. 28 dangerous routes <span style="color:#ef4444;">deleted</span>
+35 public routes (static sites only)
+35 internal routes: <span class="green">IP whitelist + bearer token + query key</span>
+Single point of control. One config = one security boundary.
+
+<span class="accent">LAYER 3 &mdash; APPLICATION AUTH</span>
+Admin endpoints: require_admin() decorator on every handler
+Customer data: auth-gated, no anonymous access
+Agent registration: validated, no injection possible
+<span class="comment">// We tested: injected fake agent into production swarm</span>
+<span class="comment">// Result: caught and blocked. Injected data cleaned.</span>
+
+<span class="accent">LAYER 4 &mdash; FILE SYSTEM</span>
+112 systemd service files: <span class="green">chmod 600</span> (owner-only)
+10 API keys: consolidated into single encrypted vault
+OAuth tokens: restricted permissions, no world-readable files
+<span class="comment">// Before: API keys in plaintext .service files</span>
+<span class="comment">// After: EnvironmentFile= pointing to chmod 600 secrets</span>
+
+<span class="accent">LAYER 5 &mdash; CUSTOMER ISOLATION</span>
+Every customer gets their own VM (not shared containers)
+No cross-customer data access. No shared databases.
+Customer VMs have zero access to internal infrastructure.
+
+<span class="comment">// Full audit: private repo with remediation docs</span>
+<span class="comment">// SECURITY.md + FIREWALL.md + HOW_TO_WORK_SECURED.md</span></pre>
+            </div>
+
+            <div class="mcp-grid" style="margin-top: 16px;">
+                <div class="mcp-card" style="border-color: rgba(239,68,68,0.3);">
+                    <h4>Pentest Findings</h4>
+                    <div class="tools" style="color:#ef4444;">4 critical vulnerabilities</div>
+                    <p>Customer PII exposed, agent injection possible, admin API on open port, API keys in readable files</p>
+                </div>
+                <div class="mcp-card" style="border-color: rgba(16,185,129,0.3);">
+                    <h4>Remediation</h4>
+                    <div class="tools" style="color:var(--green);">All fixed same day</div>
+                    <p>IP whitelist on 35 routes, firewall to 3 ports, secrets encrypted, 28 routes removed</p>
+                </div>
+                <div class="mcp-card">
+                    <h4>Ongoing</h4>
+                    <div class="tools">Continuous monitoring</div>
+                    <p>Watchdog checks security posture every cycle. Cross-VM trust verified. New service checklist enforced.</p>
+                </div>
+            </div>
+        </section>
+
+
         <section class="reveal">
             <h2 class="section-title">What We Build</h2>
             <div class="projects">
@@ -411,6 +495,14 @@ Task → Decompose → <span class="green">Parallel Execute</span> → QA Gate �
                         <p>AI controls cloud infrastructure from the browser. Gmail, BigQuery, Firestore, Vertex AI Search, Windows MCP — all connected. Google Managed MCP servers integrated. 80+ tools available to the AI orchestrator.</p>
                     </div>
                 </div>
+                <div class="timeline-item highlight">
+                    <div class="timeline-date">Feb 2026</div>
+                    <div class="timeline-content">
+                        <h4>&#128272; Full Penetration Test &mdash; 18/18 Fixed</h4>
+                        <p>Ran offensive security audit against own production. Found 18 vulnerabilities (4 critical): customer PII exposure, agent injection, open admin ports, plaintext API keys. Built 5-layer defense: firewall (3 ports only), Caddy IP whitelist on 35 routes, auth decorators, file permissions hardening (112 files), customer VM isolation. All fixed same day.</p>
+                    </div>
+                </div>
+
                 <div class="timeline-item">
                     <div class="timeline-date">Feb 2026</div>
                     <div class="timeline-content">
