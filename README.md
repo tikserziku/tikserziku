@@ -145,7 +145,7 @@ The breakthrough: Claude AI in the browser controls real cloud infrastructure th
 
 Looking for: AI engineering roles, technical co-founder partnerships, investment conversations.
 
-**Website:** [mindswarm.dev](https://mindswarm.dev) · **Telegram:** [@sergejdrus](https://t.me/sergejdrus) · **Email:** sergej.drus@gmail.com
+**Website:** [mindswarm.dev](https://mindswarm.dev) · **Telegram:** [@sergejdrus](https://t.me/sergejdrus)
 
 ---
 

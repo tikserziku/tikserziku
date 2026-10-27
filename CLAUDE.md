@@ -27,9 +27,9 @@
 
 - **Мультиязычность / i18n**: хранить переводы в <script id="i18n" type="application/json"> и парсить через JSON.parse. НЕ держать строки с апострофами (you're, Musk's, it's) в одинарных JS-кавычках — это ломает весь объект и оставляет пустые элементы. JSON снимает проблему экранирования полностью.
 - **UTF-8**: проверять кириллицу и литовские диакритики на отсутствие кракозябр после записи файла.
-- Аккаунт Cloudflare: sergej.drus@gmail.com.
+- Аккаунт Cloudflare: см. приватную память.
 
 ## Аккаунты / окружение
 - Windows PC user: serge. Дизайн-скиллы: C:\Users\serge\.claude\skills\
-- Oracle VM (prod): 92.5.72.169, секреты в /home/ubuntu/.secrets/
-- Cloudflare: sergej.drus@gmail.com, домен visaginas360.com
+- Oracle VM (prod): адрес и расположение секретов — только в приватной памяти.
+- Cloudflare: домен visaginas360.com
